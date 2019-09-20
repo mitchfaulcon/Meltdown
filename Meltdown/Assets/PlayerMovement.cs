@@ -7,9 +7,13 @@ public class PlayerMovement : MonoBehaviour
 
     private const float DEFAULT_SPEED = 300f;
     private const float SPRINT_SPEED = 500f;
+
     // Public variables can be changed in unity editor
     public float movementSpeed = DEFAULT_SPEED;
     public new Rigidbody rigidbody;
+    public GameObject playerModel;
+    public float rotateSpeed = 20f;
+    public Animator animator;
 
     private Vector3 movement;
 
@@ -55,10 +59,21 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate for physics actions
     private void FixedUpdate()
     {
+        //Move player
         movement.Normalize();
-        //rigidbody.MovePosition(rigidbody.position + movement * movementSpeed * Time.fixedDeltaTime);
         rigidbody.velocity = movement * movementSpeed * Time.fixedDeltaTime;
-        movement.x = 0;
-        movement.z = 0;
+
+        //Update animator field
+        animator.SetFloat("velocity", rigidbody.velocity.magnitude);
+
+        if (movement.x != 0 || movement.z != 0)
+        {
+            //Rotate player model to direction of travel
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(movement.x, 0f, movement.z));
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.fixedDeltaTime);
+        }
+
+        movement.x = 0f;
+        movement.z = 0f;
     }
 }
