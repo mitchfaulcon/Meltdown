@@ -1,1 +1,1 @@
-# 306-Project-2
+# SoftEng 306: Project 2
