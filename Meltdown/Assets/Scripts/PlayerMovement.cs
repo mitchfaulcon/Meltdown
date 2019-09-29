@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    private const float DEFAULT_SPEED = 300f;
-    private const float SPRINT_SPEED = 500f;
+    private const float DEFAULT_SPEED = 500f;
 
     // Public variables can be changed in unity editor
     public float movementSpeed = DEFAULT_SPEED;
@@ -45,14 +44,6 @@ public class PlayerMovement : MonoBehaviour
         {
             //Move in positive x direction
             movement.x = 1;
-        }
-        if (Input.GetKey("left shift"))
-        {
-            movementSpeed = SPRINT_SPEED;
-        }
-        if (Input.GetKeyUp("left shift"))
-        {
-            movementSpeed = DEFAULT_SPEED;
         }
     }
 
