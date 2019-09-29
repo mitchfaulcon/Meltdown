@@ -1,1 +1,2 @@
-# 306-Project-2
+# Meltdown!
+### SoftEng 306: Project 2
