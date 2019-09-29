@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Public variables can be changed in unity editor
     public float movementSpeed = DEFAULT_SPEED;
-    public new Rigidbody rigidbody;
+    public Rigidbody rigidbody;
     public GameObject playerModel;
     public float rotateSpeed = 20f;
     public Animator animator;
@@ -44,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
         {
             //Move in positive x direction
             movement.x = 1;
+        }
+        if (Input.GetKey("escape"))
+        {
+            SceneManager.LoadScene("Main Menu");
         }
     }
 
