@@ -46,10 +46,6 @@ public class PlayerMovement : MonoBehaviour
             //Move in positive x direction
             movement.x = 1;
         }
-        if (Input.GetKey("escape"))
-        {
-            SceneManager.LoadScene("Main Menu");
-        }
     }
 
     // FixedUpdate for physics actions
