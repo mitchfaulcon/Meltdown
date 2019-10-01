@@ -722,8 +722,8 @@ Camera:
   m_GameObject: {fileID: 833310645}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -901,9 +901,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - "Sentence 1\t"
-    - Sentence 2
-    - Sentence 3
+    - "Oof! \nAm I in the right place? Are you <TBD1>?"
+    - 'Hi <TBD1>, I''m <TBD2>.
+
+      I''m from the future and I work for the Youth Environmental Education Trust
+
+      ..........
+
+      or YEET for short.'
+    - At YEET, we go back in time to teach kids like you things they can do to help
+      reverse the terrible effects of climate change.
+    - "Why don't we start here inyour backyard? \nLet's do some planting and recycling."
+    - 
 --- !u!114 &1211054327
 MonoBehaviour:
   m_ObjectHideFlags: 0
