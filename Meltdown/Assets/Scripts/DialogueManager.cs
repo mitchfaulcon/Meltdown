@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         {
             sb.Append(character);
             dialogueText.text = sb.ToString();
-            yield return null;
+            yield return new WaitForSeconds(0.03f);
         }
     }
 
