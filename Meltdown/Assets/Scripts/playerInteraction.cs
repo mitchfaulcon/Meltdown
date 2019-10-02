@@ -61,7 +61,7 @@ public class playerInteraction : MonoBehaviour
         InteractableObjectBase item = other.GetComponent<InteractableObjectBase>();
         if (item != null)
         {
-            //Hud.CloseMessagePanel();
+            Hud.CloseMessagePanel();
             mInteractItem = null;
         }
     }
