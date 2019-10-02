@@ -15,7 +15,22 @@ public class RubbishBin : InteractableObjectBase
         {
             hasRubbish = false;
         }
-        return ItemTypes.RubbishBag;
+
+        // Randomly decide on rubbish type
+        int rand = Random.Range(1,3);
+        if(rand == 0)
+        {
+            return ItemTypes.RubbishBag;
+        }
+        else if(rand == 1)
+        {
+            return ItemTypes.Recyclables;
+        }
+        else
+        {
+            return ItemTypes.BananaSkin;
+        }
+        
     }
 
     public override bool CanInteract(ItemTypes heldItem)
