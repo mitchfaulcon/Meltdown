@@ -49,7 +49,7 @@ public class playerInteraction : MonoBehaviour
         {
             if (item.CanInteract(heldItem))
             {
-
+                Debug.Log("Currently Holding Item: " + heldItem);
                 mInteractItem = item;
                 Hud.OpenMessagePanel(mInteractItem);
             }
