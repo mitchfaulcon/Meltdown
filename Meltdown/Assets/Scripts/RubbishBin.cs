@@ -17,12 +17,12 @@ public class RubbishBin : InteractableObjectBase
         }
 
         // Randomly decide on rubbish type
-        int rand = Random.Range(1,3);
-        if(rand == 0)
+        int rand = Random.Range(1,4);
+        if(rand == 1)
         {
             return ItemTypes.RubbishBag;
         }
-        else if(rand == 1)
+        else if(rand == 2)
         {
             return ItemTypes.Recyclables;
         }
