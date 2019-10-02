@@ -600,7 +600,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 317368891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126410520}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1546719004}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &317368891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +895,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 332860736}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1546719004}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 129244690}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &332860736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,7 +1943,6 @@ MonoBehaviour:
     - At YEET, we go back in time to teach kids like you things they can do to help
       reverse the terrible effects of climate change.
     - "Why don't we start here in your backyard? \nLet's do some planting and recycling."
-    - 
 --- !u!1 &771541319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1955,7 @@ GameObject:
   - component: {fileID: 771541323}
   - component: {fileID: 771541322}
   - component: {fileID: 771541321}
+  - component: {fileID: 771541324}
   m_Layer: 5
   m_Name: StartLevelButton
   m_TagString: Untagged
@@ -1981,7 +2025,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 771541322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 771541324}
+        m_MethodName: LoadLevel1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &771541322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,6 +2073,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771541319}
   m_CullTransparentMesh: 0
+--- !u!114 &771541324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771541319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4087091bcef124d9adbaf24f792c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &833310645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,6 +3528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb774b4ac491d46489ba54cad32df851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPanel: {fileID: 522597195}
+  nextPanel: {fileID: 1126410520}
   dialogueText: {fileID: 2068771199}
 --- !u!4 &1785598487
 Transform:
