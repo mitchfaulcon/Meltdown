@@ -9,7 +9,6 @@ public class RubbishBin : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
-        InteractText = "Press J to turn collect rubbish";
         rubbishLevel--;
         Debug.Log("lowering rubbish level: " + rubbishLevel);
         if(rubbishLevel == 0)
@@ -21,9 +20,10 @@ public class RubbishBin : InteractableObjectBase
 
     public override bool CanInteract(ItemTypes heldItem)
     {   
-        if(heldItem == ItemTypes.NONE)
+        if(heldItem == ItemTypes.NONE && hasRubbish)
         {
-            return hasRubbish;
+            InteractText = "Press J to collect rubbish";
+            return true;
         }
         return false;
     }
