@@ -30,7 +30,7 @@ public class playerInteraction : MonoBehaviour
     {
         if (mInteractItem != null)
         {
-            mInteractItem.OnInteract();
+            heldItem = mInteractItem.OnInteract();
 
         }
 

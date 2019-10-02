@@ -17,8 +17,9 @@ public class InteractableObjectBase : MonoBehaviour
         animator.SetTrigger("tr_pickup");
     }
 
-    public virtual void OnInteract()
+    public virtual ItemTypes OnInteract()
     {
+        return ItemTypes.NONE;
     }
 
     public virtual bool CanInteract(ItemTypes item)
