@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    public DialogueManager dialogueManager;
     public Dialogue dialogue;
 
-    public void TriggerDialogue()
+    private void Start()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        //Start displaying the dialogue when the object with this script gets loaded
+        //(after previous panel changes to this one)
+        dialogueManager.StartDialogue(dialogue);
     }
 }

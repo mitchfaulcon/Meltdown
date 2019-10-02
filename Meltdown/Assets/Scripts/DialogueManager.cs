@@ -7,19 +7,18 @@ using System.Text;
 public class DialogueManager : MonoBehaviour
 {
 
-    private Queue<string> sentences;
-
+    public GameObject thisPanel;
+    public GameObject nextPanel;
     public TextMeshProUGUI dialogueText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        sentences = new Queue<string>();
-    }
+
+    private Queue<string> sentences = new Queue<string>();
 
     public void StartDialogue(Dialogue dialogue)
     {
+        //Make sure queue is cleared of sentences
         sentences.Clear();
 
+        //Add each sentence in script to the queue
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -30,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        //End the dialogue if there are no sentences remaining
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -37,12 +37,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        StopAllCoroutines();
+        StopAllCoroutines(); //Ensures the previous sentence does not continue typing if the user presses 'continue' quickly
         StartCoroutine(TypeSentence(sentence));
     }
 
     IEnumerator TypeSentence(string sentence)
     {
+        //Type the script one character at a time
         StringBuilder sb = new StringBuilder("");
         dialogueText.text = sb.ToString();
         foreach(char character in sentence.ToCharArray())
@@ -55,6 +56,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        Debug.Log("end of conversation");
+        //Change active panel to next one
+        thisPanel.SetActive(false);
+        nextPanel.SetActive(true);
     }
 }
