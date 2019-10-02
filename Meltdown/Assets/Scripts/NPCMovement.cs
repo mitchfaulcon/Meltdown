@@ -9,11 +9,11 @@ public class NPCMovement : MonoBehaviour {
 	
 	// Points are places where NPC will move towards
 	public Transform[] points;
-	private int spot;
+	protected int spot;
 	
 	public Rigidbody rigidBody;
 	
-	public bool isWalking;
+	public bool walking = true;
 
 	public float waitTime;
 	private float waitCounter;
@@ -23,19 +23,22 @@ public class NPCMovement : MonoBehaviour {
 	public Animator animator;
 	
   // Start is called before the first frame update
-  void Start() {
+  	void Start() {
 		spot = 0;
 		waitCounter = waitTime;
-  }
+  	}
 
   // Update is called once per frame
-  void Update() {
+  	void Update() {
+		Wait();
+	}
+
+	protected void Wait() {
 		// Check if NPC is near the point before decrementing wait counter
-		if (Vector3.Distance(transform.position, points[spot].position) < 1.0f) {
-	
+		if ((Vector3.Distance(transform.position, points[spot].position) < 1.0f) && walking) {
 			if (waitCounter <= 0) {
-				// Increment spots to move towards next spot
-				if (spot+1 == points.Length) {
+				// Increment spots to move towards next spot, reset after last spot
+				if (spot == points.Length - 1) {
 					spot = 0;
 				} else {
 					spot++;
@@ -49,16 +52,24 @@ public class NPCMovement : MonoBehaviour {
 		}
 	}
 
-
 	private void FixedUpdate() {
-		transform.position = Vector3.MoveTowards(transform.position, points[spot].position, movementSpeed*Time.deltaTime);
-		animator.SetFloat("velocity", Vector3.Distance(transform.position, points[spot].position) - 0.95f);
-    
-		//Rotate player model to direction of travel
-		
-		Vector3 dir = points[spot].position - transform.position;
-		dir.y = 0f;
-    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
-	
+		if (walking) {
+			// Move player and start animation when npc is moving
+			transform.position = Vector3.MoveTowards(transform.position, points[spot].position, movementSpeed*Time.deltaTime);
+			animator.SetFloat("velocity", Vector3.Distance(transform.position, points[spot].position) - 0.95f);
+
+			// Rotate player model to direction of travel
+			SetRotation(points[spot].position - transform.position);
+		}
+	}
+
+	protected void SetRotation(Vector3 direction) {
+		direction.y = 0f;
+    	transform.rotation = Quaternion.Slerp(transform.rotation, 
+								Quaternion.LookRotation(direction), 0.1f);
+	}
+
+	public void setWalking(bool walk) {
+		walking = walk;
 	}
 }
