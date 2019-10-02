@@ -21,4 +21,10 @@ public class ScoreController : MonoBehaviour
         currentValue -= 0.0003f;
         slider.value = currentValue;
     }
+
+    public void taskScored(float points)
+    {
+        Debug.Log("Correct bin, scoring points");
+        currentValue += points;
+    }
 }

@@ -1,15 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using static ScoreController;
 
 public class DepositBin : InteractableObjectBase
 {
-    public string type;
+    public ItemTypes type;
     public ItemTypes currentTrash;
+    public ScoreController scoring;
+    
 
     public override ItemTypes OnInteract()
     {
         Debug.Log("Depositing: " + currentTrash);
+
+        if (currentTrash == type)
+        {
+            scoring = FindObjectOfType<ScoreController>();
+            scoring.taskScored(0.2f);
+        }
+
         return ItemTypes.NONE;
     }
 

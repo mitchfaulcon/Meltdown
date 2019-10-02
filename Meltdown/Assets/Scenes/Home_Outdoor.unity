@@ -1592,8 +1592,9 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
-  type: CompostBin
-  currentTrash: 0
+  type: 4
+  currentTrash: 11
+  scoring: {fileID: 0}
 --- !u!1001 &290278980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4852,8 +4853,9 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
-  type: RecyclingBin
-  currentTrash: 0
+  type: 6
+  currentTrash: 11
+  scoring: {fileID: 0}
 --- !u!1001 &1022093046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6347,8 +6349,9 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
-  type: WasteBin
-  currentTrash: 0
+  type: 5
+  currentTrash: 11
+  scoring: {fileID: 0}
 --- !u!1001 &1393502409
 PrefabInstance:
   m_ObjectHideFlags: 0
