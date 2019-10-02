@@ -6,7 +6,8 @@ public enum ItemTypes
 {
 	PotatoSeeds,
 	TomatoSeeds,
-
+    CarrotSeeds,
+    TreeSappling,
 	BananaSkin,
 	RubbishBag,
 	Recyclables,
