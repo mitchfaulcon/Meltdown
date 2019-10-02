@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerInteraction : MonoBehaviour
 {
     public HUD Hud;
+    public ItemTypes heldItem = ItemTypes.NONE;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class playerInteraction : MonoBehaviour
 
         if (item != null)
         {
-            if (item.CanInteract())
+            if (item.CanInteract(heldItem))
             {
 
                 mInteractItem = item;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum ItemTypes
+public enum ItemTypes
 {
 	PotatoSeeds,
 	PumpkinSeeds,
@@ -12,5 +12,6 @@ enum ItemTypes
 	WaterBucket,
 	Tomatoes,
 	Lettuce,
-	Bike
+	Bike,
+    NONE
 }

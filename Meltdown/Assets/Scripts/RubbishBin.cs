@@ -18,9 +18,9 @@ public class RubbishBin : InteractableObjectBase
         }
     }
 
-    public override bool CanInteract(ItemType heldItem)
+    public override bool CanInteract(ItemTypes heldItem)
     {   
-        if(heldItem == null)
+        if(heldItem == ItemTypes.NONE)
         {
             return hasRubbish;
         }

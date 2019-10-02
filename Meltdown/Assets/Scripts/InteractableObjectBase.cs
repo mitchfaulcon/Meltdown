@@ -21,7 +21,7 @@ public class InteractableObjectBase : MonoBehaviour
     {
     }
 
-    public virtual bool CanInteract()
+    public virtual bool CanInteract(ItemTypes item)
     {
         return true;
     }
