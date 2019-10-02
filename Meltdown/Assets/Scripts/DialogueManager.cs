@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     private Queue<string> sentences = new Queue<string>();
+    private bool sentenceComplete;
+    private string sentence;
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -24,25 +26,39 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        sentenceComplete = true; //Set to true intially so first sentence starts straight away
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
-        //End the dialogue if there are no sentences remaining
-        if (sentences.Count == 0)
+        //End the dialogue if there are no sentences remaining and if the sentence has been fully typed out
+        if (sentences.Count == 0 && sentenceComplete)
         {
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines(); //Ensures the previous sentence does not continue typing if the user presses 'continue' quickly
-        StartCoroutine(TypeSentence(sentence));
+        StopAllCoroutines(); //Stop the sentence from 'typing'
+
+        //Check if the sentence has finished typing
+        if (sentenceComplete)
+        {
+            //Start displaying the next sentence
+            sentence = sentences.Dequeue();
+            StartCoroutine(TypeSentence(sentence));
+        } else
+        {
+            //Show the full uncompleted sentence
+            dialogueText.text = sentence;
+            sentenceComplete = true;
+        }
     }
 
     IEnumerator TypeSentence(string sentence)
     {
+        sentenceComplete = false;
+
         //Type the script one character at a time
         StringBuilder sb = new StringBuilder("");
         dialogueText.text = sb.ToString();
@@ -52,6 +68,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = sb.ToString();
             yield return new WaitForSeconds(0.03f);
         }
+
+        sentenceComplete = true;
     }
 
     private void EndDialogue()
