@@ -5,11 +5,10 @@ using UnityEngine;
 public class Plot : InteractableObjectBase
 {
     private bool hasPlant = false;
-    private ItemTypes plotType;
+    public ItemTypes plotType; 
 
     public override ItemTypes OnInteract()
     {
-        InteractText = "Press J to plant Potato seeds";
         hasPlant = true;
 
         return ItemTypes.NONE;
