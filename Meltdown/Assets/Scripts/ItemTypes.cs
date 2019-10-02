@@ -5,7 +5,8 @@ using UnityEngine;
 public enum ItemTypes
 {
 	PotatoSeeds,
-	PumpkinSeeds,
+	TomatoSeeds,
+
 	BananaSkin,
 	RubbishBag,
 	Recyclables,
