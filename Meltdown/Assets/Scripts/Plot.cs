@@ -10,6 +10,7 @@ public class Plot : InteractableObjectBase
     public override ItemTypes OnInteract()
     {
         hasPlant = true;
+
         return ItemTypes.NONE;
     }
 

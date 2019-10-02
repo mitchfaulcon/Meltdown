@@ -31,6 +31,7 @@ public class playerInteraction : MonoBehaviour
         if (mInteractItem != null)
         {
             heldItem = mInteractItem.OnInteract();
+            Debug.Log("Picked Up: " + heldItem);
 
         }
 
