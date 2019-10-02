@@ -9,7 +9,7 @@ public class RubbishBin : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
-        InteractText = "Press J to turn collect rubbish";
+        InteractText = "Press J to collect rubbish";
         rubbishLevel--;
         Debug.Log("lowering rubbish level: " + rubbishLevel);
         if(rubbishLevel == 0)
