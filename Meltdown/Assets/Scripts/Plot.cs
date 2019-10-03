@@ -5,11 +5,20 @@ using UnityEngine;
 public class Plot : InteractableObjectBase
 {
     private bool hasPlant = false;
+    public bool watered = false;
     public ItemTypes plotType; 
 
     public override ItemTypes OnInteract()
     {
-        hasPlant = true;
+        if(hasPlant == false)
+        {
+            hasPlant = true;
+        }
+        else if (!watered)
+        {
+            watered = true;
+        }
+        
 
         return ItemTypes.NONE;
     }
@@ -19,6 +28,10 @@ public class Plot : InteractableObjectBase
         if(heldItem == plotType)
         {
             return !hasPlant;
+        }
+        else if(heldItem == ItemTypes.WaterBucket && hasPlant)
+        {
+            return !watered;
         }
         return false;
     }
