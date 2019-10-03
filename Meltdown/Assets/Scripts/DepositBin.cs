@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using static ScoreController;
 
 public class DepositBin : InteractableObjectBase
 {
     public ItemTypes type;
     public ItemTypes currentTrash;
     public ScoreController scoring;
+    public TaskController taskControl;
     
 
     public override ItemTypes OnInteract()
@@ -19,6 +19,9 @@ public class DepositBin : InteractableObjectBase
             scoring = FindObjectOfType<ScoreController>();
             scoring.taskScored(0.2f);
         }
+
+        taskControl = FindObjectOfType<TaskController>();
+        taskControl.taskComplete(TaskTypes.Rubbish);
 
         return ItemTypes.NONE;
     }
