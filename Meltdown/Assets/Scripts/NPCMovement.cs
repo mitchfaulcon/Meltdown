@@ -54,16 +54,19 @@ public class NPCMovement : MonoBehaviour {
 
 	private void FixedUpdate() {
 		if (walking) {
-			// Move player and start animation when npc is moving
-			transform.position = Vector3.MoveTowards(transform.position, points[spot].position, movementSpeed*Time.deltaTime);
-			animator.SetFloat("velocity", Vector3.Distance(transform.position, points[spot].position) - 0.95f);
-
-			// Rotate player model to direction of travel
+			MovePlayer(points[spot].position);
 			SetRotation(points[spot].position - transform.position);
 		}
 	}
 
+
+	protected void MovePlayer(Vector3 dest) {
+		// Move player and start animation when npc is moving
+		transform.position = Vector3.MoveTowards(transform.position, dest, movementSpeed*Time.deltaTime);
+		animator.SetFloat("velocity", Vector3.Distance(transform.position, dest) - 0.95f);
+	}
 	protected void SetRotation(Vector3 direction) {
+		// Rotate player model to direction of travel
 		direction.y = 0f;
     	transform.rotation = Quaternion.Slerp(transform.rotation, 
 								Quaternion.LookRotation(direction), 0.1f);
