@@ -22,12 +22,12 @@ public class GridNode
 
 
     // Selects a random adjacent node
-    public Transform GetRandomNode() {
+    public Transform GetRandomNode(Transform prevNode) {
         int next = Random.Range(0, 4);
         Transform node = (Transform) adjNodes[next];
 
-        if (node == null) {
-            return GetRandomNode();
+        if (node == null || node == prevNode) {
+            return GetRandomNode(prevNode);
         } else {
             return node;
         }

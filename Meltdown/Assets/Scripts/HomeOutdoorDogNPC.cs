@@ -33,7 +33,7 @@ public class HomeOutdoorDogNPC : NPCMovement
     {
         // Check that dog is near or at the point before randomly selecting the next target node
         if (Vector3.Distance(transform.position, currentNode.position) < 1.0f) {
-            currentNode = GetCurrentGridNode().GetRandomNode();
+            currentNode = GetCurrentGridNode().GetRandomNode(currentNode);
         }
     }
 
