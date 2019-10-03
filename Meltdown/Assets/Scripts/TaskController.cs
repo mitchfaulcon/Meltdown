@@ -7,6 +7,10 @@ public class TaskController : MonoBehaviour
     public List<TaskTypes> taskList = new List<TaskTypes>();
     //equivalent to map
     public Dictionary<TaskTypes, Task> tasks = new Dictionary<TaskTypes, Task>();
+    public SeedBox carrotBox;
+    public SeedBox potatoBox;
+    public SeedBox treeBox;
+    public SeedBox tomatoBox;
     
 
     // Start is called before the first frame update
@@ -14,6 +18,10 @@ public class TaskController : MonoBehaviour
     {
         InvokeRepeating("launchTask", 1.0f, 0.5f);
         tasks.Add(TaskTypes.Rubbish, new RubbishTask());
+        tasks.Add(TaskTypes.Carrot, new SeedTask(carrotBox, TaskTypes.Carrot));
+        tasks.Add(TaskTypes.Tree, new SeedTask(treeBox, TaskTypes.Tree));
+        tasks.Add(TaskTypes.Potato, new SeedTask(potatoBox, TaskTypes.Potato));
+        tasks.Add(TaskTypes.Tomato, new SeedTask(tomatoBox, TaskTypes.Tomato));
     }
 
     // Update is called once per frame

@@ -40,5 +40,25 @@ public class RubbishTask : Task
 
 public class SeedTask : Task
 {
-   //seed task will go here
+    private WateringCan can = FindObjectOfType<WateringCan>();
+    private SeedBox seedBox;
+    private TaskTypes seedType;
+    public SeedTask(SeedBox seedBox, TaskTypes type)
+    {
+        this.seedBox = seedBox;
+        seedType = type;
+    }
+
+    public override void setupTask()
+    {
+        seedBox.fillSeedBox();
+        can.fill();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(seedType);
+    }
+
+
 }
