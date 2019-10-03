@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class RubbishBin : InteractableObjectBase
 {
-    public bool hasRubbish = true;
-    public int rubbishLevel = 3;
+    public bool hasRubbish = false;
+    public int rubbishLevel = 0;
     public GameObject alert;
 
     public override ItemTypes OnInteract()
     {
         rubbishLevel--;
         Debug.Log("lowering rubbish level: " + rubbishLevel);
-        if(rubbishLevel == 0)
+        if(rubbishLevel <= 0)
         {
             hasRubbish = false;
             alert.SetActive(false);
@@ -49,6 +49,6 @@ public class RubbishBin : InteractableObjectBase
     {
         rubbishLevel = 3;
         hasRubbish = true;
-        alert.SetActive(false);
+        alert.SetActive(true);
     }
 }
