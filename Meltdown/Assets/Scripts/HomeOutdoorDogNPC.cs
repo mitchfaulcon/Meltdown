@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class HomeOutdoorDogNPC : NPCMovement
 {
-
     private ArrayList nodes = new ArrayList();
     private Transform currentNode;
+
+    public GameObject toIgnore;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class HomeOutdoorDogNPC : NPCMovement
     // Update is called once per frame
     void Update()
     {
-        // Check that dog is near or at the point before selecting the next target node
+        // Check that dog is near or at the point before randomly selecting the next target node
         if (Vector3.Distance(transform.position, currentNode.position) < 1.0f) {
             currentNode = GetCurrentGridNode().GetRandomNode();
         }
@@ -41,9 +42,16 @@ public class HomeOutdoorDogNPC : NPCMovement
         SetRotation(currentNode.position - transform.position);
     }
 
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "NPC") {
+            Physics.IgnoreCollision(toIgnore.GetComponent<Collider>(), playerModel.GetComponent<Collider>());
+        }
+    }
+
     private GridNode GetCurrentGridNode() {
         GridNode output = null;
 
+        // Find the current grid node in the array
         foreach (GridNode gridNode in nodes) {
             if (gridNode.IsNode(currentNode)) {
                 output = gridNode;

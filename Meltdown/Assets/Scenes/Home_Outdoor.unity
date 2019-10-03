@@ -2149,6 +2149,7 @@ MonoBehaviour:
   rotateSpeed: 100
   playerModel: {fileID: 467732437}
   animator: {fileID: 467732440}
+  toIgnore: {fileID: 1376217544}
 --- !u!54 &467732439
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2975,6 +2976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -5931,7 +5937,7 @@ GameObject:
   - component: {fileID: 1376217551}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
