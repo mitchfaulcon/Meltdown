@@ -6,6 +6,7 @@ public class RubbishBin : InteractableObjectBase
 {
     public bool hasRubbish = true;
     public int rubbishLevel = 3;
+    public GameObject alert;
 
     public override ItemTypes OnInteract()
     {
@@ -14,6 +15,7 @@ public class RubbishBin : InteractableObjectBase
         if(rubbishLevel == 0)
         {
             hasRubbish = false;
+            alert.SetActive(false);
         }
 
         // Randomly decide on rubbish type
@@ -47,5 +49,6 @@ public class RubbishBin : InteractableObjectBase
     {
         rubbishLevel = 3;
         hasRubbish = true;
+        alert.SetActive(false);
     }
 }
