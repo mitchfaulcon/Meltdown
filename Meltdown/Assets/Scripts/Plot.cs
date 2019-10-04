@@ -8,10 +8,12 @@ public class Plot : InteractableObjectBase
     public bool watered = false;
     public ItemTypes plotType;
     public TaskController controller;
+    public WateringCan can;
 
     private void Start()
     {
         controller = FindObjectOfType<TaskController>();
+        can = FindObjectOfType<WateringCan>();
     }
 
     public override ItemTypes OnInteract()
@@ -19,6 +21,8 @@ public class Plot : InteractableObjectBase
         if(hasPlant == false)
         {
             hasPlant = true;
+            can.fill();
+
         }
         else if (!watered)
         {
