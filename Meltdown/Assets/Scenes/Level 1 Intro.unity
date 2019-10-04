@@ -3793,11 +3793,13 @@ MonoBehaviour:
   dialogueManager: {fileID: 1304705500}
   dialogue:
     sentences:
-    - Using my time travel technology, I can predict the future effects of climate
-      change. The predicted temperature change is shown by the thermometer on the
-      right of your screen.
-    - As you complete tasks this prediction will lower. Try to complete as many tasks
-      as you can before the timer below the thermometer runs out!
+    - 'Using my time travel technology, I can predict the future effects of climate
+      change. The predicted temperature change is shown by a thermometer on the right
+      of your screen. '
+    - As you complete tasks this prediction will lower, as shown below. The lower
+      you can get the prediction, the higher your score will be!
+    - I can only help you for a certain amount of time, so try to complete as many
+      tasks as you can before the timer runs out!
 --- !u!1 &1697533029
 GameObject:
   m_ObjectHideFlags: 0
