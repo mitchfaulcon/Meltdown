@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SeedBox : InteractableObjectBase
 {
-    private bool hasSeeds = false;
-    public ItemTypes seedType; 
+    public bool hasSeeds = false;
+    public ItemTypes seedType;
+    public GameObject alert;
 
     public override ItemTypes OnInteract()
     {
         hasSeeds = false;
+        alert.SetActive(false);
         return seedType;
     }
 
@@ -25,6 +27,7 @@ public class SeedBox : InteractableObjectBase
     public void fillSeedBox()
     {
         hasSeeds = true;
+        alert.SetActive(true);
     }
 
 }

@@ -35,7 +35,7 @@ public class TaskController : MonoBehaviour
         int rand = Random.Range(1,30);
         if (rand == 1)
         {
-            if (taskList.Capacity < 3){
+            if (taskList.Count < 3){
                 //generates a new task for the player that isnt currently in their task list
                 TaskTypes task = generateTask();
                 while (taskList.Contains(task)){
@@ -43,6 +43,7 @@ public class TaskController : MonoBehaviour
                 }
                 //adds task to current task list, then calls the tasks setupd method. 
                 taskList.Add(task);
+                Debug.Log("starting new task of: " + task.ToString());
                 tasks[task].setupTask();
                 //code to make call to add to HUD could go here
             }
@@ -53,12 +54,13 @@ public class TaskController : MonoBehaviour
     public void taskComplete(TaskTypes type)
     {
         tasks[type].completeTask();
+        Debug.Log("Completed task: " + type.ToString());
     }
 
     private TaskTypes generateTask()
     {
-        int newTask = Random.Range(0, 6);
-        if (newTask > 4) { newTask = 4; }
+        int newTask = Random.Range(0, 7);
+        if (newTask > 4) { newTask = 4; } //allows x3 chance of getting rubbish task vs any individual seed
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
     }
 

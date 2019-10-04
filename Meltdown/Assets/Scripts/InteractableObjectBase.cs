@@ -32,15 +32,18 @@ public class ItemCollectorBase : InteractableObjectBase
 {
     public ItemTypes item;
     public bool containsItem = false;
+    public GameObject alert;
 
     public void fill()
     {
         containsItem = true;
+        alert.SetActive(true);
     }
 
     public override ItemTypes OnInteract()
     {
         containsItem = false;
+        alert.SetActive(false);
         return item;
     }
 
