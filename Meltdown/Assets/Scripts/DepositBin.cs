@@ -8,6 +8,8 @@ public class DepositBin : InteractableObjectBase
     public ItemTypes currentTrash;
     public ScoreController scoring;
     public TaskController taskControl;
+    public GameObject correctAlert;
+    public GameObject incorrectAlert;
     
 
     public override ItemTypes OnInteract()
@@ -18,6 +20,15 @@ public class DepositBin : InteractableObjectBase
         {
             scoring = FindObjectOfType<ScoreController>();
             scoring.taskScored(0.2f);
+            correctAlert.SetActive(true);
+            incorrectAlert.SetActive(false);
+            Invoke("removeAlerts", 2);
+        }
+        else
+        {
+            correctAlert.SetActive(false);
+            incorrectAlert.SetActive(true);
+            Invoke("removeAlerts", 2);
         }
 
         taskControl = FindObjectOfType<TaskController>();
@@ -31,10 +42,16 @@ public class DepositBin : InteractableObjectBase
         currentTrash = heldItem;
         if (heldItem == ItemTypes.RubbishBag || heldItem == ItemTypes.BananaSkin || heldItem == ItemTypes.Recyclables)
         {
-            InteractText = "Press J to deposit " + heldItem;
+            InteractText = "Press J to deposit " + currentTrash.ToString();
             return true;
         }
         return false;
+    }
+
+    public void removeAlerts()
+    {
+        correctAlert.SetActive(false);
+        incorrectAlert.SetActive(false);
     }
 
 }

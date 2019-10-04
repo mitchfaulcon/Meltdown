@@ -16,12 +16,20 @@ public class TaskController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("launchTask", 1.0f, 0.5f);
         tasks.Add(TaskTypes.Rubbish, new RubbishTask());
         tasks.Add(TaskTypes.Carrot, new SeedTask(carrotBox, TaskTypes.Carrot));
         tasks.Add(TaskTypes.Tree, new SeedTask(treeBox, TaskTypes.Tree));
         tasks.Add(TaskTypes.Potato, new SeedTask(potatoBox, TaskTypes.Potato));
         tasks.Add(TaskTypes.Tomato, new SeedTask(tomatoBox, TaskTypes.Tomato));
+
+        // Initial Task
+        TaskTypes task = generateTask();
+        taskList.Add(task);
+        Debug.Log("starting new task of: " + task.ToString());
+        tasks[task].setupTask();
+
+        // Continually generate tasks
+        InvokeRepeating("launchTask", 1.0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -32,7 +40,7 @@ public class TaskController : MonoBehaviour
 
     void launchTask()
     {
-        int rand = Random.Range(1,30);
+        int rand = Random.Range(1,25);
         if (rand == 1)
         {
             if (taskList.Count < 3){
