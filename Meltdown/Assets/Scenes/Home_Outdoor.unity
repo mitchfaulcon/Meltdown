@@ -232,6 +232,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &2130885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -426,6 +427,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &16041275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -624,6 +626,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &39370419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -991,6 +994,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &86722324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1107,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &86722330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1317,6 +1322,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &95856445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2231,6 +2237,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &323331335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2659,6 +2666,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 307998396}
+  can: {fileID: 0}
 --- !u!1 &450215295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,7 +2816,7 @@ MonoBehaviour:
   InteractText: Press J to get potato seeds
   hasSeeds: 0
   seedType: 0
-  alert: {fileID: 462275252}
+  alert: {fileID: 1330423209}
 --- !u!1 &478600184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,6 +3029,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &496423986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3709,30 +3718,13 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &634699146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013289884710, guid: f0cf8146888c5ba4ebd406d6a76baeb7,
     type: 3}
   m_PrefabInstance: {fileID: 1503808301}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &634699147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634699146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d553113b89f124597f5052ef2e0e37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  Image: {fileID: 0}
-  InteractText: Press J to interact with object
-  item: 0
-  containsItem: 0
-  alert: {fileID: 0}
 --- !u!64 &634699150
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4665,6 +4657,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &737102329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,6 +4770,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &737102335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5756,6 +5750,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &1005119655
 GameObject:
   m_ObjectHideFlags: 0
@@ -5881,6 +5876,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &1010666668
 GameObject:
   m_ObjectHideFlags: 0
@@ -6618,6 +6614,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1098487036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8078,6 +8075,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 307998396}
+  can: {fileID: 0}
 --- !u!1 &1458941243
 GameObject:
   m_ObjectHideFlags: 0
@@ -8190,6 +8188,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1458941249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8417,6 +8416,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1001 &1503808301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8611,6 +8611,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 307998396}
+  can: {fileID: 0}
 --- !u!1001 &1539516905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8792,6 +8793,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1549699279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9111,6 +9113,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 307998396}
+  can: {fileID: 0}
 --- !u!1001 &1624150400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9378,6 +9381,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &1639234687
 GameObject:
   m_ObjectHideFlags: 0
@@ -9490,6 +9494,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1639234693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10148,6 +10153,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1697216331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10273,6 +10279,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1697920124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10397,6 +10404,7 @@ MonoBehaviour:
   watered: 0
   plotType: 0
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &1732824417
 GameObject:
   m_ObjectHideFlags: 0
@@ -10558,6 +10566,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1 &1750277666
 GameObject:
   m_ObjectHideFlags: 0
@@ -10959,6 +10968,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 307998396}
+  can: {fileID: 0}
 --- !u!1 &1814310656
 GameObject:
   m_ObjectHideFlags: 0
@@ -11071,6 +11081,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &1814310662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12280,6 +12291,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1001 &1963766850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12612,6 +12624,7 @@ MonoBehaviour:
   watered: 0
   plotType: 2
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!1001 &1999144680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12793,6 +12806,7 @@ MonoBehaviour:
   watered: 0
   plotType: 1
   controller: {fileID: 0}
+  can: {fileID: 0}
 --- !u!65 &2003369343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12931,6 +12945,7 @@ MonoBehaviour:
   watered: 0
   plotType: 3
   controller: {fileID: 307998396}
+  can: {fileID: 0}
 --- !u!1001 &2018117208
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,7 +40,6 @@ public class RubbishTask : Task
 
 public class SeedTask : Task
 {
-    private WateringCan can = FindObjectOfType<WateringCan>();
     private SeedBox seedBox;
     private TaskTypes seedType;
     public SeedTask(SeedBox seedBox, TaskTypes type)
@@ -52,7 +51,6 @@ public class SeedTask : Task
     public override void setupTask()
     {
         seedBox.fillSeedBox();
-        can.fill();
     }
 
     public override void completeTask()
