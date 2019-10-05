@@ -9,6 +9,7 @@ public class Plot : InteractableObjectBase
     public ItemTypes plotType;
     public TaskController controller;
     public WateringCan can;
+    public ScoreController scoring;
 
     private void Start()
     {
@@ -41,6 +42,10 @@ public class Plot : InteractableObjectBase
             {
                 task = TaskTypes.Tomato;
             }
+
+            scoring = FindObjectOfType<ScoreController>();
+            scoring.taskScored(0.3f);
+
             controller.taskComplete(task);
 
         }
