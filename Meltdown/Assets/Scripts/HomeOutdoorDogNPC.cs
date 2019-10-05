@@ -14,6 +14,7 @@ public class HomeOutdoorDogNPC : NPCMovement
     void Start()
     {
         waitTime = 0f;
+        walking = true;
 
         // Setup the grid of nodes where the dog can traverse
         nodes.Add(new GridNode(points[0], new Transform[] {points[1], points[8]})); // point0

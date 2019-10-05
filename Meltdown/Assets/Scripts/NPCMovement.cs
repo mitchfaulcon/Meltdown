@@ -13,7 +13,7 @@ public class NPCMovement : MonoBehaviour {
 	
 	public Rigidbody rigidBody;
 	
-	public bool walking = true;
+	public bool walking;
 
 	public float waitTime;
 	private float waitCounter;
@@ -25,6 +25,7 @@ public class NPCMovement : MonoBehaviour {
 
   // Start is called before the first frame update
   	void Start() {
+		walking = false;
 		spot = 0;
 		waitCounter = waitTime;
   	}
