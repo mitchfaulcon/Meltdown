@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Text;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,8 +14,10 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     private Queue<string> sentences = new Queue<string>();
+    private Image[] images;
     private bool sentenceComplete;
     private string sentence;
+    private Dictionary<string, Image> sentencesAndImages = new Dictionary<string, Image>();
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -24,7 +28,12 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+
+            //Add sentence & corresponding image to dictionary
+            sentencesAndImages.Add(sentence, dialogue.images[Array.IndexOf(dialogue.sentences, sentence)]);
         }
+
+        images = dialogue.images;
 
         sentenceComplete = true; //Set to true intially so first sentence starts straight away
         DisplayNextSentence();
@@ -46,6 +55,14 @@ public class DialogueManager : MonoBehaviour
         {
             //Start displaying the next sentence
             sentence = sentences.Dequeue();
+            //Hide all images
+            foreach (Image image in images)
+            {
+                if (image != null)
+                {
+                    image.enabled = false;
+                }
+            }
             StartCoroutine(TypeSentence(sentence));
         } else
         {
@@ -58,6 +75,14 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         sentenceComplete = false;
+
+        //Display new image
+        Image image;
+        sentencesAndImages.TryGetValue(sentence, out image);
+        if (image != null)
+        {
+            image.enabled = true;
+        }
 
         //Type the script one character at a time
         StringBuilder sb = new StringBuilder("");
