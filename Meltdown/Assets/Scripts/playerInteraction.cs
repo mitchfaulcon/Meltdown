@@ -6,6 +6,9 @@ public class playerInteraction : MonoBehaviour
 {
     public HUD Hud;
     public ItemTypes heldItem = ItemTypes.NONE;
+    public GameObject holdingBottle;
+    public GameObject holdingRubbish;
+    public GameObject holdingCompost;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,30 @@ public class playerInteraction : MonoBehaviour
         {
             heldItem = mInteractItem.OnInteract();
             Debug.Log("Picked Up: " + heldItem);
+            if (heldItem == ItemTypes.Recyclables)
+            {
+                holdingBottle.SetActive(true);
+                holdingRubbish.SetActive(false);
+                holdingCompost.SetActive(false);
+            }
+            if (heldItem == ItemTypes.RubbishBag)
+            {
+                holdingBottle.SetActive(false);
+                holdingRubbish.SetActive(true);
+                holdingCompost.SetActive(false);
+            }
+            if (heldItem == ItemTypes.BananaSkin)
+            {
+                holdingBottle.SetActive(false);
+                holdingRubbish.SetActive(false);
+                holdingCompost.SetActive(true);
+            }
+            if (heldItem == ItemTypes.NONE)
+            {
+                holdingBottle.SetActive(false);
+                holdingRubbish.SetActive(false);
+                holdingCompost.SetActive(false);
+            }
 
         }
 
