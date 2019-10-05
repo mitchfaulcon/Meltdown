@@ -18,7 +18,7 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentValue -= 0.0003f;
+        currentValue -= 0.00022f;
         slider.value = currentValue;
     }
 
