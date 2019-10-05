@@ -22,6 +22,7 @@ public class Plot : InteractableObjectBase
         {
             hasPlant = true;
             can.fill();
+            InteractText = "Press J to Water";
 
         }
         else if (!watered)
