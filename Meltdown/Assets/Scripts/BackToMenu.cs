@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManager;
+using UnityEngine.SceneManagement;
 
-public class ButtonToMenuScript : MonoBehaviour
+public class BackToMenu : MonoBehaviour
 {
-    public void playGame()
-    {
+    public void ToMenu()
+    {           
         SceneManager.LoadScene("Main Menu");
     }
-
 }

@@ -1526,8 +1526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5.6, y: -149.61}
+  m_SizeDelta: {x: -11.3, y: -299.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435801587
 MonoBehaviour:
@@ -3232,7 +3232,7 @@ MonoBehaviour:
     spaceCount: 8
     wordCount: 9
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -5527,12 +5527,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: f6f65e4e4931d7c49b50b7b13f28cbf9, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1214944909}
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5583,7 +5583,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1214944903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808ac33a0702351459beb18269487c7d, type: 3}
+  m_Script: {fileID: 11500000, guid: a00b2797f13f77a4cadf345c911a2e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1297164341
@@ -6793,7 +6793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1642990008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8415,7 +8415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2072026734
 RectTransform:
   m_ObjectHideFlags: 0
