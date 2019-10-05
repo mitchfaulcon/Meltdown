@@ -33,7 +33,6 @@ public class RubbishTask : Task
         bin = FindObjectOfType<RubbishBin>();
         bin.fillBin();
         rubbishStatus = 3;
-        npc.InteractAnimation(false);
     }
 
     public override void completeTask()

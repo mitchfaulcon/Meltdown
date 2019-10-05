@@ -25,24 +25,22 @@ public class HomeOutDoorBinNPC : NPCMovement
         if (completed) {
             // Stop walking once the route is complete
             SetWalking(false);
+            animator.SetBool("interact", false);
         } else if (walking && (spot == 0 || spot == 5)) { // Set NPC to stop near the shed and the bin
             waitTime = userWaitTime;
-        } else if (spot == 6) { // When the NPC is stopped at the bin
-            InteractAnimation(true);
-            Debug.Log(animator.GetBool("interact"));
-            ((RubbishTask) task).FillBin();
-            filled = true;
         } else {
             waitTime = 0;
         }
+        
+        // When the NPC is stopped at the bin, fill the bin
+        if (spot == 6) { 
+            animator.SetBool("interact", true);
+            ((RubbishTask) task).FillBin();
+            filled = true;
 
         // Set completed to false if it is not neat or at the final node
         completed = (Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f) && filled;
 
         Wait();
-    }
-
-    public void InteractAnimation(bool interact) {
-        animator.SetBool("interact", interact);
     }
 }

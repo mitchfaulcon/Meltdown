@@ -58,6 +58,7 @@ public class NPCMovement : MonoBehaviour {
 		if (walking) {
 			MovePlayer(points[spot].position);
 			SetRotation(points[spot].position - transform.position);
+			
 		}
 	}
 
@@ -70,8 +71,10 @@ public class NPCMovement : MonoBehaviour {
 	protected void SetRotation(Vector3 direction) {
 		// Rotate player model to direction of travel
 		direction.y = 0f;
-    	transform.rotation = Quaternion.Slerp(transform.rotation, 
-								Quaternion.LookRotation(direction), 0.1f);
+		if (direction.x != 0 || direction.z != 0) {
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.1f);
+		}
+    	
 	}
 
 	public void SetWalking(bool walk) {
