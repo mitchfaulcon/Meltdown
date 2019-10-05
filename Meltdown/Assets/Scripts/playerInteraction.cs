@@ -42,27 +42,48 @@ public class playerInteraction : MonoBehaviour
             Debug.Log("Picked Up: " + heldItem);
             if (heldItem == ItemTypes.Recyclables)
             {
+                removeSpeechBubbles();
                 holdingBottle.SetActive(true);
-                holdingRubbish.SetActive(false);
-                holdingCompost.SetActive(false);
+                
             }
             else if (heldItem == ItemTypes.RubbishBag)
             {
-                holdingBottle.SetActive(false);
+                removeSpeechBubbles();
                 holdingRubbish.SetActive(true);
-                holdingCompost.SetActive(false);
             }
             else if (heldItem == ItemTypes.BananaSkin)
             {
-                holdingBottle.SetActive(false);
-                holdingRubbish.SetActive(false);
+                removeSpeechBubbles();
                 holdingCompost.SetActive(true);
             }
             else if (heldItem == ItemTypes.NONE)
             {
-                holdingBottle.SetActive(false);
-                holdingRubbish.SetActive(false);
-                holdingCompost.SetActive(false);
+                removeSpeechBubbles();
+            }
+            else if (heldItem == ItemTypes.TomatoSeeds)
+            {
+                removeSpeechBubbles();
+                holdingTomato.SetActive(true);
+            }
+            else if (heldItem == ItemTypes.TreeSappling)
+            {
+                removeSpeechBubbles();
+                holdingTree.SetActive(true);
+            }
+            else if (heldItem == ItemTypes.PotatoSeeds)
+            {
+                removeSpeechBubbles();
+                holdingPotato.SetActive(true);
+            }
+            else if (heldItem == ItemTypes.CarrotSeeds)
+            {
+                removeSpeechBubbles();
+                holdingCarrot.SetActive(true);
+            }
+            else if (heldItem == ItemTypes.WaterBucket)
+            {
+                removeSpeechBubbles();
+                holdingCan.SetActive(true);
             }
 
         }
@@ -97,5 +118,17 @@ public class playerInteraction : MonoBehaviour
             Hud.CloseMessagePanel();
             mInteractItem = null;
         }
+    }
+
+    private void removeSpeechBubbles()
+    {
+        holdingBottle.SetActive(false);
+        holdingRubbish.SetActive(false);
+        holdingCompost.SetActive(false);
+        holdingTomato.SetActive(false);
+        holdingTree.SetActive(false);
+        holdingPotato.SetActive(false);
+        holdingCarrot.SetActive(false);
+        holdingCan.SetActive(false);
     }
 }
