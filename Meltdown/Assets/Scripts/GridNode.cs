@@ -8,25 +8,22 @@ using UnityEngine;
    format with a maximum of 4 adjacent nodes. */
 public class GridNode
 {
-    private ArrayList adjNodes = new ArrayList();
+    private Transform[] adjNodes;
     private Transform node;
 
-    public GridNode(Transform centreNode, Transform northNode, Transform eastNode, Transform southNode, Transform westNode) {
+    public GridNode(Transform centreNode, Transform[] adjacentNodes) {
         node = centreNode;
-        
-        adjNodes.Add(northNode);
-        adjNodes.Add(eastNode);
-        adjNodes.Add(southNode);
-        adjNodes.Add(westNode);
+        adjNodes = adjacentNodes;
     }
 
 
-    // Selects a random adjacent node
+    // Selects a random adjacent node that isn't the previously traversed node
     public Transform GetRandomNode(Transform prevNode) {
-        int next = Random.Range(0, 4);
-        Transform node = (Transform) adjNodes[next];
+        int next = Random.Range(0, adjNodes.Length);
+        Transform node = adjNodes[next];
 
-        if (node == null || node == prevNode) {
+        if (node == prevNode) {
+            // If the selected node is the previous node, try again.
             return GetRandomNode(prevNode);
         } else {
             return node;
