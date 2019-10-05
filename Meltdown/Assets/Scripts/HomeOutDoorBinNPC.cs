@@ -32,6 +32,7 @@ public class HomeOutDoorBinNPC : NPCMovement
 
         // Set completed to false if it is not neat or at the final node
         completed = (Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f);
+        Debug.Log(completed);
 
         Wait();
     }
