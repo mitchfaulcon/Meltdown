@@ -9,6 +9,11 @@ public class playerInteraction : MonoBehaviour
     public GameObject holdingBottle;
     public GameObject holdingRubbish;
     public GameObject holdingCompost;
+    public GameObject holdingTomato;
+    public GameObject holdingTree;
+    public GameObject holdingPotato;
+    public GameObject holdingCarrot;
+    public GameObject holdingCan;
 
     // Start is called before the first frame update
     void Start()
@@ -41,19 +46,19 @@ public class playerInteraction : MonoBehaviour
                 holdingRubbish.SetActive(false);
                 holdingCompost.SetActive(false);
             }
-            if (heldItem == ItemTypes.RubbishBag)
+            else if (heldItem == ItemTypes.RubbishBag)
             {
                 holdingBottle.SetActive(false);
                 holdingRubbish.SetActive(true);
                 holdingCompost.SetActive(false);
             }
-            if (heldItem == ItemTypes.BananaSkin)
+            else if (heldItem == ItemTypes.BananaSkin)
             {
                 holdingBottle.SetActive(false);
                 holdingRubbish.SetActive(false);
                 holdingCompost.SetActive(true);
             }
-            if (heldItem == ItemTypes.NONE)
+            else if (heldItem == ItemTypes.NONE)
             {
                 holdingBottle.SetActive(false);
                 holdingRubbish.SetActive(false);
