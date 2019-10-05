@@ -25,12 +25,10 @@ public class ScoreController : MonoBehaviour
 
         slider.value = currentValue;
         barImage.fillAmount = currentValue;
-        Debug.Log(currentValue);
     }
 
     public void taskScored(float points)
     {
-        Debug.Log("Correct bin, scoring points");
         currentValue -= points;
     }
 }
