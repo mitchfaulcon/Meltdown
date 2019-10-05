@@ -8,9 +8,6 @@ public class HomeOutdoorDogNPC : NPCMovement
     private Transform nextNode;
     private Transform currentNode;
     private Transform prevNode;
-
-    private bool updateCur;
-
     public GameObject toIgnore;
 
     // Start is called before the first frame update
@@ -32,7 +29,6 @@ public class HomeOutdoorDogNPC : NPCMovement
         nextNode = points[1]; // Start at point3
         currentNode = null;
         prevNode = null;
-        updateCur = true;
     }
 
     // Update is called once per frame

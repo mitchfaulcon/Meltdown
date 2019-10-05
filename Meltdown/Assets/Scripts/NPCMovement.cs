@@ -21,7 +21,8 @@ public class NPCMovement : MonoBehaviour {
 	public float rotateSpeed = 20f;
 	public GameObject playerModel;
 	public Animator animator;
-	
+	protected Task task;
+
   // Start is called before the first frame update
   	void Start() {
 		spot = 0;
@@ -72,7 +73,11 @@ public class NPCMovement : MonoBehaviour {
 								Quaternion.LookRotation(direction), 0.1f);
 	}
 
-	public void setWalking(bool walk) {
+	public void SetWalking(bool walk) {
 		walking = walk;
 	}
-}
+
+	public void SetTask(Task t) {
+		task = t;
+	}
+} 

@@ -23,16 +23,17 @@ public class HomeOutDoorBinNPC : NPCMovement
     {
         if (completed) {
             // Stop walking once the route is complete
-            setWalking(false);
+            SetWalking(false);
         } else if (walking && (spot == 0 || spot == 5)) { // Set NPC to stop near the shed and the bin
             waitTime = userWaitTime;
+        } else if (spot == 6) {
+                ((RubbishTask) task).FillBin();
         } else {
             waitTime = 0;
         }
 
         // Set completed to false if it is not neat or at the final node
         completed = (Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f);
-        Debug.Log(completed);
 
         Wait();
     }

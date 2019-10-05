@@ -23,6 +23,12 @@ public class RubbishTask : Task
 
     public override void setupTask()
     {
+        HomeOutDoorBinNPC npc = FindObjectOfType<HomeOutDoorBinNPC>();
+        npc.SetTask(this);
+        npc.SetWalking(true);
+    }
+
+    public void FillBin() {
         bin = FindObjectOfType<RubbishBin>();
         bin.fillBin();
         rubbishStatus = 3;
