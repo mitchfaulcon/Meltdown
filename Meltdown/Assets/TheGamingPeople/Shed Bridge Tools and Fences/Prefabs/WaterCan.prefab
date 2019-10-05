@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4589677120312100}
   - component: {fileID: 33950439459436630}
   - component: {fileID: 23363046743540238}
-  - component: {fileID: 65522118501894952}
   m_Layer: 0
   m_Name: WaterCanMDL
   m_TagString: Untagged
@@ -79,19 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65522118501894952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213663381088244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.022949107, y: 0.009323379, z: 0.014096659}
-  m_Center: {x: 0.0017253155, y: 0, z: 0.0013299079}
 --- !u!1 &1904459089822904
 GameObject:
   m_ObjectHideFlags: 0
