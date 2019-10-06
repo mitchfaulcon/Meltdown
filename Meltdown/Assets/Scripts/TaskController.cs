@@ -26,18 +26,19 @@ public class TaskController : MonoBehaviour
     void Start()
     {
         hideAllUITasks();
+
+        //add different task types to our task dictionary
         tasks.Add(TaskTypes.Rubbish, new RubbishTask());
         tasks.Add(TaskTypes.Carrot, new SeedTask(carrotBox, TaskTypes.Carrot));
         tasks.Add(TaskTypes.Tree, new SeedTask(treeBox, TaskTypes.Tree));
         tasks.Add(TaskTypes.Potato, new SeedTask(potatoBox, TaskTypes.Potato));
         tasks.Add(TaskTypes.Tomato, new SeedTask(tomatoBox, TaskTypes.Tomato));
 
-        // Initial Task
+        // Generate initial Task
         TaskTypes task = generateTask();
         generateTaskTime();
         taskList.Add(task);
         updateUI();
-        Debug.Log("starting new task of: " + task.ToString());
         tasks[task].setupTask();
 
         // Continually generate tasks
@@ -51,30 +52,9 @@ public class TaskController : MonoBehaviour
 
     }
 
-    //void launchTask()
-    //{
-    //    int rand = Random.Range(1,25);
-    //    if (rand == 1)
-    //    {
-    //        if (taskList.Count < 4){
-    //            //generates a new task for the player that isn't currently in their task list
-    //            TaskTypes task = generateTask();
-    //            while (taskList.Contains(task)){
-    //                task = generateTask();
-    //            }
-    //            //adds task to current task list, then calls the tasks setup method.
-    //            taskList.Add(task);
-    //            updateUI();
-    //            Debug.Log("starting new task of: " + task.ToString());
-    //            tasks[task].setupTask();
-    //            //code to make call to add to HUD could go here
-    //        }
-    //    }
-
-    //}
-
     void checkForNewTask()
     {
+        //update time count, and if it reaches the time set to generate a new task at, do so.
         timeCount += 0.5f;
         if(timeCount >= newTaskTime)
         {
@@ -96,6 +76,7 @@ public class TaskController : MonoBehaviour
         int rand = Random.Range(1, 25);
         if (rand == 1)
         {
+            //Checks if rubbish task is already active, if not, starts the rubbish task
             TaskTypes task = TaskTypes.Rubbish;
             if (!taskList.Contains(task))
             {
@@ -110,15 +91,16 @@ public class TaskController : MonoBehaviour
     public void taskComplete(TaskTypes type)
     {
         tasks[type].completeTask();
-        Debug.Log("Completed task: " + type.ToString());
     }
 
-    private void generateTaskTime()
+    //resets count for time til new task, and generates a new time for when next task should be made
+    private void generateTaskTime() 
     {
         timeCount = 0.0f;
         newTaskTime = Random.Range(8.0f, 14.0f);
     }
 
+    //generates a new task from enum TaskTypes, based on rng
     private TaskTypes generateTask()
     {
         int newTask = Random.Range(0, 4);
