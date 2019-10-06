@@ -175,7 +175,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Your progress in the fight against climate change will be shown by a thermometer
+    in the top left of your screen. This shows the predicted temperature rise of the
+    Earth in this timeline.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfa5abe5a2758984ba7a9406fa941d6f, type: 2}
   m_sharedMaterial: {fileID: 596680330726368305, guid: dfa5abe5a2758984ba7a9406fa941d6f,
@@ -221,7 +223,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 162
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -245,13 +247,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 10300673}
-    characterCount: 0
+    characterCount: 185
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 32
+    wordCount: 33
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 6
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -429,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &113723615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5890,7 +5892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1546719005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6471,9 +6473,9 @@ MonoBehaviour:
   dialogueManager: {fileID: 1304705500}
   dialogue:
     sentences:
-    - Your progress in the fight against climate change will be shown by a thermometer
-      in the top left of your screen. This shows the predicted temperature rise of
-      the Earth in this timeline.
+    - "Your progress in the fight against \nclimate change will be shown by \na thermometer
+      in the top left of \nyour screen. This shows the \npredicted temperature rise
+      of the \nEarth in this timeline."
     - "As you complete tasks this \nprediction will lower, as shown \nbelow. The lower
       you can get the \nprediction, the higher your score \nwill be!"
     - "I can only help you for a certain \namount of time, so try to \ncomplete as
