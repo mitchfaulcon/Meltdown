@@ -19,6 +19,12 @@ public class Score
 
     public void SetPoints(float score)
     {
+        score = (1 - score) * 100;
+
+        //Scale up score & round off decimals
+        score *= 100;
+        score = Mathf.Round(score);
+
         points = score;
     }
 

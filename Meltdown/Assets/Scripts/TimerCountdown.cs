@@ -52,13 +52,7 @@ public class TimerCountdown : MonoBehaviour
     {
         //Calculate score based on thermometer
         float score = scoreBar.fillAmount;
-        score = (1 - score) * 100;
-
-        //Round score to 2dp
-        score *= 100;
-        score = Mathf.Round(score);
-        score /= 100;
-
+        
         Score.GetInstance().SetPoints(score);
 
         //Enable cursor
