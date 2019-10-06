@@ -88,6 +88,7 @@ public class TaskController : MonoBehaviour
         updateUI();
     }
 
+    // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)
     private void hideAllUITasks() {
         foreach (GameObject task in potatoTasks) {
             task.SetActive(false);
@@ -106,6 +107,8 @@ public class TaskController : MonoBehaviour
         }
     }
 
+
+    // Updates the Task List UI on the level every time a new task is generated or completed
     private void updateUI () {
         hideAllUITasks();
         int i = 0;
