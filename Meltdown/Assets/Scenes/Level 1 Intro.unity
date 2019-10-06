@@ -429,7 +429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &113723615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1812,7 +1812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &496411986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2975,8 +2975,27 @@ MonoBehaviour:
   dialogueManager: {fileID: 51661089}
   dialogue:
     sentences:
-    - "Why don't we start here in your \nbackyard!\n\nLet's do some planting and \nrecycling."
+    - "Since we're in your backyard, why\ndon't we see what we can do\nright here.\r"
+    - "It looks like you've got plenty of\r\nspace to plant some trees and\r\ndelicous
+      home-grown crops. \r"
+    - "The plants you grow will fight\r\nclimate change for you by\r\nremoving the
+      greenhouse gas CO2\r\nfrom the atmosphere. \r \r"
+    - "Every household has waste. Make\r\nsure your household is properly\r\nsorting
+      its rubbish so as much of\r\nit is recycled or composted as\r\npossible. \r\n"
+    - 'Recycling and composting helps
+
+      fight climate change by stopping
+
+      waste materials from releasing
+
+      greenhouse gases as they
+
+      decompose in landfills. '
     images:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
 --- !u!1 &644244707
 GameObject:
@@ -6452,9 +6471,9 @@ MonoBehaviour:
   dialogueManager: {fileID: 1304705500}
   dialogue:
     sentences:
-    - "Using my time travel technology, I \ncan predict the future effects of \nclimate
-      change. The predicted \ntemperature change is shown by a \nthermometer on the
-      top-left of \nyour screen."
+    - Your progress in the fight against climate change will be shown by a thermometer
+      in the top left of your screen. This shows the predicted temperature rise of
+      the Earth in this timeline.
     - "As you complete tasks this \nprediction will lower, as shown \nbelow. The lower
       you can get the \nprediction, the higher your score \nwill be!"
     - "I can only help you for a certain \namount of time, so try to \ncomplete as
