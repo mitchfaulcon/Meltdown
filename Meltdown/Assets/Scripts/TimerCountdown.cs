@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimerCountdown : MonoBehaviour
 {
@@ -47,7 +48,10 @@ public class TimerCountdown : MonoBehaviour
 
     private void EndGame()
     {
-        Debug.Log("End game");
+        //Enable cursor
+        Cursor.visible = true;
+
+        SceneManager.LoadScene("Level 1 Outro");
     }
 
     private void DisplayTime()
