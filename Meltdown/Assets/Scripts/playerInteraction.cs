@@ -14,6 +14,7 @@ public class playerInteraction : MonoBehaviour
     public GameObject holdingPotato;
     public GameObject holdingCarrot;
     public GameObject holdingCan;
+    public AudioSource interactSound;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class playerInteraction : MonoBehaviour
         // item above them relevant to the item
         if (mInteractItem != null)
         {
+            interactSound.Play();
             heldItem = mInteractItem.OnInteract();
             if (heldItem == ItemTypes.Recyclables)
             {
