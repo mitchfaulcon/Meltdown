@@ -17,7 +17,7 @@ public class SeedBox : InteractableObjectBase
 
     public override bool CanInteract(ItemTypes heldItem)
     {   
-        if(heldItem == ItemTypes.NONE)
+        if (heldItem == ItemTypes.NONE)
         {
             return hasSeeds;
         }

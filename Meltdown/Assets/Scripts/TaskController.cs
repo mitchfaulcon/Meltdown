@@ -5,7 +5,7 @@ using UnityEngine;
 public class TaskController : MonoBehaviour
 {
     public List<TaskTypes> taskList = new List<TaskTypes>();
-    //equivalent to map
+    // equivalent to map
     public GameObject[] potatoTasks = new GameObject[4];
     public GameObject[] treeTasks = new GameObject[4];
     public GameObject[] tomatoTasks = new GameObject[4];
@@ -52,7 +52,7 @@ public class TaskController : MonoBehaviour
         int rand = Random.Range(1,25);
         if (rand == 1)
         {
-            if (taskList.Count < 3){
+            if (taskList.Count < 4){
                 //generates a new task for the player that isn't currently in their task list
                 TaskTypes task = generateTask();
                 while (taskList.Contains(task)){
