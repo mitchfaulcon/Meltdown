@@ -7,6 +7,6 @@ public class StartLevel1 : MonoBehaviour
 {
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Home_Outdoor");
     }
 }
