@@ -18,7 +18,8 @@ public class playerInteraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Hide the cursor when the game starts
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
