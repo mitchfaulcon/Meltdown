@@ -8,6 +8,7 @@ public class HomeOutdoorDogNPC : NPCMovement
     private Transform nextNode;
     private Transform currentNode;
     private Transform prevNode;
+
     public GameObject toIgnore;
 
     // Start is called before the first frame update

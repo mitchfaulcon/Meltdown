@@ -8,6 +8,8 @@ public class HomeOutDoorBinNPC : NPCMovement
     private bool completed;
     private bool filled;
 
+    public GameObject toIgnore;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class HomeOutDoorBinNPC : NPCMovement
         // NPC starts off not moving. Only moves when triggered 
         completed = false;
         filled = false;
+        Physics.IgnoreCollision(toIgnore.GetComponent<Collider>(), playerModel.GetComponent<Collider>());
     }
 
     // Update is called once per frame

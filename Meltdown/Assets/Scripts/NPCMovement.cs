@@ -79,9 +79,12 @@ public class NPCMovement : MonoBehaviour {
 
 	public void SetWalking(bool walk) {
 		walking = walk;
+		animator.SetFloat("velocity", 0f);
 	}
 
 	public void SetTask(Task t) {
 		task = t;
 	}
+
+
 } 
