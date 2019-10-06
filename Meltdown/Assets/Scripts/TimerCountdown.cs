@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TimerCountdown : MonoBehaviour
 {
 
     public TextMeshProUGUI timerText;
     public float minutes = 1.5f;
+    public Image scoreBar;
 
     private float secondsRemaining;
 
@@ -48,6 +50,17 @@ public class TimerCountdown : MonoBehaviour
 
     private void EndGame()
     {
+        //Calculate score based on thermometer
+        float score = scoreBar.fillAmount;
+        score = (1 - score) * 100;
+
+        //Round score to 2dp
+        score *= 100;
+        score = Mathf.Round(score);
+        score /= 100;
+
+        Score.GetInstance().SetPoints(score);
+
         //Enable cursor
         Cursor.visible = true;
 
