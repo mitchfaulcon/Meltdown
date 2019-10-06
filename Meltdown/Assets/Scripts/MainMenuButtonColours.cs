@@ -7,7 +7,7 @@ public class MainMenuButtonColours : MonoBehaviour
     public TextMeshProUGUI buttonText;
 
     private readonly Color normalColour = new Color(0f,0f,0f); //Black
-    private readonly Color hoverColour = new Color(0.15f, 0.15f, 0.15f, 0.741f); //Grey
+    private readonly Color hoverColour = new Color(0.5f, 0.5f, 0.5f);
     
     //Initialise button text colour
     private void Start()
