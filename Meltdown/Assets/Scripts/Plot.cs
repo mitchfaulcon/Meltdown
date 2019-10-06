@@ -21,7 +21,7 @@ public class Plot : InteractableObjectBase
     {
         if(hasPlant == false)
         {
-            this.transform.FindChild("Dirt_Pile").gameObject.SetActive(true);
+            this.transform.Find("Dirt_Pile").gameObject.SetActive(true);
             hasPlant = true;
             can.fill();
             InteractText = "Press J to Water";
@@ -30,7 +30,7 @@ public class Plot : InteractableObjectBase
         else if (!watered)
         {
             watered = true;
-            this.transform.FindChild("plant").gameObject.SetActive(true);
+            this.transform.Find("plant").gameObject.SetActive(true);
             TaskTypes task = TaskTypes.Tree;
             if(plotType == ItemTypes.CarrotSeeds)
             {
