@@ -14,8 +14,7 @@ public class DepositBin : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
-        Debug.Log("Depositing: " + currentTrash);
-
+        // If the type of rubbish the player is holding is the same as the bin takes in, grant score, show the player they were correct
         if (currentTrash == type)
         {
             scoring = FindObjectOfType<ScoreController>();
@@ -24,6 +23,7 @@ public class DepositBin : InteractableObjectBase
             incorrectAlert.SetActive(false);
             Invoke("removeAlerts", 2);
         }
+        // If the player deposits incorrect rubbish, tell the player they were wrong and hide popup after 2 seconds
         else
         {
             correctAlert.SetActive(false);
@@ -31,6 +31,7 @@ public class DepositBin : InteractableObjectBase
             Invoke("removeAlerts", 2);
         }
 
+        // Either way, mark the task as complete in the Task Controller and remove the rubbish from the players hand
         taskControl = FindObjectOfType<TaskController>();
         taskControl.taskComplete(TaskTypes.Rubbish);
 
@@ -39,6 +40,7 @@ public class DepositBin : InteractableObjectBase
 
     public override bool CanInteract(ItemTypes heldItem)
     {
+        // If the currently held item is a type of rubbish, then allow the player to interact with any of the bins
         currentTrash = heldItem;
         if (heldItem == ItemTypes.RubbishBag || heldItem == ItemTypes.BananaSkin || heldItem == ItemTypes.Recyclables)
         {
@@ -50,6 +52,7 @@ public class DepositBin : InteractableObjectBase
 
     public void removeAlerts()
     {
+        // Hide both correct and incorrect popup alerts
         correctAlert.SetActive(false);
         incorrectAlert.SetActive(false);
     }
