@@ -18,6 +18,8 @@ public class TaskController : MonoBehaviour
     public SeedBox potatoBox;
     public SeedBox treeBox;
     public SeedBox tomatoBox;
+    private float timeCount = 0.0f;
+    private float newTaskTime = 0.0f;
     
 
     // Start is called before the first frame update
@@ -32,13 +34,15 @@ public class TaskController : MonoBehaviour
 
         // Initial Task
         TaskTypes task = generateTask();
+        generateTaskTime();
         taskList.Add(task);
         updateUI();
         Debug.Log("starting new task of: " + task.ToString());
         tasks[task].setupTask();
 
         // Continually generate tasks
-        InvokeRepeating("launchTask", 1.0f, 0.5f);
+        InvokeRepeating("checkForNewTask", 1.0f, 0.5f);
+        InvokeRepeating("generateRubbishTask", 1.0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -47,26 +51,60 @@ public class TaskController : MonoBehaviour
 
     }
 
-    void launchTask()
+    //void launchTask()
+    //{
+    //    int rand = Random.Range(1,25);
+    //    if (rand == 1)
+    //    {
+    //        if (taskList.Count < 4){
+    //            //generates a new task for the player that isn't currently in their task list
+    //            TaskTypes task = generateTask();
+    //            while (taskList.Contains(task)){
+    //                task = generateTask();
+    //            }
+    //            //adds task to current task list, then calls the tasks setup method.
+    //            taskList.Add(task);
+    //            updateUI();
+    //            Debug.Log("starting new task of: " + task.ToString());
+    //            tasks[task].setupTask();
+    //            //code to make call to add to HUD could go here
+    //        }
+    //    }
+
+    //}
+
+    void checkForNewTask()
     {
-        int rand = Random.Range(1,25);
+        timeCount += 0.5f;
+        if(timeCount >= newTaskTime)
+        {
+            TaskTypes task = generateTask();
+            while (taskList.Contains(task))
+            {
+                task = generateTask();
+            }
+            taskList.Add(task);
+            updateUI();
+            tasks[task].setupTask();
+
+            generateTaskTime();
+        }
+    }
+
+    void generateRubbishTask()
+    {
+        int rand = Random.Range(1, 25);
         if (rand == 1)
         {
-            if (taskList.Count < 4){
-                //generates a new task for the player that isn't currently in their task list
-                TaskTypes task = generateTask();
-                while (taskList.Contains(task)){
-                    task = generateTask();
-                }
-                //adds task to current task list, then calls the tasks setup method.
+            TaskTypes task = TaskTypes.Rubbish;
+            if (!taskList.Contains(task))
+            {
                 taskList.Add(task);
                 updateUI();
-                Debug.Log("starting new task of: " + task.ToString());
                 tasks[task].setupTask();
-                //code to make call to add to HUD could go here
             }
+            
         }
-
     }
 
     public void taskComplete(TaskTypes type)
@@ -75,10 +113,15 @@ public class TaskController : MonoBehaviour
         Debug.Log("Completed task: " + type.ToString());
     }
 
+    private void generateTaskTime()
+    {
+        timeCount = 0.0f;
+        newTaskTime = Random.Range(8.0f, 14.0f);
+    }
+
     private TaskTypes generateTask()
     {
-        int newTask = Random.Range(0, 7);
-        if (newTask > 4) { newTask = 4; } //allows x3 chance of getting rubbish task vs any individual seed
+        int newTask = Random.Range(0, 4);
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
     }
 

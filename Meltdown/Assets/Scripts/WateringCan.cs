@@ -5,7 +5,7 @@ using UnityEngine;
 public class WateringCan : ItemCollectorBase
 {
     public int waterLevel = 0;
-      public void fill()
+      public new void fill()
     {
         waterLevel++;
         containsItem = true;
