@@ -3102,7 +3102,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 113
+  m_RootOrder: 111
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213057651 stripped
 GameObject:
@@ -3723,7 +3723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 104
+  m_RootOrder: 102
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296547928
 GameObject:
@@ -3798,79 +3798,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296547928}
   m_CullTransparentMesh: 0
---- !u!1 &307998394
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 307998395}
-  - component: {fileID: 307998396}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &307998395
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307998394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.27, y: 20.52, z: -16.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 100
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &307998396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307998394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67b0939bf11df5446a348b1f74e3e00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskList: 
-  potatoTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  treeTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  tomatoTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  carrotTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  recyclingTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  carrotBox: {fileID: 534641485}
-  potatoBox: {fileID: 462275255}
-  treeBox: {fileID: 774176563}
-  tomatoBox: {fileID: 1401312570}
 --- !u!1 &310258117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,7 +3826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 112
+  m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312195043
 GameObject:
@@ -3929,7 +3856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 108
+  m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &314394753
 PrefabInstance:
@@ -4321,7 +4248,7 @@ RectTransform:
   - {fileID: 1281210484}
   - {fileID: 117238016}
   m_Father: {fileID: 0}
-  m_RootOrder: 124
+  m_RootOrder: 122
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5319,7 +5246,7 @@ MonoBehaviour:
   InteractText: Press J to plant tree
   watered: 0
   plotType: 3
-  controller: {fileID: 307998396}
+  controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
 --- !u!1 &450215295
@@ -5415,7 +5342,7 @@ RectTransform:
   - {fileID: 2049321609}
   - {fileID: 762057680}
   m_Father: {fileID: 0}
-  m_RootOrder: 116
+  m_RootOrder: 114
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6018,7 +5945,7 @@ RectTransform:
   - {fileID: 1660940073}
   - {fileID: 26781169}
   m_Father: {fileID: 0}
-  m_RootOrder: 121
+  m_RootOrder: 119
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6672,7 +6599,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 101
+  m_RootOrder: 99
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &522436591
 PrefabInstance:
@@ -6975,7 +6902,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 103
+  m_RootOrder: 101
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &553119061
 PrefabInstance:
@@ -7098,7 +7025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 110
+  m_RootOrder: 108
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &566824940
 PrefabInstance:
@@ -10366,10 +10293,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to interact with object
-  item: 0
+  InteractText: Press J to collect water
+  item: 7
   containsItem: 0
-  alert: {fileID: 0}
+  alert: {fileID: 1662468969}
+  waterLevel: 0
 --- !u!65 &775600355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10562,7 +10490,7 @@ RectTransform:
   - {fileID: 712102801}
   - {fileID: 1757337308}
   m_Father: {fileID: 0}
-  m_RootOrder: 125
+  m_RootOrder: 123
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10880,7 +10808,7 @@ RectTransform:
   m_Children:
   - {fileID: 454035366}
   m_Father: {fileID: 0}
-  m_RootOrder: 128
+  m_RootOrder: 126
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11433,7 +11361,7 @@ RectTransform:
   - {fileID: 764501336}
   - {fileID: 952589092}
   m_Father: {fileID: 0}
-  m_RootOrder: 122
+  m_RootOrder: 120
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11533,7 +11461,7 @@ RectTransform:
   - {fileID: 1137306771}
   - {fileID: 656463710}
   m_Father: {fileID: 0}
-  m_RootOrder: 123
+  m_RootOrder: 121
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11908,7 +11836,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 106
+  m_RootOrder: 104
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923935846
 GameObject:
@@ -14991,7 +14919,7 @@ RectTransform:
   - {fileID: 1581107329}
   - {fileID: 296547929}
   m_Father: {fileID: 0}
-  m_RootOrder: 127
+  m_RootOrder: 125
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15684,7 +15612,7 @@ RectTransform:
   - {fileID: 2109326649}
   - {fileID: 983100630}
   m_Father: {fileID: 0}
-  m_RootOrder: 118
+  m_RootOrder: 116
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16314,72 +16242,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326835506}
   m_CullTransparentMesh: 0
---- !u!1 &1329825405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1329825408}
-  - component: {fileID: 1329825407}
-  - component: {fileID: 1329825406}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1329825406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329825405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1329825407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329825405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1329825408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329825405}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 99
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330423209
 GameObject:
   m_ObjectHideFlags: 0
@@ -16473,7 +16335,7 @@ RectTransform:
   - {fileID: 669394143}
   - {fileID: 2144360369}
   m_Father: {fileID: 0}
-  m_RootOrder: 120
+  m_RootOrder: 118
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16776,7 +16638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 111
+  m_RootOrder: 109
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376217544
 GameObject:
@@ -17847,7 +17709,7 @@ MonoBehaviour:
   InteractText: Press J to plant tree
   watered: 0
   plotType: 3
-  controller: {fileID: 307998396}
+  controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
 --- !u!1 &1453475902 stripped
@@ -18230,7 +18092,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 102
+  m_RootOrder: 100
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1502579211
 GameObject:
@@ -18562,7 +18424,7 @@ MonoBehaviour:
   InteractText: Press J to plant tree
   watered: 0
   plotType: 3
-  controller: {fileID: 307998396}
+  controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
 --- !u!1001 &1539516905
@@ -19302,7 +19164,7 @@ MonoBehaviour:
   InteractText: Press J to plant tree
   watered: 0
   plotType: 3
-  controller: {fileID: 307998396}
+  controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
 --- !u!1 &1601469688 stripped
@@ -19345,7 +19207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 114
+  m_RootOrder: 112
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1624150400
 PrefabInstance:
@@ -20068,7 +19930,7 @@ RectTransform:
   - {fileID: 1835021846}
   - {fileID: 365293086}
   m_Father: {fileID: 0}
-  m_RootOrder: 119
+  m_RootOrder: 117
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21787,7 +21649,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 105
+  m_RootOrder: 103
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1780982499
 GameObject:
@@ -22007,7 +21869,7 @@ MonoBehaviour:
   InteractText: Press J to Plant tree
   watered: 0
   plotType: 3
-  controller: {fileID: 307998396}
+  controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
 --- !u!1001 &1807903413
@@ -24166,7 +24028,7 @@ RectTransform:
   - {fileID: 1821444297}
   - {fileID: 203997580}
   m_Father: {fileID: 0}
-  m_RootOrder: 117
+  m_RootOrder: 115
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -24683,7 +24545,7 @@ RectTransform:
   - {fileID: 1861391899}
   - {fileID: 2040563086}
   m_Father: {fileID: 0}
-  m_RootOrder: 126
+  m_RootOrder: 124
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -24718,7 +24580,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 109
+  m_RootOrder: 107
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983516420 stripped
 GameObject:
@@ -24768,7 +24630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 115
+  m_RootOrder: 113
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1998997189
 GameObject:
@@ -25223,7 +25085,7 @@ MonoBehaviour:
   InteractText: Press J to plant tree
   watered: 0
   plotType: 3
-  controller: {fileID: 307998396}
+  controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
 --- !u!1001 &2013679757
@@ -25698,7 +25560,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 107
+  m_RootOrder: 105
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2073186001
 PrefabInstance:
