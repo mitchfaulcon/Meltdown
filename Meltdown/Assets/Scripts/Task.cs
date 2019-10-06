@@ -19,10 +19,17 @@ public class Task : MonoBehaviour
 public class RubbishTask : Task
 {
     public RubbishBin bin;
+    private HomeOutDoorBinNPC npc;
     public int rubbishStatus = 0;
 
     public override void setupTask()
     {
+        npc = FindObjectOfType<HomeOutDoorBinNPC>();
+        npc.SetTask(this);
+        npc.SetWalking(true);
+    }
+
+    public void FillBin() {
         bin = FindObjectOfType<RubbishBin>();
         bin.fillBin();
         rubbishStatus = 3;
