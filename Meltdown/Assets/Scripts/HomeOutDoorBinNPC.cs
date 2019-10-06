@@ -31,12 +31,12 @@ public class HomeOutDoorBinNPC : NPCMovement
         } else {
             waitTime = 0;
         }
-
-        if (spot == 6) { // When the NPC is stopped at the bin
+        
+        // When the NPC is stopped at the bin, fill the bin
+        if (spot == 6) { 
             animator.SetBool("interact", true);
             ((RubbishTask) task).FillBin();
             filled = true;
-        }
 
         // Set completed to false if it is not neat or at the final node
         completed = (Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f) && filled;
