@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreController : MonoBehaviour
     {
@@ -13,6 +14,8 @@ public class ScoreController : MonoBehaviour
     private static readonly float DEFAULT_RATE = 0.02f;
     
     private float increaseRate = DEFAULT_RATE;
+    public TextMeshProUGUI scoreText;
+
     // Update is called once per frame
     void Update()
     {
@@ -32,6 +35,8 @@ public class ScoreController : MonoBehaviour
             newRate += 0.01f;
         }
         increaseRate = newRate;
+        Score.GetInstance().SetPoints(currentValue);
+        scoreText.text = Score.GetInstance().GetPoints().ToString();
     }
 
 
