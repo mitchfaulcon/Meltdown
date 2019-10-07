@@ -1,5 +1,18 @@
 # Meltdown!
 ### SoftEng 306: Project 2
+
+## The Team
+
+| Name  | UPI | Username |
+| --- | --- | --- |
+| Nathan Mills | nmil063 | [NathanMills1](https://github.com/NathanMills1) |
+| Hayden Simpson | hsim744 | [hdnsimpson](https://github.com/hdnsimpson/) |
+| Mitchell Faulconbridge | mfau584 | [mitchfaulcon](https://github.com/mitchfaulcon/) |
+| Bradley Coleman | bcol085 | [bradleycoleman](https://github.com/bradleycoleman/) |
+| Eric Robinson Pedrido | eped596 | [EricPedrido](https://github.com/EricPedrido/) |
+| Gargi Bansal | gban550 | [gargi-bansal](https://github.com/gargi-bansal/) |
+| Salma Sanad | ssan631 | [salma-s](https://github.com/salma-s/) |
+
 ## Setting up Git with Unity for project development
 1. Clone this repository to your local machine
 2. Install Unity version 2019.2.6f1
