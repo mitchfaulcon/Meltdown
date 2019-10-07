@@ -79,7 +79,7 @@ public class ScoreDisplay : MonoBehaviour
         switch (level)
         {
             case ScoreLevel.NONE:
-                commentDisplayText.text = THREESTARCOMMENT;
+                commentDisplayText.text = ZEROSTARCOMMENT;
                 break;
             case ScoreLevel.ONE:
                 commentDisplayText.text = ONESTARCOMMENT;
