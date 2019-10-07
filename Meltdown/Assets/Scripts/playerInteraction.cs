@@ -41,7 +41,12 @@ public class playerInteraction : MonoBehaviour
         // item above them relevant to the item
         if (mInteractItem != null)
         {
-            interactSound.Play();
+            // Only play sound if enabled
+            if (GameSettings.sounds == true)
+            {
+                interactSound.Play();
+            }
+            
             heldItem = mInteractItem.OnInteract();
             if (heldItem == ItemTypes.Recyclables)
             {
