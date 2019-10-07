@@ -8,6 +8,8 @@ public class HomeOutDoorBinNPC : NPCMovement
     private bool completed;
     private bool filled;
 
+    private bool binVisited;
+
     public GameObject toIgnore;
     
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class HomeOutDoorBinNPC : NPCMovement
         // NPC starts off not moving. Only moves when triggered 
         completed = false;
         filled = false;
+        binVisited = false;
         Physics.IgnoreCollision(toIgnore.GetComponent<Collider>(), playerModel.GetComponent<Collider>());
     }
 
@@ -28,23 +31,36 @@ public class HomeOutDoorBinNPC : NPCMovement
         if (completed) {
             // Stop walking once the route is complete
             SetWalking(false);
-            animator.SetBool("interact", false);
-        } else if (walking && (spot == 0 || spot == 5)) { // Set NPC to stop near the shed and the bin
+        } else if (walking && (spot == 1 || spot == 5)) { // Set NPC to stop near the shed and the bin
             waitTime = userWaitTime;
         } else {
             waitTime = 0;
         }
         
         // When the NPC is stopped at the bin, fill the bin
-        if (spot == 6) { 
+        if (spot == 2) { 
             animator.SetBool("interact", true);
             ((RubbishTask) task).FillBin();
+            binVisited = true;
+        }
+
+        // Set filled to true after the player starts walking away from the bin
+        // so that interact animation stops playing.
+        if (Vector3.Distance(transform.position, points[2].position) > 1.0f & binVisited) {
             filled = true;
+            animator.SetBool("interact", false);
         }
 
         // Set completed to false if it is not neat or at the final node
         completed = (Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f) && filled;
 
         Wait();
+    }
+
+    public void StartTask(Task toStart) {
+        this.task = toStart;
+        SetWalking(true);
+        completed = false;
+        filled = false;
     }
 }
