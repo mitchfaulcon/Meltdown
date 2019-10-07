@@ -14,11 +14,20 @@ public class playerInteraction : MonoBehaviour
     public GameObject holdingPotato;
     public GameObject holdingCarrot;
     public GameObject holdingCan;
+    public AudioSource interactSound;
+    public AudioSource gameMusic;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Hide the cursor when the game starts
+        Cursor.visible = false;
+
+        // Start game music if enabled
+        if (GameSettings.music == true)
+        {
+            gameMusic.Play();
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +37,6 @@ public class playerInteraction : MonoBehaviour
         if (mInteractItem != null && Input.GetKeyDown(KeyCode.J))
         {
             // Interact animation
-            //mInteractItem.OnInteractAnimation(_animator);
             InteractWithItem();
         }
 
@@ -36,10 +44,17 @@ public class playerInteraction : MonoBehaviour
 
     public void InteractWithItem()
     {
+        // As long as the player is holding an item, show a speech bubble showing they are holding that
+        // item above them relevant to the item
         if (mInteractItem != null)
         {
+            // Only play sound if enabled
+            if (GameSettings.sounds == true)
+            {
+                interactSound.Play();
+            }
+            
             heldItem = mInteractItem.OnInteract();
-            Debug.Log("Picked Up: " + heldItem);
             if (heldItem == ItemTypes.Recyclables)
             {
                 removeSpeechBubbles();
@@ -88,8 +103,8 @@ public class playerInteraction : MonoBehaviour
 
         }
 
+        // Once the interaction is complete, hide the interaction prompt
         Hud.CloseMessagePanel();
-
         mInteractItem = null;
     }
 
@@ -99,11 +114,11 @@ public class playerInteraction : MonoBehaviour
     {
         InteractableObjectBase item = other.GetComponent<InteractableObjectBase>();
 
+        // If inside a trigger zone with a triggerable item, and the player is able to interact, display the interaction prompt to the user
         if (item != null)
         {
             if (item.CanInteract(heldItem))
             {
-                Debug.Log("Currently Holding Item: " + heldItem);
                 mInteractItem = item;
                 Hud.OpenMessagePanel(mInteractItem);
             }
@@ -112,6 +127,7 @@ public class playerInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        // If the player leaves a trigger zone, hide the interaction prompt
         InteractableObjectBase item = other.GetComponent<InteractableObjectBase>();
         if (item != null)
         {
@@ -120,6 +136,7 @@ public class playerInteraction : MonoBehaviour
         }
     }
 
+    // Remove all item speech bubbles
     private void removeSpeechBubbles()
     {
         holdingBottle.SetActive(false);

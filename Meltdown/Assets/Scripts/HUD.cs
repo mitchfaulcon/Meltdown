@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
         get { return mIsMessagePanelOpened; }
     }
 
+    // Display interaction message panel with reference to an item's interation text
     public void OpenMessagePanel(InteractableObjectBase item)
     {
         MessagePanel.SetActive(true);
@@ -21,12 +22,10 @@ public class HUD : MonoBehaviour
         Text mpText = MessagePanel.transform.Find("Text").GetComponent<Text>();
         mpText.text = item.InteractText;
 
-
         mIsMessagePanelOpened = true;
-
-
     }
 
+    // Display interaction message panel with reference to given interaction text
     public void OpenMessagePanel(string text)
     {
         MessagePanel.SetActive(true);
@@ -38,6 +37,7 @@ public class HUD : MonoBehaviour
         mIsMessagePanelOpened = true;
     }
 
+    // Close interaction message panel
     public void CloseMessagePanel()
     {
         MessagePanel.SetActive(false);

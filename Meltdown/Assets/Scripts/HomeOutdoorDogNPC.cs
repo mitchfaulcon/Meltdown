@@ -45,11 +45,13 @@ public class HomeOutdoorDogNPC : NPCMovement
     }
 
     void FixedUpdate() {
+        // Puppet Dog movement and position per each fixed update
         MovePlayer(nextNode.position);
         SetRotation(nextNode.position - transform.position);
     }
 
     void OnCollisionEnter(Collision collision) {
+        // Ignore collisions betweent the NPC and the Dog
         if (collision.gameObject.tag == "NPC") {
             Physics.IgnoreCollision(toIgnore.GetComponent<Collider>(), playerModel.GetComponent<Collider>());
         }

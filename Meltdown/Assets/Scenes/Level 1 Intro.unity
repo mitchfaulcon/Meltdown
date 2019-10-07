@@ -2140,6 +2140,7 @@ GameObject:
   - component: {fileID: 496411988}
   - component: {fileID: 496411987}
   - component: {fileID: 496411989}
+  - component: {fileID: 496411990}
   m_Layer: 5
   m_Name: TimeTravelIntro
   m_TagString: Untagged
@@ -2219,6 +2220,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueButton: {fileID: 510993851}
+--- !u!114 &496411990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496411985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9cc930cef9b4f4e8bb2d6b021dd16e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalSound: {fileID: 1352492541}
 --- !u!1 &504339928
 GameObject:
   m_ObjectHideFlags: 0
@@ -6502,7 +6516,7 @@ GameObject:
   - component: {fileID: 1352492540}
   - component: {fileID: 1352492541}
   m_Layer: 5
-  m_Name: Audio Source
+  m_Name: TimeTravelSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6538,7 +6552,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1f969884a2bd9f942ba0482498127ac0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
