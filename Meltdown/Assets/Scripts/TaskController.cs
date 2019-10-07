@@ -55,26 +55,30 @@ public class TaskController : MonoBehaviour
     void checkForNewTask()
     {
         //update time count, and if it reaches the time set to generate a new task at, do so.
-        timeCount += 0.5f;
-        if(timeCount >= newTaskTime)
+        if (taskList.Count < 4)
         {
-            TaskTypes task = generateTask();
-            while (taskList.Contains(task))
+            timeCount += 0.5f;
+            if (timeCount >= newTaskTime)
             {
-                task = generateTask();
-            }
-            taskList.Add(task);
-            updateUI();
-            tasks[task].setupTask();
+                TaskTypes task = generateTask();
+                while (taskList.Contains(task))
+                {
+                    task = generateTask();
+                }
+                taskList.Add(task);
+                updateUI();
+                tasks[task].setupTask();
 
-            generateTaskTime();
+                generateTaskTime();
+            }
         }
+
     }
 
     void generateRubbishTask()
     {
         int rand = Random.Range(1, 25);
-        if (rand == 1)
+        if (rand == 1 && taskList.Count<4)
         {
             //Checks if rubbish task is already active, if not, starts the rubbish task
             TaskTypes task = TaskTypes.Rubbish;
