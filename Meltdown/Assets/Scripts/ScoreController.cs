@@ -7,14 +7,8 @@ public class ScoreController : MonoBehaviour
     {
 
     public Slider slider;
-    private float currentValue = 0.5f;
+    private float currentValue = 1f;
     public Image barImage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentValue = 0.5f;
-    }
 
     // Update is called once per frame
     void Update()
