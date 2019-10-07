@@ -19,7 +19,7 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentValue += 0.00022f;
+        currentValue += 0.022f * Time.deltaTime;
         //Fix value between 0 and 1
         currentValue = Mathf.Clamp(currentValue, 0f, 1f);
 

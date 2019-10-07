@@ -5,8 +5,9 @@ using UnityEngine;
 public class WateringCan : ItemCollectorBase
 {
     public int waterLevel = 0;
-      public void fill()
+      public new void fill()
     {
+        //increase water level for if multiple tasks need water
         waterLevel++;
         containsItem = true;
         alert.SetActive(true);
@@ -14,6 +15,7 @@ public class WateringCan : ItemCollectorBase
 
     public override ItemTypes OnInteract()
     {
+        //when can contains no more water, remove alert
         waterLevel--;
         if(waterLevel == 0)
         {
