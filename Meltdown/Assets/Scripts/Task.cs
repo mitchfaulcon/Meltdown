@@ -27,8 +27,7 @@ public class RubbishTask : Task
     public override void setupTask()
     {
         npc = FindObjectOfType<HomeOutDoorBinNPC>();
-        npc.SetTask(this);
-        npc.SetWalking(true);
+        npc.StartTask(this);
     }
 
     //get bin to fill with rubbish, and track how much rubbish it has
