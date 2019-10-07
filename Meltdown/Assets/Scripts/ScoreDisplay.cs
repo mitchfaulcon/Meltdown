@@ -16,9 +16,9 @@ public class ScoreDisplay : MonoBehaviour
     private readonly string THREESTARCOMMENT = "Excellent! You reduced the predicted temperature rise by ";
 
     //Different score thresholds - change to whatever neccesary
-    private readonly float ONESTARTHRESHOLD = 1000;
-    private readonly float TWOSTARTHRESHOLD = 4000;
-    private readonly float THREESTARTHRESHOLD = 8000;
+    private readonly float ONESTARTHRESHOLD = 2640;
+    private readonly float TWOSTARTHRESHOLD = 4600;
+    private readonly float THREESTARTHRESHOLD = 6400;
 
     public TextMeshProUGUI scoreDisplayText;
     public TextMeshProUGUI commentDisplayText;
