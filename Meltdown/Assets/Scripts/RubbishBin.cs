@@ -8,10 +8,12 @@ public class RubbishBin : InteractableObjectBase
     public int rubbishLevel = 0;
     public GameObject alert;
 
+    // Randomly give rubbish item to player, decrease rubbish level in the bin
     public override ItemTypes OnInteract()
     {
         rubbishLevel--;
-        Debug.Log("lowering rubbish level: " + rubbishLevel);
+
+        // Remove popup alert if bin is empty
         if(rubbishLevel <= 0)
         {
             hasRubbish = false;
@@ -35,16 +37,19 @@ public class RubbishBin : InteractableObjectBase
         
     }
 
+    // The player can interact with the bin if it has rubbish and they are not carrying anything
     public override bool CanInteract(ItemTypes heldItem)
     {   
         if(heldItem == ItemTypes.NONE && hasRubbish)
         {
+            // Set the interact prompt text
             InteractText = "Press J to collect rubbish";
             return true;
         }
         return false;
     }
 
+    // Setup bin for task, increase rubbish level by 3 and show the player a popup alert
     public void fillBin()
     {
         rubbishLevel = 3;

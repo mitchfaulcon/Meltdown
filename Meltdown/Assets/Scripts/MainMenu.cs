@@ -7,13 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     public void playGame()
     {
-        //SceneManager.LoadScene("Level 1");
+        // Load the level 1 intro
         SceneManager.LoadScene("Level 1 Intro");
     }
 
     public void quitGame()
     {
+        // Quit the application
         Application.Quit();
-        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }

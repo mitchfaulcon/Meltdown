@@ -13,12 +13,15 @@ public class Plot : InteractableObjectBase
 
     private void Start()
     {
+        // Identify the Task Controller and Watering Can objects immediately
         controller = FindObjectOfType<TaskController>();
         can = FindObjectOfType<WateringCan>();
     }
 
+    // Interact with a particular plot
     public override ItemTypes OnInteract()
     {
+        // If there is no plant, plant a dirt pile and set the next interaction text to water
         if(hasPlant == false)
         {
             this.transform.Find("Dirt_Pile").gameObject.SetActive(true);
@@ -27,11 +30,14 @@ public class Plot : InteractableObjectBase
             InteractText = "Press J to Water";
 
         }
+        // If it's not watered, water the plot to grow the plant
         else if (!watered)
         {
             watered = true;
             this.transform.Find("plant").gameObject.SetActive(true);
             TaskTypes task = TaskTypes.Tree;
+
+            // Grow the correct type of plant
             if(plotType == ItemTypes.CarrotSeeds)
             {
                 task = TaskTypes.Carrot;
@@ -45,17 +51,17 @@ public class Plot : InteractableObjectBase
                 task = TaskTypes.Tomato;
             }
 
+            // Grant score, and complete the task
             scoring = FindObjectOfType<ScoreController>();
             scoring.taskScored(0.3f);
-
             controller.taskComplete(task);
-
         }
         
-
+        // Remove items from the player after interaction
         return ItemTypes.NONE;
     }
 
+    // The player can interact if the plot is empty, or if a plant is there but needs watering
     public override bool CanInteract(ItemTypes heldItem)
     {   
         if(heldItem == plotType)
