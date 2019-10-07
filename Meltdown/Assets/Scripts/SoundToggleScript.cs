@@ -19,7 +19,13 @@ public class SoundToggleScript : MonoBehaviour
 
     public void toggle()
     {
-        Debug.Log("Toggling");
         GameSettings.sounds = !GameSettings.sounds;
+        Debug.Log("Toggling Sound " + GameSettings.sounds);
+    }
+
+    public void toggleMusic()
+    {
+        GameSettings.music = !GameSettings.music;
+        Debug.Log("Toggling Music " + GameSettings.music);
     }
 }
