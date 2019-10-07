@@ -19192,7 +19192,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -32129,7 +32129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2970012314943299312}
-  minutes: 2
+  minutes: 0.1
   scoreBar: {fileID: 1069927966}
 --- !u!222 &2970012314943299315
 CanvasRenderer:
