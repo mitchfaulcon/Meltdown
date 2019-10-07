@@ -19,11 +19,13 @@ public class InteractableObjectBase : MonoBehaviour
 
     public virtual ItemTypes OnInteract()
     {
+        // By default, empty the players hands on interact
         return ItemTypes.NONE;
     }
 
     public virtual bool CanInteract(ItemTypes item)
     {
+        // By default, the player can always interact
         return true;
     }
 }
@@ -34,12 +36,14 @@ public class ItemCollectorBase : InteractableObjectBase
     public bool containsItem = false;
     public GameObject alert;
 
+    // Ready tasks, such as filling bin or seed crate
     public void fill()
     {
         containsItem = true;
         alert.SetActive(true);
     }
 
+    // On interaction, empty the item collector and return an item to the player
     public override ItemTypes OnInteract()
     {
         containsItem = false;
@@ -47,6 +51,7 @@ public class ItemCollectorBase : InteractableObjectBase
         return item;
     }
 
+    // If not holding anything, pickup the stored item, otherwise cannot interact
     public override bool CanInteract(ItemTypes heldItem)
     {
         if (heldItem == ItemTypes.NONE)

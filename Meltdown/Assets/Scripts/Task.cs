@@ -16,12 +16,14 @@ public class Task : MonoBehaviour
     }
 }
 
+//Task to remove rubbish from main bin into the 3 special bins
 public class RubbishTask : Task
 {
     public RubbishBin bin;
     private HomeOutDoorBinNPC npc;
     public int rubbishStatus = 0;
 
+    //gets npc to walk to rubbish bin, at which point it will fill the bin
     public override void setupTask()
     {
         npc = FindObjectOfType<HomeOutDoorBinNPC>();
@@ -29,6 +31,7 @@ public class RubbishTask : Task
         npc.SetWalking(true);
     }
 
+    //get bin to fill with rubbish, and track how much rubbish it has
     public void FillBin() {
         bin = FindObjectOfType<RubbishBin>();
         bin.fillBin();
@@ -45,6 +48,7 @@ public class RubbishTask : Task
     }
 }
 
+//Task for planting and watering the different seed types
 public class SeedTask : Task
 {
     private SeedBox seedBox;
