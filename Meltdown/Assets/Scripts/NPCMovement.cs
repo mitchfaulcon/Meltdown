@@ -78,14 +78,10 @@ public class NPCMovement : MonoBehaviour {
     	
 	}
 
-	public void SetWalking(bool walk) {
+	protected void SetWalking(bool walk) {
 		walking = walk;
-		animator.SetFloat("velocity", 0f);
+		if (!walk) {
+			animator.SetFloat("velocity", 0f);
+		}
 	}
-
-	public void SetTask(Task t) {
-		task = t;
-	}
-
-
 } 
