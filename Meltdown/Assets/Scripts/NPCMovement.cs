@@ -54,6 +54,7 @@ public class NPCMovement : MonoBehaviour {
 		}
 	}
 
+    // Puppet the NPCs movement and rotation each fixed update
 	private void FixedUpdate() {
 		if (walking) {
 			MovePlayer(points[spot].position);

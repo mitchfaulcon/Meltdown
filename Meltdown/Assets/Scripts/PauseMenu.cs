@@ -33,6 +33,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuCards.SetActive(false);
         helpMenuCards.SetActive(false);
 
+        //Hide mouse cursor
+        Cursor.visible = false;
+
         Time.timeScale = 1f; //Un-pause time
         isPaused = false;
     }
@@ -43,6 +46,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         pauseMenuCards.SetActive(true);
         helpMenuCards.SetActive(false);
+
+        //Mouse cursor visible
+        Cursor.visible = true;
 
         Time.timeScale = 0f; //Pause time
         isPaused = true;
