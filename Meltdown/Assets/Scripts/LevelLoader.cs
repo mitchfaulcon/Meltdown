@@ -18,10 +18,13 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     IEnumerator LoadAsynchronously()
     {
+        //Start loading scene
         AsyncOperation operation = SceneManager.LoadSceneAsync("Home_Outdoor");
 
+        //Update progress bar until level finishes loading
         while (!operation.isDone)
         {
+            //Fix between 0 & 1
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
 
             slider.value = progress;
