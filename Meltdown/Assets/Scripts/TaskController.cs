@@ -60,7 +60,14 @@ public class TaskController : MonoBehaviour
             timeCount += 0.5f;
             if (timeCount >= newTaskTime)
             {
-                TaskTypes task = generateTask();
+                addTask();
+            }
+        }
+
+    }
+
+    private void addTask() {
+        TaskTypes task = generateTask();
                 while (taskList.Contains(task))
                 {
                     task = generateTask();
@@ -70,9 +77,6 @@ public class TaskController : MonoBehaviour
                 tasks[task].setupTask();
 
                 generateTaskTime();
-            }
-        }
-
     }
 
     void generateRubbishTask()
@@ -101,7 +105,7 @@ public class TaskController : MonoBehaviour
     private void generateTaskTime() 
     {
         timeCount = 0.0f;
-        newTaskTime = Random.Range(8.0f, 14.0f);
+        newTaskTime = Random.Range(5.0f, 12.0f);
     }
 
     //generates a new task from enum TaskTypes, based on rng
@@ -114,6 +118,10 @@ public class TaskController : MonoBehaviour
     public void removeTask(TaskTypes task)
     {
         taskList.Remove(task);
+
+        if (taskList.Count < 1) {
+            addTask();
+        }
         updateUI();
     }
 
