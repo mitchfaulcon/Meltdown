@@ -8,7 +8,7 @@ public class HighScoreManager : MonoBehaviour
 
     void Start()
     {
-
+        highscore = PlayerPrefs.GetInt("highscore", highscore);
     }
 
     void Update()
@@ -24,6 +24,12 @@ public class HighScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("highscore", highscore);
             Debug.Log("New highscore set: " + highscore);
         }
+    }
+
+    void OnDestroy()
+    {
+        PlayerPrefs.SetInt("highscore", highscore);
+        PlayerPrefs.Save();
     }
 
 }
