@@ -5,15 +5,23 @@ using TMPro;
 
 public class HighScoreManager : MonoBehaviour
 {
-    public static int highscore;
     public GameObject scores;
-
+    public static List<int> highScoreList = new List<int>();
+    public static int highscore1;
+    public static int highscore2;
+    public static int highscore3;
+    public static int highscore4;
+    public static int highscore5;
 
     // On start, get current high scores and set the high score screen to display as text
     void Start()
     {
-        highscore = PlayerPrefs.GetInt("highscore", highscore);
-        scores.GetComponent<TMP_Text>().text = highscore.ToString();
+        highscore1 = PlayerPrefs.GetInt("highscore1", highscore1);
+        scores.GetComponent<TMP_Text>().text = (highscore1.ToString() + "\n" +
+            highscore2.ToString() + "\n" +
+            highscore3.ToString() + "\n" +
+            highscore4.ToString() + "\n" +
+            highscore5.ToString());
     }
 
     void Update()
@@ -25,10 +33,10 @@ public class HighScoreManager : MonoBehaviour
     public static bool recieveNewScore(int newScore)
     {
         // If the new score is a highscore, save it to player prefs
-        if (newScore > highscore)
+        if (newScore > highscore1)
         {
-            highscore = newScore;
-            PlayerPrefs.SetInt("highscore", highscore);
+            highscore1 = newScore;
+            PlayerPrefs.SetInt("highscore1", highscore1);
             PlayerPrefs.Save();
 
             return true;
@@ -42,7 +50,7 @@ public class HighScoreManager : MonoBehaviour
     // Save player prefs on destroy
     void OnDestroy()
     {
-        PlayerPrefs.SetInt("highscore", highscore);
+        PlayerPrefs.SetInt("highscore1", highscore1);
         PlayerPrefs.Save();
     }
 
