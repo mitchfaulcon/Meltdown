@@ -11,8 +11,11 @@ public class TimerCountdown : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float minutes = 1.5f;
     public Image scoreBar;
+    public AudioSource endBellSound;
+    public AudioSource gameMusic;
 
     private float secondsRemaining;
+    private bool gameFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +28,7 @@ public class TimerCountdown : MonoBehaviour
     void Update()
     {
 
-        if (secondsRemaining < 0)
+        if (secondsRemaining < 0 && !gameFinished)
         {
             EndGame();
         } else
@@ -50,13 +53,40 @@ public class TimerCountdown : MonoBehaviour
 
     private void EndGame()
     {
+        //Set game to finished & freeze
+        gameFinished = true;
+        Time.timeScale = 0f;
+
+        //Stop the music 
+        gameMusic.Stop();
+        //Play bell if sound effects setting is enabled
+        if (GameSettings.sounds == true)
+        {
+            endBellSound.Play();
+        }
+
+        StartCoroutine(LoadPostLevel());
+    }
+
+    IEnumerator LoadPostLevel()
+    {
+        //while loop to wait for 3 seconds for bell sound to finish (cannot use WaitForSeconds(3) as time is frozen)
+        float calledTime = Time.realtimeSinceStartup;
+        while (Time.realtimeSinceStartup - calledTime < 3)
+        {
+            yield return null;
+        }
+
         //Calculate score based on thermometer
         float score = scoreBar.fillAmount;
-        
+
         Score.GetInstance().SetPoints(score);
 
         //Enable cursor
         Cursor.visible = true;
+
+        //Unfreeze time
+        Time.timeScale = 1f;
 
         SceneManager.LoadScene("Level 1 Outro");
     }
