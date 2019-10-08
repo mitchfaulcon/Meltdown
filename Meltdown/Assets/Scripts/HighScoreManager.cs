@@ -6,7 +6,9 @@ using TMPro;
 public class HighScoreManager : MonoBehaviour
 {
     public GameObject scores;
+
     public static List<int> highScoreList = new List<int>();
+
     public static int highscore1;
     public static int highscore2;
     public static int highscore3;
@@ -16,12 +18,29 @@ public class HighScoreManager : MonoBehaviour
     // On start, get current high scores and set the high score screen to display as text
     void Start()
     {
+        // Init top 5 high scores
         highscore1 = PlayerPrefs.GetInt("highscore1", highscore1);
-        scores.GetComponent<TMP_Text>().text = (highscore1.ToString() + "\n" +
-            highscore2.ToString() + "\n" +
-            highscore3.ToString() + "\n" +
-            highscore4.ToString() + "\n" +
-            highscore5.ToString());
+        highscore2 = PlayerPrefs.GetInt("highscore2", highscore2);
+        highscore3 = PlayerPrefs.GetInt("highscore3", highscore3);
+        highscore4 = PlayerPrefs.GetInt("highscore4", highscore4);
+        highscore5 = PlayerPrefs.GetInt("highscore5", highscore5);
+
+        // Write highscores to the highscore list
+        highScoreList.Add(highscore1);
+        highScoreList.Add(highscore2);
+        highScoreList.Add(highscore3);
+        highScoreList.Add(highscore4);
+        highScoreList.Add(highscore5);
+        highScoreList.Sort();
+        highScoreList.Reverse();
+
+        // Display top 5 high scores on the highscore board
+        scores.GetComponent<TMP_Text>().text = (highScoreList[0].ToString() + "\n" +
+            highScoreList[1].ToString() + "\n" +
+            highScoreList[2].ToString() + "\n" +
+            highScoreList[3].ToString() + "\n" +
+            highScoreList[4].ToString());
+        
     }
 
     void Update()
