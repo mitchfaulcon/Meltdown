@@ -26,6 +26,8 @@ public class ScoreDisplay : MonoBehaviour
     public Image twoStar;
     public Image threeStar;
 
+    public bool highScore = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,7 @@ public class ScoreDisplay : MonoBehaviour
         SetComment(level, score);
 
         // Update HighScoreManager to save potential highscore
-        HighScoreManager.recieveNewScore((int)score);
+        highScore = HighScoreManager.recieveNewScore((int)score);
 
         //Initially hide all stars
         oneStar.enabled = false;
