@@ -13,6 +13,7 @@ public class TimerCountdown : MonoBehaviour
     public Image scoreBar;
     public AudioSource endBellSound;
     public AudioSource gameMusic;
+    public GameObject timeUpPanel;
 
     private float secondsRemaining;
     private bool gameFinished = false;
@@ -56,6 +57,9 @@ public class TimerCountdown : MonoBehaviour
         //Set game to finished & freeze
         gameFinished = true;
         Time.timeScale = 0f;
+
+        //Display time up panel
+        timeUpPanel.SetActive(true);
 
         //Stop the music 
         gameMusic.Stop();
