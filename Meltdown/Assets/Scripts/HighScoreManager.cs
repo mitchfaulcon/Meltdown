@@ -51,18 +51,19 @@ public class HighScoreManager : MonoBehaviour
     public static bool recieveNewScore(int newScore)
     {
         // If the new score is a highscore, save it to player prefs
-        if (newScore > highscore1)
+        for (int i = highScoreList.Count - 1; i >= 0; i--)
         {
-            highscore1 = newScore;
-            PlayerPrefs.SetInt("highscore1", highscore1);
-            PlayerPrefs.Save();
+            if (newScore > highScoreList[i])
+            {
+                highScoreList[i] = newScore;
+                highScoreList.Sort();
+                highScoreList.Reverse();
 
-            return true;
+                return true;
+            }
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 
     // Save player prefs on destroy

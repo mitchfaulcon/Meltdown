@@ -11,7 +11,7 @@ public class ScoreController : MonoBehaviour
     private float currentValue = 1f;
     public Image barImage;
    
-    private static readonly float DEFAULT_RATE = 0.0165f;
+    private static readonly float DEFAULT_RATE = 0.0175f;
     
     private float increaseRate = DEFAULT_RATE;
     public TextMeshProUGUI scoreText;
