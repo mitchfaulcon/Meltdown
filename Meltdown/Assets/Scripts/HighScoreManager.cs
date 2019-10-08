@@ -40,7 +40,6 @@ public class HighScoreManager : MonoBehaviour
             highScoreList[2].ToString() + "\n" +
             highScoreList[3].ToString() + "\n" +
             highScoreList[4].ToString());
-        
     }
 
     void Update()
@@ -69,7 +68,11 @@ public class HighScoreManager : MonoBehaviour
     // Save player prefs on destroy
     void OnDestroy()
     {
-        PlayerPrefs.SetInt("highscore1", highscore1);
+        PlayerPrefs.SetInt("highscore1", highScoreList[0]);
+        PlayerPrefs.SetInt("highscore2", highScoreList[1]);
+        PlayerPrefs.SetInt("highscore3", highScoreList[2]);
+        PlayerPrefs.SetInt("highscore4", highScoreList[3]);
+        PlayerPrefs.SetInt("highscore5", highScoreList[4]);
         PlayerPrefs.Save();
     }
 
