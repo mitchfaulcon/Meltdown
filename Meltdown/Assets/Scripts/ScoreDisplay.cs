@@ -39,6 +39,9 @@ public class ScoreDisplay : MonoBehaviour
         SetScoreText(score);
         SetComment(level, score);
 
+        // Update HighScoreManager to save potential highscore
+        HighScoreManager.recieveNewScore((int)score);
+
         //Initially hide all stars
         oneStar.enabled = false;
         twoStar.enabled = false;
