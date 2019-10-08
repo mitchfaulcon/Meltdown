@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HighScoreManager : MonoBehaviour
 {
     public static int highscore;
 
+    public GameObject scores;
+
     void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", highscore);
+        scores.GetComponent<TMP_Text>().text = highscore.ToString();
     }
 
     void Update()
