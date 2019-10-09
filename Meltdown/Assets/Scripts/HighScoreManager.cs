@@ -37,6 +37,13 @@ public class HighScoreManager : MonoBehaviour
         highScoreList.Sort();
         highScoreList.Reverse();
 
+        // Add zeroes if no previous high scores are available
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+
         // Display top 5 high scores on the highscore board
         scores.GetComponent<TMP_Text>().text = (highScoreList[0].ToString() + "\n" +
             highScoreList[1].ToString() + "\n" +
