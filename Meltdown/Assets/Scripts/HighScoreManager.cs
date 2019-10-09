@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class HighScoreManager : MonoBehaviour
 {
@@ -31,6 +32,15 @@ public class HighScoreManager : MonoBehaviour
         highScoreList.Add(highscore3);
         highScoreList.Add(highscore4);
         highScoreList.Add(highscore5);
+
+        highScoreList = highScoreList.Distinct().ToList();
+
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+        highScoreList.Add(0);
+
         highScoreList.Sort();
         highScoreList.Reverse();
 
@@ -56,8 +66,23 @@ public class HighScoreManager : MonoBehaviour
             if (newScore > highScoreList[i])
             {
                 highScoreList[i] = newScore;
+                highScoreList = highScoreList.Distinct().ToList();
+
+                highScoreList.Add(0);
+                highScoreList.Add(0);
+                highScoreList.Add(0);
+                highScoreList.Add(0);
+                highScoreList.Add(0);
+
                 highScoreList.Sort();
                 highScoreList.Reverse();
+
+                PlayerPrefs.SetInt("highscore1", highScoreList[0]);
+                PlayerPrefs.SetInt("highscore2", highScoreList[1]);
+                PlayerPrefs.SetInt("highscore3", highScoreList[2]);
+                PlayerPrefs.SetInt("highscore4", highScoreList[3]);
+                PlayerPrefs.SetInt("highscore5", highScoreList[4]);
+                PlayerPrefs.Save();
 
                 return true;
             }
