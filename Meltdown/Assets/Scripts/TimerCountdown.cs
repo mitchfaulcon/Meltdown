@@ -16,7 +16,7 @@ public class TimerCountdown : MonoBehaviour
     public GameObject timeUpPanel;
 
     private float secondsRemaining;
-    private bool gameFinished = false;
+    public static bool gameFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,10 @@ public class TimerCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
+        {
+            LoadOutro();
+        }
         if (secondsRemaining < 0 && !gameFinished)
         {
             EndGame();
@@ -81,6 +84,11 @@ public class TimerCountdown : MonoBehaviour
             yield return null;
         }
 
+        LoadOutro();
+    }
+
+    private void LoadOutro()
+    {
         //Calculate score based on thermometer
         float score = scoreBar.fillAmount;
 
@@ -93,6 +101,9 @@ public class TimerCountdown : MonoBehaviour
         Time.timeScale = 1f;
 
         SceneManager.LoadScene("Level 1 Outro");
+
+        //Set gameCompleted to false to prevent bugs when trying again
+        gameFinished = false;
     }
 
     private void DisplayTime()
