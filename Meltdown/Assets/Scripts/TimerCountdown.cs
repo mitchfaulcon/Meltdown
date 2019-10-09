@@ -101,6 +101,9 @@ public class TimerCountdown : MonoBehaviour
         Time.timeScale = 1f;
 
         SceneManager.LoadScene("Level 1 Outro");
+
+        //Set gameCompleted to false to prevent bugs when trying again
+        gameFinished = false;
     }
 
     private void DisplayTime()
