@@ -49,6 +49,12 @@ public class TimerCountdown : MonoBehaviour
         secondsAndMinutes[0] = (int) secondsRemaining / 60;
         secondsAndMinutes[1] = (int) Mathf.Ceil(secondsRemaining % 60);
 
+        if (secondsAndMinutes[1] == 60)
+        {
+            secondsAndMinutes[1] = 00;
+            secondsAndMinutes[0]++;
+        }
+
         return secondsAndMinutes;
     }
 
