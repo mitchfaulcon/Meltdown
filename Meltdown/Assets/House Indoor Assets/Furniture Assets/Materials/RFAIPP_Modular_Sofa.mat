@@ -9,8 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: RFAIPP_Modular_Sofa
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
-    _SPECGLOSSMAP
+  m_ShaderKeywords: _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -65,10 +64,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0.14
+    - _GlossMapScale: 0
     - _Glossiness: 0.2
     - _GlossyReflections: 1
-    - _Metallic: 0.86
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
