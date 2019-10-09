@@ -22,6 +22,7 @@ public class ScoreDisplay : MonoBehaviour
 
     public TextMeshProUGUI scoreDisplayText;
     public TextMeshProUGUI commentDisplayText;
+    public GameObject highScoreDisplayText;
     public Image oneStar;
     public Image twoStar;
     public Image threeStar;
@@ -42,7 +43,7 @@ public class ScoreDisplay : MonoBehaviour
         SetComment(level, score);
 
         // Update HighScoreManager to save potential highscore
-        highScore = HighScoreManager.recieveNewScore((int)score);
+        highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int)score));
 
         //Initially hide all stars
         oneStar.enabled = false;

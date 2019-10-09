@@ -84,7 +84,10 @@ public class HighScoreManager : MonoBehaviour
                 PlayerPrefs.SetInt("highscore5", highScoreList[4]);
                 PlayerPrefs.Save();
 
-                return true;
+                if (i <= 5)
+                {
+                    return true;
+                }
             }
         }
 
