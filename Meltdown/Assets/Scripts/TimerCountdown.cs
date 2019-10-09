@@ -11,8 +11,12 @@ public class TimerCountdown : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float minutes = 1.5f;
     public Image scoreBar;
+    public AudioSource endBellSound;
+    public AudioSource gameMusic;
+    public GameObject timeUpPanel;
 
     private float secondsRemaining;
+    public static bool gameFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +28,11 @@ public class TimerCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (secondsRemaining < 0)
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
+        {
+            LoadOutro();
+        }
+        if (secondsRemaining < 0 && !gameFinished)
         {
             EndGame();
         } else
@@ -43,22 +50,66 @@ public class TimerCountdown : MonoBehaviour
         int[] secondsAndMinutes = new int[2];
 
         secondsAndMinutes[0] = (int) secondsRemaining / 60;
-        secondsAndMinutes[1] = (int) secondsRemaining % 60;
+        secondsAndMinutes[1] = (int) Mathf.Ceil(secondsRemaining % 60);
+
+        if (secondsAndMinutes[1] == 60)
+        {
+            secondsAndMinutes[1] = 00;
+            secondsAndMinutes[0]++;
+        }
 
         return secondsAndMinutes;
     }
 
     private void EndGame()
     {
+        //Set game to finished & freeze
+        gameFinished = true;
+        Time.timeScale = 0f;
+
+        //Display time up panel
+        timeUpPanel.SetActive(true);
+
+        //Stop the music 
+        gameMusic.Stop();
+        //Play bell if sound effects setting is enabled
+        if (GameSettings.sounds == true)
+        {
+            endBellSound.Play();
+        }
+
+        StartCoroutine(LoadPostLevel());
+    }
+
+    IEnumerator LoadPostLevel()
+    {
+        //while loop to wait for 3 seconds for bell sound to finish (cannot use WaitForSeconds(3) as time is frozen)
+        float calledTime = Time.realtimeSinceStartup;
+        while (Time.realtimeSinceStartup - calledTime < 3)
+        {
+            yield return null;
+        }
+
+        LoadOutro();
+    }
+
+    private void LoadOutro()
+    {
         //Calculate score based on thermometer
         float score = scoreBar.fillAmount;
-        
+
         Score.GetInstance().SetPoints(score);
 
         //Enable cursor
         Cursor.visible = true;
 
+        //Unfreeze time
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene("Level 1 Outro");
+
+        //Set gameCompleted to false to prevent bugs when trying again
+        gameFinished = false;
     }
 
     private void DisplayTime()
