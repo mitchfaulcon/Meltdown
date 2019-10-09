@@ -28,7 +28,10 @@ public class TimerCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
+        {
+            LoadOutro();
+        }
         if (secondsRemaining < 0 && !gameFinished)
         {
             EndGame();
@@ -81,6 +84,11 @@ public class TimerCountdown : MonoBehaviour
             yield return null;
         }
 
+        LoadOutro();
+    }
+
+    private void LoadOutro()
+    {
         //Calculate score based on thermometer
         float score = scoreBar.fillAmount;
 
