@@ -19,6 +19,8 @@ public class HighScoreManager : MonoBehaviour
     // On start, get current high scores and set the high score screen to display as text
     void Start()
     {
+        highScoreList.Clear();
+
         // Init top 5 high scores
         highscore1 = PlayerPrefs.GetInt("highscore1", highscore1);
         highscore2 = PlayerPrefs.GetInt("highscore2", highscore2);
@@ -32,15 +34,6 @@ public class HighScoreManager : MonoBehaviour
         highScoreList.Add(highscore3);
         highScoreList.Add(highscore4);
         highScoreList.Add(highscore5);
-
-        highScoreList = highScoreList.Distinct().ToList();
-
-        highScoreList.Add(0);
-        highScoreList.Add(0);
-        highScoreList.Add(0);
-        highScoreList.Add(0);
-        highScoreList.Add(0);
-
         highScoreList.Sort();
         highScoreList.Reverse();
 
@@ -60,37 +53,24 @@ public class HighScoreManager : MonoBehaviour
     // When a new score is awarded, check to see if it is a highscore
     public static bool recieveNewScore(int newScore)
     {
-        // If the new score is a highscore, save it to player prefs
-        for (int i = highScoreList.Count - 1; i >= 0; i--)
+        // Add new score to the list and sort from high to low
+        highScoreList.Add(newScore);
+        highScoreList.Sort();
+        highScoreList.Reverse();
+
+        // Save top 5 high scores to player prefs
+        PlayerPrefs.SetInt("highscore1", highScoreList[0]);
+        PlayerPrefs.SetInt("highscore2", highScoreList[1]);
+        PlayerPrefs.SetInt("highscore3", highScoreList[2]);
+        PlayerPrefs.SetInt("highscore4", highScoreList[3]);
+        PlayerPrefs.SetInt("highscore5", highScoreList[4]);
+        PlayerPrefs.Save();
+
+        // If the new score is the best ever, return true
+        if (newScore >= highScoreList.Max())
         {
-            if (newScore > highScoreList[i])
-            {
-                highScoreList[i] = newScore;
-                highScoreList = highScoreList.Distinct().ToList();
-
-                highScoreList.Add(0);
-                highScoreList.Add(0);
-                highScoreList.Add(0);
-                highScoreList.Add(0);
-                highScoreList.Add(0);
-
-                highScoreList.Sort();
-                highScoreList.Reverse();
-
-                PlayerPrefs.SetInt("highscore1", highScoreList[0]);
-                PlayerPrefs.SetInt("highscore2", highScoreList[1]);
-                PlayerPrefs.SetInt("highscore3", highScoreList[2]);
-                PlayerPrefs.SetInt("highscore4", highScoreList[3]);
-                PlayerPrefs.SetInt("highscore5", highScoreList[4]);
-                PlayerPrefs.Save();
-
-                if (i <= 5 && newScore >= highScoreList.Max())
-                {
-                    return true;
-                }
-            }
+            return true;
         }
-
         return false;
     }
 
@@ -104,5 +84,4 @@ public class HighScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("highscore5", highScoreList[4]);
         PlayerPrefs.Save();
     }
-
 }
