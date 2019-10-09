@@ -37,6 +37,12 @@ public class ScoreController : MonoBehaviour
         increaseRate = newRate;
         Score.GetInstance().SetPoints(currentValue);
         scoreText.text = Score.GetInstance().GetPoints().ToString();
+
+        //Cheat to decrease temperature
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.T))
+        {
+            currentValue -= 0.2f;
+        }
     }
 
 
