@@ -22,9 +22,12 @@ public class ScoreDisplay : MonoBehaviour
 
     public TextMeshProUGUI scoreDisplayText;
     public TextMeshProUGUI commentDisplayText;
+    public GameObject highScoreDisplayText;
     public Image oneStar;
     public Image twoStar;
     public Image threeStar;
+
+    public bool highScore = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,9 @@ public class ScoreDisplay : MonoBehaviour
         threeStar.enabled = false;
         //Display correct no. of stars
         SetStars(level);
+
+        // Update HighScoreManager to save potential highscore
+        highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int)score));
     }
 
     private void SetScoreText(float score)
