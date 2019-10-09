@@ -84,7 +84,7 @@ public class HighScoreManager : MonoBehaviour
                 PlayerPrefs.SetInt("highscore5", highScoreList[4]);
                 PlayerPrefs.Save();
 
-                if (i <= 5)
+                if (i <= 5 && newScore >= highScoreList.Max())
                 {
                     return true;
                 }
