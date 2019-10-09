@@ -42,15 +42,15 @@ public class ScoreDisplay : MonoBehaviour
         SetScoreText(score);
         SetComment(level, score);
 
-        // Update HighScoreManager to save potential highscore
-        highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int)score));
-
         //Initially hide all stars
         oneStar.enabled = false;
         twoStar.enabled = false;
         threeStar.enabled = false;
         //Display correct no. of stars
         SetStars(level);
+
+        // Update HighScoreManager to save potential highscore
+        highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int)score));
     }
 
     private void SetScoreText(float score)
