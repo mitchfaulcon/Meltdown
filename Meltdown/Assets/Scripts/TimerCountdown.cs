@@ -16,7 +16,7 @@ public class TimerCountdown : MonoBehaviour
     public GameObject timeUpPanel;
 
     private float secondsRemaining;
-    private bool gameFinished = false;
+    public static bool gameFinished = false;
 
     // Start is called before the first frame update
     void Start()
