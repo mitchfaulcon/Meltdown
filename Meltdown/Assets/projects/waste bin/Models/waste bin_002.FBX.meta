@@ -1,28 +1,32 @@
 fileFormatVersion: 2
-guid: fb1f9dba893f9984ba94591e8fabee87
+guid: cbe901c534fac324b9a0e1c87356397a
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
       43: 4300000
-    second: body
+    second: waste bin_002
   - first:
-      43: 4300002
-    second: cap
-  - first:
-      43: 4300004
-    second: wheels
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: plastic
-    second: {fileID: 2100000, guid: c278c4805f3c3d54dae018009d805c0e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wheels
-    second: {fileID: 2100000, guid: 48b5d27f5b60a084bab76fda268c04fe, type: 2}
+      name: waste bin_002_map
+    second: {fileID: 2100000, guid: 1d30c8ccdb2e8314fbb8c30637edece5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -53,7 +57,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.05
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -77,11 +81,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 0
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
@@ -100,13 +104,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.05
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
