@@ -28,7 +28,8 @@ public class TimerCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
+        //Cheat to end game early
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.E))
         {
             LoadOutro();
         }
@@ -106,7 +107,7 @@ public class TimerCountdown : MonoBehaviour
         //Unfreeze time
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene("Level 1 Outro");
+        SceneManager.LoadScene("BackyardOutro");
 
         //Set gameCompleted to false to prevent bugs when trying again
         gameFinished = false;

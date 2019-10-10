@@ -10,8 +10,6 @@ public class DepositBin : InteractableObjectBase
     public TaskController taskControl;
     public GameObject correctAlert;
     public GameObject incorrectAlert;
-
-    private static readonly float SCORE_VALUE = 0.13f;
     
 
     public override ItemTypes OnInteract()
@@ -20,7 +18,7 @@ public class DepositBin : InteractableObjectBase
         // If the type of rubbish the player is holding is the same as the bin takes in, grant score, show the player they were correct
         if (currentTrash == type)
         {
-            scoring.taskScored(SCORE_VALUE);
+            scoring.taskScored(ScoreController.Tasks.SORT_RUBBISH);
             correctAlert.SetActive(true);
             incorrectAlert.SetActive(false);
             Invoke("removeAlerts", 2);
@@ -28,7 +26,7 @@ public class DepositBin : InteractableObjectBase
         // If the player deposits incorrect rubbish, tell the player they were wrong and hide popup after 2 seconds
         else
         {
-            scoring.taskFailed(SCORE_VALUE);
+            scoring.taskFailed(ScoreController.Tasks.SORT_RUBBISH);
             correctAlert.SetActive(false);
             incorrectAlert.SetActive(true);
             Invoke("removeAlerts", 2);

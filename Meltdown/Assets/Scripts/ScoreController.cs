@@ -11,16 +11,21 @@ public class ScoreController : MonoBehaviour
     private float currentValue = 1f;
     public Image barImage;
 
-    private static readonly float DEFAULT_RATE = 0.0185f;
+    private static readonly float DEFAULT_RATE = 0.003f;
     
     private float increaseRate = DEFAULT_RATE;
     public TextMeshProUGUI scoreText;
+    public struct Tasks
+    {
+        public const float SORT_RUBBISH = 0.07f;
+        public const float PLANT = 0.06f;
+    }
 
     public Material treeMaterial;
     private readonly Color goodTreeColour = new Color(0.8f, 0.8f, 0.8f, 1f); //Normal green colour
     private readonly Color badTreeColour = new Color(0.635f, 0.318f, 0f, 1f); //Dark brown colour
     private Color targetColour;
-
+    
     private void Start()
     {
         targetColour = badTreeColour;
@@ -37,18 +42,24 @@ public class ScoreController : MonoBehaviour
         barImage.fillAmount = currentValue;
         
         float newRate = DEFAULT_RATE;
-        if (currentValue > ScoreDisplay.THREESTARTHRESHOLD/1000) {
-            newRate += 0.03f;
-        } else if (currentValue > ScoreDisplay.TWOSTARTHRESHOLD/1000) {
-            newRate += 0.02f;
-        } else if (currentValue > ScoreDisplay.ONESTARTHRESHOLD/1000) {
-            newRate += 0.01f;
+        if (1 - currentValue > ScoreDisplay.THREESTARTHRESHOLD/10000f) {
+            newRate += 0.005f;
+        } else if (1 - currentValue > ScoreDisplay.TWOSTARTHRESHOLD/10000f) {
+            newRate += 0.003f;
+        } else if (1 - currentValue > ScoreDisplay.ONESTARTHRESHOLD/10000f) {
+            newRate += 0.001f;
         }
         increaseRate = newRate;
         Score.GetInstance().SetPoints(currentValue);
         scoreText.text = Score.GetInstance().GetPoints().ToString();
 
         ColourTrees();
+        
+        //Cheat to decrease temperature
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.T))
+        {
+            currentValue -= 0.2f;
+        }
     }
 
 

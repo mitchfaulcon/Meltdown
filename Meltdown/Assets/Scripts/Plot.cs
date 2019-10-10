@@ -53,7 +53,7 @@ public class Plot : InteractableObjectBase
 
             // Grant score, and complete the task
             scoring = FindObjectOfType<ScoreController>();
-            scoring.taskScored(0.2f);
+            scoring.taskScored(ScoreController.Tasks.PLANT);
             controller.taskComplete(task);
         }
         
