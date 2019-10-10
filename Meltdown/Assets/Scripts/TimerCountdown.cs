@@ -106,7 +106,7 @@ public class TimerCountdown : MonoBehaviour
         //Unfreeze time
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene("Level 1 Outro");
+        SceneManager.LoadScene("BackyardOutro");
 
         //Set gameCompleted to false to prevent bugs when trying again
         gameFinished = false;

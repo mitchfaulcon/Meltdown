@@ -19,7 +19,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadAsynchronously()
     {
         //Start loading scene
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Home_Outdoor");
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Backyard");
 
         //Update progress bar until level finishes loading
         while (!operation.isDone)
