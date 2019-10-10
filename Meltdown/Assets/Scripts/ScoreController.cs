@@ -10,7 +10,7 @@ public class ScoreController : MonoBehaviour
     public Slider slider;
     private float currentValue = 1f;
     public Image barImage;
-   
+
     private static readonly float DEFAULT_RATE = 0.003f;
     
     private float increaseRate = DEFAULT_RATE;
@@ -20,6 +20,17 @@ public class ScoreController : MonoBehaviour
         public const float SORT_RUBBISH = 0.07f;
         public const float PLANT = 0.06f;
     }
+
+    public Material treeMaterial;
+    private readonly Color goodTreeColour = new Color(0.8f, 0.8f, 0.8f, 1f); //Normal green colour
+    private readonly Color badTreeColour = new Color(0.635f, 0.318f, 0f, 1f); //Dark brown colour
+    private Color targetColour;
+    
+    private void Start()
+    {
+        targetColour = badTreeColour;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +53,8 @@ public class ScoreController : MonoBehaviour
         Score.GetInstance().SetPoints(currentValue);
         scoreText.text = Score.GetInstance().GetPoints().ToString();
 
+        ColourTrees();
+        
         //Cheat to decrease temperature
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.T))
         {
@@ -58,5 +71,14 @@ public class ScoreController : MonoBehaviour
     public void taskFailed(float points)
     {
         currentValue += points;
+    }
+
+    private void ColourTrees()
+    {
+        //Calculate the new colour as the value of the temperature between the bad & good colours
+        targetColour = (currentValue) * (badTreeColour) + (1 - currentValue) * (goodTreeColour);
+
+        //Smooth the colour change over 2 seconds
+        treeMaterial.color = Color.Lerp(treeMaterial.color, targetColour, Time.deltaTime/2f);
     }
 }
