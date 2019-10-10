@@ -28,7 +28,8 @@ public class TimerCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
+        //Cheat to end game early
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.E))
         {
             LoadOutro();
         }
