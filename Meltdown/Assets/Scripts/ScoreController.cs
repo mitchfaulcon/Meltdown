@@ -17,8 +17,8 @@ public class ScoreController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public struct Tasks
     {
-        public const float SORT_RUBBISH = 0.1f;
-        public const float PLANT = 0.09f;
+        public const float SORT_RUBBISH = 0.07f;
+        public const float PLANT = 0.06f;
     }
     // Update is called once per frame
     void Update()
