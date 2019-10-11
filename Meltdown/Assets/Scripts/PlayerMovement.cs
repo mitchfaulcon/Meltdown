@@ -14,13 +14,18 @@ public class PlayerMovement : MonoBehaviour
     public GameObject playerModel;
     public float rotateSpeed = 20f;
     public Animator animator;
+    public SkinnedMeshRenderer playerSkin;
 
     private Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Set player skin (will remain as default if nothing has been selected)
+        if (GameSettings.playerSkin != null)
+        {
+            playerSkin.material = GameSettings.playerSkin;
+        }
     }
 
     // Update is called once per frame

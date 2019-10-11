@@ -28,7 +28,7 @@ public class ScoreController : MonoBehaviour
     
     private void Start()
     {
-        targetColour = badTreeColour;
+        treeMaterial.color = badTreeColour;
     }
 
     // Update is called once per frame
