@@ -45,7 +45,18 @@ public class DepositBin : InteractableObjectBase
         currentTrash = heldItem;
         if (heldItem == ItemTypes.RubbishBag || heldItem == ItemTypes.BananaSkin || heldItem == ItemTypes.Recyclables)
         {
-            InteractText = "Press J to deposit " + currentTrash.ToString();
+            InteractText = "Press J to deposit ";
+            switch (heldItem)
+            {
+                case ItemTypes.RubbishBag: InteractText += "Chip Packet";
+                    break;
+                case ItemTypes.BananaSkin:
+                    InteractText += "Banana Skin";
+                    break;
+                case ItemTypes.Recyclables:
+                    InteractText += "Bottle";
+                    break;
+            }
             return true;
         }
         return false;
