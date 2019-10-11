@@ -12,7 +12,17 @@ ModelImporter:
   - first:
       43: 4300004
     second: wheels
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic
+    second: {fileID: 2100000, guid: 8e14fac966d2cc048a9648d5ade6d65e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheels
+    second: {fileID: 2100000, guid: 08a8dc5654ba6cd45b2816577a91b33e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
