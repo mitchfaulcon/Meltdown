@@ -2,18 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerInteraction : MonoBehaviour
+public abstract class PlayerInteraction : MonoBehaviour
 {
     public HUD Hud;
     public ItemTypes heldItem = ItemTypes.NONE;
-    public GameObject holdingBottle;
-    public GameObject holdingRubbish;
-    public GameObject holdingCompost;
-    public GameObject holdingTomato;
-    public GameObject holdingTree;
-    public GameObject holdingPotato;
-    public GameObject holdingCarrot;
-    public GameObject holdingCan;
+
     public AudioSource interactSound;
     public AudioSource gameMusic;
 
@@ -60,51 +53,8 @@ public class playerInteraction : MonoBehaviour
             }
             
             heldItem = mInteractItem.OnInteract();
-            if (heldItem == ItemTypes.Recyclables)
-            {
-                removeSpeechBubbles();
-                holdingBottle.SetActive(true);
-                
-            }
-            else if (heldItem == ItemTypes.RubbishBag)
-            {
-                removeSpeechBubbles();
-                holdingRubbish.SetActive(true);
-            }
-            else if (heldItem == ItemTypes.BananaSkin)
-            {
-                removeSpeechBubbles();
-                holdingCompost.SetActive(true);
-            }
-            else if (heldItem == ItemTypes.NONE)
-            {
-                removeSpeechBubbles();
-            }
-            else if (heldItem == ItemTypes.TomatoSeeds)
-            {
-                removeSpeechBubbles();
-                holdingTomato.SetActive(true);
-            }
-            else if (heldItem == ItemTypes.TreeSappling)
-            {
-                removeSpeechBubbles();
-                holdingTree.SetActive(true);
-            }
-            else if (heldItem == ItemTypes.PotatoSeeds)
-            {
-                removeSpeechBubbles();
-                holdingPotato.SetActive(true);
-            }
-            else if (heldItem == ItemTypes.CarrotSeeds)
-            {
-                removeSpeechBubbles();
-                holdingCarrot.SetActive(true);
-            }
-            else if (heldItem == ItemTypes.WaterBucket)
-            {
-                removeSpeechBubbles();
-                holdingCan.SetActive(true);
-            }
+            removeSpeechBubbles();
+            setActiveBubble();
 
         }
 
@@ -142,15 +92,7 @@ public class playerInteraction : MonoBehaviour
     }
 
     // Remove all item speech bubbles
-    private void removeSpeechBubbles()
-    {
-        holdingBottle.SetActive(false);
-        holdingRubbish.SetActive(false);
-        holdingCompost.SetActive(false);
-        holdingTomato.SetActive(false);
-        holdingTree.SetActive(false);
-        holdingPotato.SetActive(false);
-        holdingCarrot.SetActive(false);
-        holdingCan.SetActive(false);
-    }
+    protected abstract void removeSpeechBubbles();
+
+    protected abstract void setActiveBubble();
 }
