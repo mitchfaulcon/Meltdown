@@ -8,6 +8,7 @@ public class LevelLoader : MonoBehaviour
 {
 
     public Slider slider;
+    public string levelToLoad;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadAsynchronously()
     {
         //Start loading scene
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Backyard");
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
 
         //Update progress bar until level finishes loading
         while (!operation.isDone)

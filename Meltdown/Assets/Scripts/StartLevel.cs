@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartLevel1 : MonoBehaviour
+public class StartLevel : MonoBehaviour
 {
-    public void LoadLevel1()
+    public void LoadLevel(string levelName)
     {
-        SceneManager.LoadScene("Backyard");
+        SceneManager.LoadScene(levelName);
     }
 }
