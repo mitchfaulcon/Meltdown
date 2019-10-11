@@ -51,7 +51,10 @@ public class playerInteraction : MonoBehaviour
             // Only play sound if enabled
             if (GameSettings.sounds == true)
             {
-                interactSound.Play();
+                if (!(mInteractItem is Plot))
+                {
+                    interactSound.Play();
+                }
             }
             
             heldItem = mInteractItem.OnInteract();
