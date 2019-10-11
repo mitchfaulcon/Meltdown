@@ -51,7 +51,7 @@ public abstract class TaskController : MonoBehaviour
 
     }
 
-    private void addTask() {
+    protected void addTask() {
         TaskTypes task = generateTask();
                 while (taskList.Contains(task))
                 {

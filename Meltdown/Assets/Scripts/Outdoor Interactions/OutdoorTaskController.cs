@@ -17,19 +17,6 @@ public class OutdoorTaskController : TaskController
     public SeedBox treeBox;
     public SeedBox tomatoBox;
 
-    private void addTask() {
-        TaskTypes task = generateTask();
-                while (taskList.Contains(task))
-                {
-                    task = generateTask();
-                }
-                taskList.Add(task);
-                updateUI();
-                tasks[task].setupTask();
-
-                generateTaskTime();
-    }
-
     protected override void loadTasks()
     {
         //add different task types to our task dictionary

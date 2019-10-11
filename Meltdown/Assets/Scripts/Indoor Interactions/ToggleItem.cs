@@ -20,6 +20,11 @@ public class ToggleItem : InteractableObjectBase
     {
         Debug.Log("Turning off light");
         on = false;
+        if(GameSettings.sounds == true)
+        {
+            interactSound.Play();
+        }
+ 
         if (isLight)
         {
             //code here to disable light in room
@@ -36,10 +41,11 @@ public class ToggleItem : InteractableObjectBase
     // Update is called once per frame
     public override bool CanInteract(ItemTypes item)
     {
+        playerHolding = item;
         return on;
     }
 
-    public void fill()
+    public void Activate()
     {
         on = true;
         if(task == TaskTypes.Tap)

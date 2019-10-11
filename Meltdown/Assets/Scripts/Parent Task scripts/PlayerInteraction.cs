@@ -7,7 +7,6 @@ public abstract class PlayerInteraction : MonoBehaviour
     public HUD Hud;
     public ItemTypes heldItem = ItemTypes.NONE;
 
-    public AudioSource interactSound;
     public AudioSource gameMusic;
 
     // Start is called before the first frame update
@@ -41,16 +40,6 @@ public abstract class PlayerInteraction : MonoBehaviour
         // item above them relevant to the item
         if (mInteractItem != null)
         {
-            // Only play sound if enabled
-            if (GameSettings.sounds == true)
-            {
-                // Don't play the generic interact sound if the interact item is a Plot
-                // Plot will play its own sounds for digging and watering. 
-                if (!(mInteractItem is Plot))
-                {
-                    interactSound.Play();
-                }
-            }
             
             heldItem = mInteractItem.OnInteract();
             removeSpeechBubbles();
