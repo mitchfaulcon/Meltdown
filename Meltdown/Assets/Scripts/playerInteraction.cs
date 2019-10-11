@@ -51,6 +51,8 @@ public class playerInteraction : MonoBehaviour
             // Only play sound if enabled
             if (GameSettings.sounds == true)
             {
+                // Don't play the generic interact sound if the interact item is a Plot
+                // Plot will play its own sounds for digging and watering. 
                 if (!(mInteractItem is Plot))
                 {
                     interactSound.Play();
