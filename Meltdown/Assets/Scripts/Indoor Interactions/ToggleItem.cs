@@ -27,7 +27,8 @@ public class ToggleItem : InteractableObjectBase
  
         if (isLight)
         {
-            //code here to disable light in room
+            //turn off the light
+            this.transform.Find("Light").gameObject.SetActive(false);
         }
         else
         {
@@ -55,7 +56,8 @@ public class ToggleItem : InteractableObjectBase
         }
         else
         {
-            //set light on here
+            this.transform.Find("Light").gameObject.SetActive(true);
+
         }
     }
 }
