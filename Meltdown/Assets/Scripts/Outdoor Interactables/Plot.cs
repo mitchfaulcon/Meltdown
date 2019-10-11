@@ -9,7 +9,7 @@ public class Plot : InteractableObjectBase
     public ItemTypes plotType;
     public TaskController controller;
     public WateringCan can;
-    public ScoreController scoring;
+    public OutdoorScoreController scoring;
 
     private void Start()
     {
@@ -52,8 +52,8 @@ public class Plot : InteractableObjectBase
             }
 
             // Grant score, and complete the task
-            scoring = FindObjectOfType<ScoreController>();
-            scoring.taskScored(ScoreController.Tasks.PLANT);
+            scoring = FindObjectOfType<OutdoorScoreController>();
+            scoring.taskScored(OutdoorScoreController.Tasks.PLANT);
             controller.taskComplete(task);
         }
         
