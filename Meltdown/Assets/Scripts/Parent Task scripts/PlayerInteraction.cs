@@ -73,7 +73,8 @@ public abstract class PlayerInteraction : MonoBehaviour
     {
         // If the player leaves a trigger zone, hide the interaction prompt
         InteractableObjectBase item = other.GetComponent<InteractableObjectBase>();
-        if (item != null)
+        // Only remove the prompt if the item being left is the current item
+        if (item == mInteractItem)
         {
             Hud.CloseMessagePanel();
             mInteractItem = null;

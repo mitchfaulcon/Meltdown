@@ -5011,6 +5011,7 @@ MonoBehaviour:
   playerModel: {fileID: 1467435994}
   rotateSpeed: 20
   animator: {fileID: 1467435995}
+  playerSkin: {fileID: 1845961601}
 --- !u!54 &688446203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15813,6 +15814,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 968b3a59e4c0e254099fb3dea2e9888b, type: 3}
+--- !u!137 &1845961601 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845961600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1852176386
 GameObject:
   m_ObjectHideFlags: 0
