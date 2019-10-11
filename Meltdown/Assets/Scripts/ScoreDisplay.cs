@@ -22,10 +22,12 @@ public class ScoreDisplay : MonoBehaviour
 
     public TextMeshProUGUI scoreDisplayText;
     public TextMeshProUGUI commentDisplayText;
+    public GameObject failedText;
     public GameObject highScoreDisplayText;
     public Image oneStar;
     public Image twoStar;
     public Image threeStar;
+    public GameObject continueButton;
 
     public bool highScore = false;
 
@@ -86,6 +88,10 @@ public class ScoreDisplay : MonoBehaviour
         {
             case ScoreLevel.NONE:
                 commentDisplayText.text = ZEROSTARCOMMENT;
+                //Display 'you need at least one star' text
+                failedText.SetActive(true);
+                //Hide continue button
+                continueButton.SetActive(false);
                 break;
             case ScoreLevel.ONE:
                 commentDisplayText.text = ONESTARCOMMENT;

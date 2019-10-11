@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2130885}
   - component: {fileID: 2130884}
   m_Layer: 0
-  m_Name: Potatos7
+  m_Name: Potatoes7
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,6 +236,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &2130885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -525,7 +527,7 @@ GameObject:
   - component: {fileID: 16041274}
   - component: {fileID: 16041275}
   m_Layer: 0
-  m_Name: Tomatos3
+  m_Name: Tomatoes3
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,12 +622,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &16041275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -831,7 +835,7 @@ GameObject:
   - component: {fileID: 39370414}
   - component: {fileID: 39370419}
   m_Layer: 0
-  m_Name: Tomatos8
+  m_Name: Tomatoes8
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,12 +930,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &39370419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1313,12 +1319,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &78063038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,7 +1599,7 @@ GameObject:
   - component: {fileID: 86722325}
   - component: {fileID: 86722330}
   m_Layer: 0
-  m_Name: Tomatos2
+  m_Name: Tomatoes2
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,12 +1694,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &86722330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1895,7 +1905,7 @@ GameObject:
   - component: {fileID: 95856445}
   - component: {fileID: 95856444}
   m_Layer: 0
-  m_Name: Potatos2
+  m_Name: Potatoes2
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1996,6 +2006,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &95856445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4362,7 +4374,7 @@ GameObject:
   - component: {fileID: 323331335}
   - component: {fileID: 323331334}
   m_Layer: 0
-  m_Name: Potatos8
+  m_Name: Potatoes8
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4463,6 +4475,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &323331335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5929,12 +5943,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &446025275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6724,7 +6740,7 @@ GameObject:
   - component: {fileID: 496423985}
   - component: {fileID: 496423986}
   m_Layer: 0
-  m_Name: Tomatos1
+  m_Name: Tomatoes1
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6819,12 +6835,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &496423986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8642,12 +8660,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &633317731
 GameObject:
   m_ObjectHideFlags: 0
@@ -10222,12 +10242,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &712102800
 GameObject:
   m_ObjectHideFlags: 0
@@ -10543,7 +10565,7 @@ GameObject:
   - component: {fileID: 737102335}
   - component: {fileID: 737102334}
   m_Layer: 0
-  m_Name: Potatos4
+  m_Name: Potatoes4
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10644,6 +10666,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &737102335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11686,6 +11710,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1022093046}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &827452682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827452684}
+  - component: {fileID: 827452683}
+  m_Layer: 0
+  m_Name: DiggingSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &827452683
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827452682}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8582e8035b2735e42b6b96ffa27fc4eb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &827452684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827452682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.47, y: -0.3, z: -7}
+  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 130
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &833552118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13071,6 +13222,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952589091}
   m_CullTransparentMesh: 0
+--- !u!1 &978195748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978195750}
+  - component: {fileID: 978195749}
+  m_Layer: 0
+  m_Name: WateringSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &978195749
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978195748}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b747bcb751c87944b938526e50e29d5d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &978195750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978195748}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.47, y: -0.3, z: -7}
+  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 132
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983100629
 GameObject:
   m_ObjectHideFlags: 0
@@ -13627,12 +13905,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &1005119655
 GameObject:
   m_ObjectHideFlags: 0
@@ -13756,12 +14036,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &1010666668
 GameObject:
   m_ObjectHideFlags: 0
@@ -14650,7 +14932,7 @@ GameObject:
   - component: {fileID: 1098487036}
   - component: {fileID: 1098487035}
   m_Layer: 0
-  m_Name: Potatos9
+  m_Name: Potatoes9
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14751,6 +15033,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1098487036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18676,12 +18960,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &1453475902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
@@ -18770,7 +19056,7 @@ GameObject:
   - component: {fileID: 1458941249}
   - component: {fileID: 1458941248}
   m_Layer: 0
-  m_Name: Potatos1
+  m_Name: Potatoes1
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18871,6 +19157,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1458941249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19351,12 +19639,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &1503808301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19555,12 +19845,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &1526127674
 GameObject:
   m_ObjectHideFlags: 0
@@ -19811,7 +20103,7 @@ GameObject:
   - component: {fileID: 1549699278}
   - component: {fileID: 1549699279}
   m_Layer: 0
-  m_Name: Tomatos4
+  m_Name: Tomatoes4
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19906,12 +20198,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1549699279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20174,7 +20468,7 @@ GameObject:
   - component: {fileID: 1574328968}
   - component: {fileID: 1574328967}
   m_Layer: 0
-  m_Name: Potatos5
+  m_Name: Potatoes5
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20457,7 +20751,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 130
+  m_RootOrder: 131
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588434018
 GameObject:
@@ -20582,12 +20876,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &1601469688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
@@ -20904,12 +21200,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1 &1639234687
 GameObject:
   m_ObjectHideFlags: 0
@@ -20925,7 +21223,7 @@ GameObject:
   - component: {fileID: 1639234693}
   - component: {fileID: 1639234692}
   m_Layer: 0
-  m_Name: Potatos6
+  m_Name: Potatoes6
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21026,6 +21324,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1639234693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21573,7 +21873,7 @@ GameObject:
   - component: {fileID: 1697216330}
   - component: {fileID: 1697216331}
   m_Layer: 0
-  m_Name: Tomatos6
+  m_Name: Tomatoes6
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21668,12 +21968,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1697216331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21702,7 +22004,7 @@ GameObject:
   - component: {fileID: 1697920124}
   - component: {fileID: 1697920123}
   m_Layer: 0
-  m_Name: Potatos3
+  m_Name: Potatoes3
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21803,6 +22105,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1697920124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22063,6 +22367,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 0}
+  wateringSound: {fileID: 0}
 --- !u!1 &1732824417
 GameObject:
   m_ObjectHideFlags: 0
@@ -22221,12 +22527,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &1741599223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22785,7 +23093,7 @@ GameObject:
   - component: {fileID: 1780982501}
   - component: {fileID: 1780982500}
   m_Layer: 0
-  m_Name: Tomatos5
+  m_Name: Tomatoes5
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22987,12 +23295,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to Plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &1807903413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23075,7 +23385,7 @@ GameObject:
   - component: {fileID: 1814310657}
   - component: {fileID: 1814310662}
   m_Layer: 0
-  m_Name: Tomatos7
+  m_Name: Tomatoes7
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23170,12 +23480,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &1814310662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25400,12 +25712,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &1963766850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25999,12 +26313,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant carrots
+  InteractText: Press J to plant Carrots
   watered: 0
   plotType: 2
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &1999144680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26094,7 +26410,7 @@ GameObject:
   - component: {fileID: 2003369342}
   - component: {fileID: 2003369343}
   m_Layer: 0
-  m_Name: Tomatos9
+  m_Name: Tomatoes9
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26189,12 +26505,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tomoato seeds
+  InteractText: Press J to plant Tomatoes
   watered: 0
   plotType: 1
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!65 &2003369343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26331,12 +26649,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant tree
+  InteractText: Press J to plant a Sapling
   watered: 0
   plotType: 3
   controller: {fileID: 0}
   can: {fileID: 0}
   scoring: {fileID: 0}
+  diggingSound: {fileID: 827452683}
+  wateringSound: {fileID: 978195749}
 --- !u!1001 &2013679757
 PrefabInstance:
   m_ObjectHideFlags: 0
