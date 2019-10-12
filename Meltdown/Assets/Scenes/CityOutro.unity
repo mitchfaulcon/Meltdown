@@ -641,6 +641,7 @@ GameObject:
   - component: {fileID: 317368891}
   - component: {fileID: 317368890}
   - component: {fileID: 1329018705}
+  - component: {fileID: 317368893}
   m_Layer: 5
   m_Name: RedoLevelButton
   m_TagString: Untagged
@@ -660,7 +661,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1561094240}
-  - {fileID: 1760178059}
   m_Father: {fileID: 511043380}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -711,7 +711,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 317368891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 317368893}
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &317368891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +759,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317368888}
   m_CullTransparentMesh: 0
+--- !u!114 &317368893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317368888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900a351e20368b740a64ac882b816078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &429911713
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +881,7 @@ RectTransform:
   - {fileID: 2033083881}
   - {fileID: 1831726168}
   - {fileID: 317368889}
+  - {fileID: 1760178059}
   m_Father: {fileID: 681698868}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2380,6 +2404,7 @@ GameObject:
   - component: {fileID: 1760178062}
   - component: {fileID: 1760178061}
   - component: {fileID: 1760178060}
+  - component: {fileID: 1760178064}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -2399,12 +2424,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1045592423}
-  m_Father: {fileID: 317368889}
-  m_RootOrder: 1
+  m_Father: {fileID: 511043380}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 320, y: 0}
+  m_AnchoredPosition: {x: 470, y: -275}
   m_SizeDelta: {x: 75.8, y: 74.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760178060
@@ -2465,9 +2490,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072026733}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1760178064}
+        m_MethodName: GameOutro
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2475,17 +2500,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1760178062
 MonoBehaviour:
@@ -2523,6 +2537,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760178058}
   m_CullTransparentMesh: 0
+--- !u!114 &1760178064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760178058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900a351e20368b740a64ac882b816078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1831726167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,19 +2648,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072026733}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1831726173}
-        m_MethodName: ToMenu
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2689,7 +2704,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831726167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b2797f13f77a4cadf345c911a2e1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 900a351e20368b740a64ac882b816078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1889365718
@@ -3034,10 +3049,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreDisplayText: {fileID: 1889365720}
   commentDisplayText: {fileID: 2125778078}
+  failedText: {fileID: 0}
   highScoreDisplayText: {fileID: 193475781}
   oneStar: {fileID: 1064032312}
   twoStar: {fileID: 1492624095}
   threeStar: {fileID: 1196028758}
+  continueButton: {fileID: 0}
   highScore: 0
 --- !u!1 &2074423364
 GameObject:

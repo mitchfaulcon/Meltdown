@@ -662,7 +662,7 @@ RectTransform:
   m_Children:
   - {fileID: 1561094240}
   m_Father: {fileID: 511043380}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -712,24 +712,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072026733}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 317368893}
-        m_MethodName: StartScene
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -782,7 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900a351e20368b740a64ac882b816078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToOpen: Kitchen
 --- !u!1 &429911713
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,8 +880,8 @@ RectTransform:
   m_Children:
   - {fileID: 2033083881}
   - {fileID: 1831726168}
-  - {fileID: 1760178059}
   - {fileID: 317368889}
+  - {fileID: 1760178059}
   m_Father: {fileID: 681698868}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2437,7 +2425,7 @@ RectTransform:
   m_Children:
   - {fileID: 1045592423}
   m_Father: {fileID: 511043380}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2502,27 +2490,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072026733}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1760178064}
+        m_MethodName: LevelIntro
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1760178064}
-        m_MethodName: StartScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1760178062
 MonoBehaviour:
@@ -2572,7 +2549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900a351e20368b740a64ac882b816078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToOpen: BackyardIntro
 --- !u!1 &1831726167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,19 +2648,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2072026733}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1831726167}
-        m_MethodName: 
+      - m_Target: {fileID: 1831726173}
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2692,7 +2657,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1831726171
 MonoBehaviour:
@@ -2739,7 +2704,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831726167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b2797f13f77a4cadf345c911a2e1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 900a351e20368b740a64ac882b816078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1889365718
