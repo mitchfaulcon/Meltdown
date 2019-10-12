@@ -1749,8 +1749,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.5, y: 0}
-  m_SizeDelta: {x: -105, y: -100}
+  m_AnchoredPosition: {x: 7.5, y: 7.5}
+  m_SizeDelta: {x: -105, y: -85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446040902
 MonoBehaviour:
@@ -2230,11 +2230,35 @@ MonoBehaviour:
   dialogueManager: {fileID: 51661089}
   dialogue:
     sentences:
-    - A
-    - B
-    - C
+    - 'It''s going to take more than one
+
+      person to reverse the effects of
+
+      global warming.
+
+
+      Time to step out in to the town
+
+      and help inspire change in your
+
+      community.'
+    - 'Help climate strike protesters
+
+      get their voice heard by giving
+
+      them protest signs.
+
+
+      Transport makes up 14% of
+
+      the world''s greenhouse gas
+
+      emissions. Help the towns
+
+      people take on biking - a greener
+
+      option.'
     images:
-    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
 --- !u!1 &653463162
