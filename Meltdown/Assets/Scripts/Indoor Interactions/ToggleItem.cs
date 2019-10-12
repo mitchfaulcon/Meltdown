@@ -28,7 +28,7 @@ public class ToggleItem : InteractableObjectBase
         if (isLight)
         {
             //turn off the light
-            this.transform.Find("Light").gameObject.SetActive(false);
+            this.transform.Find("Area Light").gameObject.SetActive(false);
         }
         else
         {
