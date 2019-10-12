@@ -8,7 +8,11 @@ public enum TaskTypes
     Carrot = 1,
     Potato = 2,
     Tomato = 3,
-    Rubbish = 4
+    Rubbish = 4,
+    Light1 = 5,
+    Light2 = 6,
+    Tap = 7,
+    Salad = 8
 }
 
 
