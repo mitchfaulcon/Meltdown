@@ -51,7 +51,12 @@ public class playerInteraction : MonoBehaviour
             // Only play sound if enabled
             if (GameSettings.sounds == true)
             {
-                interactSound.Play();
+                // Don't play the generic interact sound if the interact item is a Plot
+                // Plot will play its own sounds for digging and watering. 
+                if (!(mInteractItem is Plot))
+                {
+                    interactSound.Play();
+                }
             }
             
             heldItem = mInteractItem.OnInteract();
@@ -129,7 +134,8 @@ public class playerInteraction : MonoBehaviour
     {
         // If the player leaves a trigger zone, hide the interaction prompt
         InteractableObjectBase item = other.GetComponent<InteractableObjectBase>();
-        if (item != null)
+        // Only remove the prompt if the item being left is the current item
+        if (item == mInteractItem)
         {
             Hud.CloseMessagePanel();
             mInteractItem = null;

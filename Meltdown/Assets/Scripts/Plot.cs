@@ -10,6 +10,9 @@ public class Plot : InteractableObjectBase
     public TaskController controller;
     public WateringCan can;
     public ScoreController scoring;
+    public AudioSource diggingSound;
+    public AudioSource wateringSound;
+
 
     private void Start()
     {
@@ -25,6 +28,10 @@ public class Plot : InteractableObjectBase
         if(hasPlant == false)
         {
             this.transform.Find("Dirt_Pile").gameObject.SetActive(true);
+            if (GameSettings.sounds == true)
+            {
+                diggingSound.Play();
+            }
             hasPlant = true;
             can.fill();
             InteractText = "Press J to Water";
@@ -35,6 +42,10 @@ public class Plot : InteractableObjectBase
         {
             watered = true;
             this.transform.Find("plant").gameObject.SetActive(true);
+            if (GameSettings.sounds == true)
+            {
+                wateringSound.Play();
+            }
             TaskTypes task = TaskTypes.Tree;
 
             // Grow the correct type of plant
@@ -53,7 +64,7 @@ public class Plot : InteractableObjectBase
 
             // Grant score, and complete the task
             scoring = FindObjectOfType<ScoreController>();
-            scoring.taskScored(0.2f);
+            scoring.taskScored(ScoreController.Tasks.PLANT);
             controller.taskComplete(task);
         }
         
