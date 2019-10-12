@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Task : MonoBehaviour
+public abstract class Task : MonoBehaviour
 {
     public TaskController controller = FindObjectOfType<TaskController>();
-    public virtual void setupTask()
-    {
+    public abstract void setupTask();
 
-    }
-
-    public virtual void completeTask()
-    {
-
-    }
+    public abstract void completeTask();
 }
 
 //Task to remove rubbish from main bin into the 3 special bins
@@ -69,4 +63,48 @@ public class SeedTask : Task
     }
 
 
+}
+
+public class LightSwitchTask : Task
+{
+    private ToggleItem lightSwitch;
+    private TaskTypes whichSwitch;
+
+    public LightSwitchTask(ToggleItem lightSwitch, TaskTypes whichSwitch)
+    {
+        this.lightSwitch = lightSwitch;
+        this.whichSwitch = whichSwitch;
+    }
+
+    public override void setupTask()
+    {
+        //in future call npc to move here
+        lightSwitch.Activate();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(whichSwitch);
+    }
+}
+
+public class TapTask : Task
+{
+    private ToggleItem tap;
+
+    public TapTask()
+    {
+        tap = GameObject.FindGameObjectWithTag("Tap").GetComponent<ToggleItem>();
+    }
+
+    public override void setupTask()
+    {
+        //Call npc to go turn on tap here
+        tap.Activate();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(TaskTypes.Tap);
+    }
 }

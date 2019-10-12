@@ -43,7 +43,7 @@ public class RubbishBin : InteractableObjectBase
         if(heldItem == ItemTypes.NONE && hasRubbish)
         {
             // Set the interact prompt text
-            InteractText = "Press J to collect rubbish";
+            InteractText = "Press J to collect Rubbish";
             return true;
         }
         return false;

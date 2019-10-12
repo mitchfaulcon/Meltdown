@@ -10,7 +10,13 @@ public class InteractableObjectBase : MonoBehaviour
 
     public string InteractText = "Press J to interact with object";
 
+    public AudioSource interactSound;
+
     //public EItemType ItemType;
+    void start()
+    {
+        interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+    }
 
     public virtual void OnInteractAnimation(Animator animator)
     {
