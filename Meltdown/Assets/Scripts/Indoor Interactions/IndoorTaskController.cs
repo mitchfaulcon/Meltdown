@@ -5,11 +5,9 @@ using UnityEngine;
 public class IndoorTaskController : TaskController
 {
 
-    public GameObject[] potatoTasks = new GameObject[4];
-    public GameObject[] treeTasks = new GameObject[4];
-    public GameObject[] tomatoTasks = new GameObject[4];
-    public GameObject[] carrotTasks = new GameObject[4];
-    public GameObject[] recyclingTasks = new GameObject[4];
+    public GameObject[] lightTasks = new GameObject[4];
+    public GameObject[] tapTasks = new GameObject[4];
+    public GameObject[] saladTasks = new GameObject[4];
 
 
     public ToggleItem leftSwitch;
@@ -39,12 +37,12 @@ public class IndoorTaskController : TaskController
 
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)
     protected override void hideAllUITasks() {
-        //foreach (GameObject task in potatoTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in tomatoTasks) {
-        //    task.SetActive(false);
-        //}
+        foreach (GameObject task in lightTasks) {
+            task.SetActive(false);
+        }
+        foreach (GameObject task in tapTasks) {
+            task.SetActive(false);
+        }
         //foreach (GameObject task in carrotTasks) {
         //    task.SetActive(false);
         //}
@@ -59,27 +57,27 @@ public class IndoorTaskController : TaskController
 
     // Updates the Task List UI on the level every time a new task is generated or completed
     protected override void updateUI () {
-        //hideAllUITasks();
-        //int i = 0;
-        //foreach (TaskTypes type in taskList) {
-        //    switch (type) {
-        //        case TaskTypes.Tree:
-        //            treeTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Carrot:
-        //            carrotTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Potato:
-        //            potatoTasks[i].SetActive(true);
-        //            break;
+        hideAllUITasks();
+        int i = 0;
+        foreach (TaskTypes type in taskList) {
+            switch (type) {
+                case TaskTypes.Tap:
+                    tapTasks[i].SetActive(true);
+                    break;
+                case TaskTypes.Light1:
+                    lightTasks[i].SetActive(true);
+                    break;
+                case TaskTypes.Light2:
+                    tapTasks[i].SetActive(true);
+                    break;
         //        case TaskTypes.Tomato:
         //            tomatoTasks[i].SetActive(true);
         //            break;
         //        case TaskTypes.Rubbish:
         //            recyclingTasks[i].SetActive(true);
         //            break;
-        //    }
-        //    i++;
-        //}
+            }
+            i++;
+        }
     }
 }
