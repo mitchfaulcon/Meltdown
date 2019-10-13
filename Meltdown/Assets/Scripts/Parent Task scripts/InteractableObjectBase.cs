@@ -13,7 +13,7 @@ public abstract class InteractableObjectBase : MonoBehaviour
     public AudioSource interactSound;
 
     //public EItemType ItemType;
-    void start()
+    void Start()
     {
         interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }

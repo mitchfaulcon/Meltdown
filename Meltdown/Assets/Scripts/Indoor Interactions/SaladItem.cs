@@ -16,6 +16,7 @@ public class SaladItem : ItemCollectorBase
 
     public override ItemTypes OnInteract()
     {
+        playSound();
         quantity--;
         if(quantity == 0)
         {
