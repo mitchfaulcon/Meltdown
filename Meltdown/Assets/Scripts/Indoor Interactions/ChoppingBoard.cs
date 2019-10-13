@@ -12,6 +12,7 @@ public class ChoppingBoard : InteractableObjectBase
 
     public override bool CanInteract(ItemTypes item)
     {
+        playerHolding = item;
         if (!saladMade)
         {
             if (item == ItemTypes.Lettuce)
@@ -47,14 +48,17 @@ public class ChoppingBoard : InteractableObjectBase
         {
             if (playerHolding == ItemTypes.Tomatoes)
             {
+                this.transform.Find("ChoppingBoard").gameObject.transform.Find("Tomato").gameObject.SetActive(true);
                 containsTomato = true;
             }
             else if (playerHolding == ItemTypes.Avacado)
             {
+                this.transform.Find("ChoppingBoard").gameObject.transform.Find("Avocado").gameObject.SetActive(true);
                 containsAvacado = true;
             }
             else
             {
+                this.transform.Find("ChoppingBoard").gameObject.transform.Find("Salad").gameObject.SetActive(true);
                 containsLettuce = true;
             }
             if (containsTomato && containsLettuce && containsAvacado)
@@ -67,6 +71,7 @@ public class ChoppingBoard : InteractableObjectBase
         }
         else
         {
+            clearBoard();
             return ItemTypes.Salad;
         }
     }
@@ -77,6 +82,9 @@ public class ChoppingBoard : InteractableObjectBase
         containsLettuce = false;
         containsTomato = false;
         saladMade = false;
+        this.transform.Find("ChoppingBoard").gameObject.transform.Find("Avocado").gameObject.SetActive(false);
+        this.transform.Find("ChoppingBoard").gameObject.transform.Find("Tomato").gameObject.SetActive(false);
+        this.transform.Find("ChoppingBoard").gameObject.transform.Find("Salad").gameObject.SetActive(false);
         GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
 }

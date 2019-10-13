@@ -33,7 +33,6 @@ public class IndoorTaskController : TaskController
     protected override TaskTypes generateTask()
     {
         int newTask = Random.Range(5, 8);
-        Debug.Log("Generated task: " + newTask.ToString());
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
     }
 

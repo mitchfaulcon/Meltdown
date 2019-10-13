@@ -21,6 +21,11 @@ public abstract class InteractableObjectBase : MonoBehaviour
     public abstract ItemTypes OnInteract();
 
     public abstract bool CanInteract(ItemTypes item);
+
+    public void playSound()
+    {
+        interactSound.Play();
+    }
 }
 
 public class ItemCollectorBase : InteractableObjectBase
