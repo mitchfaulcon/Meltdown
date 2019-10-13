@@ -44,6 +44,7 @@ public class ChoppingBoard : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
+        playSound();
         if (saladMade == false)
         {
             if (playerHolding == ItemTypes.Tomatoes)

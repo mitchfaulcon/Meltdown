@@ -12,9 +12,10 @@ public class RubbishBin : InteractableObjectBase
     public override ItemTypes OnInteract()
     {
         rubbishLevel--;
+        playSound();
 
         // Remove popup alert if bin is empty
-        if(rubbishLevel <= 0)
+        if (rubbishLevel <= 0)
         {
             hasRubbish = false;
             alert.SetActive(false);
@@ -34,6 +35,7 @@ public class RubbishBin : InteractableObjectBase
         {
             return ItemTypes.BananaSkin;
         }
+        
         
     }
 
