@@ -5,13 +5,14 @@ using UnityEngine;
 public class SaladItem : ItemCollectorBase
 {
     public int quantity = 0;
+    public GameObject alert;
 
     public override void fill()
     {
         quantity++;
         containsItem = true;
         this.transform.Find("Vegetable").gameObject.SetActive(true);
-        //alert.SetActive(true);
+        alert.SetActive(true);
     }
 
     public override ItemTypes OnInteract()
@@ -22,7 +23,7 @@ public class SaladItem : ItemCollectorBase
         {
             this.transform.Find("Vegetable").gameObject.SetActive(false);
             containsItem = false;
-            //alert.SetActive(false);
+            alert.SetActive(false);
         }
         return item;
     }
