@@ -10,6 +10,7 @@ public abstract class TaskController : MonoBehaviour
 
     protected float timeCount = 0.0f;
     protected float newTaskTime = 0.0f;
+    public int maxTasks = 4;
     
 
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public abstract class TaskController : MonoBehaviour
     void checkForNewTask()
     {
         //update time count, and if it reaches the time set to generate a new task at, do so.
-        if (taskList.Count < 4)
+        if (taskList.Count < maxTasks)
         {
             timeCount += 0.5f;
             if (timeCount >= newTaskTime)
