@@ -6,7 +6,7 @@ public class ChoppingBoard : InteractableObjectBase
 {
     public bool containsLettuce;
     public bool containsTomato;
-    public bool containsAvacado;
+    public bool containsAvocado;
     public bool saladMade;
     public ItemTypes playerHolding;
 
@@ -25,10 +25,10 @@ public class ChoppingBoard : InteractableObjectBase
                 InteractText = "Press J to place Tomoatoes";
                 return !containsTomato;
             }
-            else if (item == ItemTypes.Avacado)
+            else if (item == ItemTypes.Avocado)
             {
-                InteractText = "Press J to place Avacado";
-                return !containsAvacado;
+                InteractText = "Press J to place Avocado";
+                return !containsAvocado;
             }
             return false;
         }
@@ -51,17 +51,17 @@ public class ChoppingBoard : InteractableObjectBase
                 this.transform.Find("ChoppingBoard").gameObject.transform.Find("Tomato").gameObject.SetActive(true);
                 containsTomato = true;
             }
-            else if (playerHolding == ItemTypes.Avacado)
+            else if (playerHolding == ItemTypes.Avocado)
             {
                 this.transform.Find("ChoppingBoard").gameObject.transform.Find("Avocado").gameObject.SetActive(true);
-                containsAvacado = true;
+                containsAvocado = true;
             }
             else
             {
                 this.transform.Find("ChoppingBoard").gameObject.transform.Find("Salad").gameObject.SetActive(true);
                 containsLettuce = true;
             }
-            if (containsTomato && containsLettuce && containsAvacado)
+            if (containsTomato && containsLettuce && containsAvocado)
             {
                 saladMade = true;
                 InteractText = "Press J to make salad";
@@ -78,7 +78,7 @@ public class ChoppingBoard : InteractableObjectBase
 
     public void clearBoard()
     {
-        containsAvacado = false;
+        containsAvocado = false;
         containsLettuce = false;
         containsTomato = false;
         saladMade = false;

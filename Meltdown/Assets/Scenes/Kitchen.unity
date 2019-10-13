@@ -410,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
       propertyPath: m_Name
-      value: Avocado
+      value: AvocadoPopup
       objectReference: {fileID: 0}
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
@@ -976,6 +976,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -0.277}
+--- !u!1 &107225622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 665264806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120190524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2226,7 @@ PrefabInstance:
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
       propertyPath: m_Name
-      value: Lettuce
+      value: LettucePopup
       objectReference: {fileID: 0}
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
@@ -3289,6 +3295,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &326537807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1584979386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &327674643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5280,7 +5292,7 @@ PrefabInstance:
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
       propertyPath: m_Name
-      value: Tomato
+      value: TomatoPopup
       objectReference: {fileID: 0}
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
@@ -5687,6 +5699,10 @@ MonoBehaviour:
   Hud: {fileID: 1341331187}
   heldItem: 13
   gameMusic: {fileID: 1693925901}
+  holdingLettuce: {fileID: 1198342194}
+  holdingAvocado: {fileID: 1985751045}
+  holdingTomato: {fileID: 107225622}
+  holdingSalad: {fileID: 326537807}
 --- !u!1 &703195386
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,6 +10347,12 @@ MonoBehaviour:
   containsAvacado: 0
   saladMade: 0
   playerHolding: 13
+--- !u!1 &1198342194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 217068918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1199709186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13130,36 +13152,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
---- !u!1 &1548383966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 159559803}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1548383967}
-  m_Layer: 0
-  m_Name: Vegetable (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1548383967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 159559803}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548383966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1125335985}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565705599
 GameObject:
   m_ObjectHideFlags: 0
@@ -13297,7 +13289,7 @@ PrefabInstance:
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
       propertyPath: m_Name
-      value: Salad
+      value: SaladPopup
       objectReference: {fileID: 0}
     - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
         type: 3}
@@ -17931,6 +17923,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6483e210746cd4e97caa7e658dec5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  containsLettuce: 0
+  containsTomato: 0
+  containsAvacado: 0
+  saladMade: 0
+  playerHolding: 0
 --- !u!1 &1979551701
 GameObject:
   m_ObjectHideFlags: 0
@@ -18089,6 +18090,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d82a0024cf3346b4695544dd461fb02b, type: 3}
+--- !u!1 &1985751045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 27583529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1988245729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18504,6 +18511,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6483e210746cd4e97caa7e658dec5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  containsLettuce: 0
+  containsTomato: 0
+  containsAvacado: 0
+  saladMade: 0
+  playerHolding: 0
 --- !u!1 &2041183276
 GameObject:
   m_ObjectHideFlags: 0
