@@ -32,6 +32,8 @@ public class DepositBin : InteractableObjectBase
             Invoke("removeAlerts", 2);
         }
 
+        PlayInteractSound();
+
         // Either way, mark the task as complete in the Task Controller and remove the rubbish from the players hand
         taskControl = FindObjectOfType<TaskController>();
         taskControl.taskComplete(TaskTypes.Rubbish);
