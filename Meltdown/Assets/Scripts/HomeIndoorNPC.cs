@@ -35,14 +35,13 @@ public class HomeIndoorNPC : NPCMovement
 
     void Start()
     {
-        prevRoute = HomeIndoorRoutes.Couch; // Set the default starting point to the couch
+        // Set the default starting point to the couch
+        prevRoute = HomeIndoorRoutes.Couch; 
         curRoute = HomeIndoorRoutes.Couch;
         dest = starting;
-
         points = new Transform[] {starting};
 
         SetWalking(true);
-
         placeHolderFull = false;
 
         stools.Add(stool1);
@@ -59,15 +58,14 @@ public class HomeIndoorNPC : NPCMovement
         if ((Vector3.Distance(transform.position, dest.position) < 1.0f)) {
             HomeIndoorRoutes destination;
             
-            // Have the NPC follow a new randomly selected route
+            // Set the route to the couch if the task list is full, otherwise select a random route
             if (placeHolderFull) {
                 destination = HomeIndoorRoutes.Couch;
             } else {
-                // Set the route to the couch if the task list is full
                 destination = RandomRoute();
             }
-
             points = ConstructRoute(destination);
+
 
         }
         Wait();
@@ -103,10 +101,13 @@ public class HomeIndoorNPC : NPCMovement
         }
     }
 
+    // We know that RNG selected to have the NPC sit on a stool.
+    // This method randomly selects which stool.
     private Transform RandomStool() {
         int num = Random.Range(0, stools.Count);
         Transform stool = stools[num];
-        Debug.Log(stool);
+
+        // Set the dest depending on which stool was randomly selected
         switch(num) {
             case 0:
                 dest = stool1;
@@ -125,11 +126,13 @@ public class HomeIndoorNPC : NPCMovement
         return stool;
     }
 
+    // Method which exhausts all possible path options for the NPC
+    // Depending on which route the NPC just completed
     private Transform[] ConstructRoute(HomeIndoorRoutes nextRoute) {
-        Debug.Log(prevRoute);
-        Debug.Log(nextRoute);
         spot = 0;
 
+        // All possible previous routes will have a switch/case statement
+        // which will contain all next routes.
         switch(prevRoute) {
         case HomeIndoorRoutes.LightSwitchLeft: 
             switch (nextRoute) {
