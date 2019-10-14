@@ -5,7 +5,6 @@ using UnityEngine;
 public class SaladItem : ItemCollectorBase
 {
     public int quantity = 0;
-    public GameObject alert;
 
     public override void fill()
     {
