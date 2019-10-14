@@ -32,7 +32,7 @@ public class ScoreDisplay : MonoBehaviour
     public bool highScore = false;
     public enum Level
     {
-        KITCHEN = 1,
+        HOME = 1,
         BACKYARD = 2,
         CITY = 3
     }
