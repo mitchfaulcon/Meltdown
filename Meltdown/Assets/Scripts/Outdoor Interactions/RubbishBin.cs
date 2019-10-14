@@ -14,6 +14,8 @@ public class RubbishBin : InteractableObjectBase
         rubbishLevel--;
         playSound();
 
+        PlayInteractSound();
+
         // Remove popup alert if bin is empty
         if (rubbishLevel <= 0)
         {
