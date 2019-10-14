@@ -1,5 +1,6 @@
 # Meltdown!
 ### SoftEng 306: Project 2
+See the project [wiki](https://github.com/mitchfaulcon/Meltdown/wiki) for all process documentation.
 
 ## The Team
 
