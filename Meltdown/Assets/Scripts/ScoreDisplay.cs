@@ -30,6 +30,13 @@ public class ScoreDisplay : MonoBehaviour
     public GameObject continueButton;
 
     public bool highScore = false;
+    public enum Level
+    {
+        KITCHEN = 1,
+        BACKYARD = 2,
+        CITY = 3
+    }
+    public Level levelIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +59,7 @@ public class ScoreDisplay : MonoBehaviour
         SetStars(level);
 
         // Update HighScoreManager to save potential highscore
-        highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int)score));
+        highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int) levelIndex, (int)score));
     }
 
     private void SetScoreText(float score)
