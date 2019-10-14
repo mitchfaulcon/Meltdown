@@ -33,6 +33,7 @@ public class HomeIndoorNPC : NPCMovement
 
     public bool placeHolderFull;
 
+    public bool served; // Boolean to check if the player has served the NPC a salad
     void Start()
     {
         // Set the default starting point to the couch
@@ -43,6 +44,7 @@ public class HomeIndoorNPC : NPCMovement
 
         SetWalking(true);
         placeHolderFull = false;
+        served = false;
 
         stools.Add(stool1);
         stools.Add(stool2);
@@ -55,20 +57,37 @@ public class HomeIndoorNPC : NPCMovement
     void Update()
     {
         // If the player has reached the destination
-        if ((Vector3.Distance(transform.position, dest.position) < 1.0f)) {
-            HomeIndoorRoutes destination;
-            
-            // Set the route to the couch if the task list is full, otherwise select a random route
-            if (placeHolderFull) {
-                destination = HomeIndoorRoutes.Couch;
+        if (Vector3.Distance(transform.position, dest.position) < 1.2f) {
+            // If the NPC is at one of the stools, stop moving
+            if (curRoute == HomeIndoorRoutes.Stool) {
+                // Start walking once the NPC has been served a salad
+                if (served) {
+                    SetWalking(true);
+                    NextRoute();
+                } else {
+                    SetWalking(false);
+                }
             } else {
-                destination = RandomRoute();
-            }
-            points = ConstructRoute(destination);
-
-
+                NextRoute();
+            }            
         }
+
         Wait();
+    }
+    public void serve() {
+        served = true;
+    }
+
+    private void NextRoute() {
+        HomeIndoorRoutes destination;
+        // Set the route to the couch if the task list is full, otherwise select a random route
+        if (placeHolderFull) {
+        destination = HomeIndoorRoutes.Couch;
+        } else {
+            destination = RandomRoute();
+        }
+
+        points = ConstructRoute(destination);
     }
 
     private HomeIndoorRoutes RandomRoute() {
