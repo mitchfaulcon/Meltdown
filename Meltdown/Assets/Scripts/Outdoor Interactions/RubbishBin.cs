@@ -13,8 +13,10 @@ public class RubbishBin : InteractableObjectBase
     {
         rubbishLevel--;
 
+        PlayInteractSound();
+
         // Remove popup alert if bin is empty
-        if(rubbishLevel <= 0)
+        if (rubbishLevel <= 0)
         {
             hasRubbish = false;
             alert.SetActive(false);

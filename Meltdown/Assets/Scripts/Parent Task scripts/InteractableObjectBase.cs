@@ -34,6 +34,15 @@ public class InteractableObjectBase : MonoBehaviour
         // By default, the player can always interact
         return true;
     }
+
+    public void PlayInteractSound()
+    {
+        // Play the set interactSound if the sound settings enable sound effects. 
+        if (GameSettings.sounds == true)
+        {
+            interactSound.Play();
+        }
+    }
 }
 
 public class ItemCollectorBase : InteractableObjectBase
