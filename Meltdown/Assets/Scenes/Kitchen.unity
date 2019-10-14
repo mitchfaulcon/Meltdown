@@ -894,6 +894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94751623}
   - component: {fileID: 94751625}
+  - component: {fileID: 94751624}
   m_Layer: 0
   m_Name: ScoreBar
   m_TagString: Untagged
@@ -921,6 +922,21 @@ RectTransform:
   m_AnchoredPosition: {x: 65, y: -180}
   m_SizeDelta: {x: 445.40002, y: 189.59998}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &94751624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94751622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d8ded28b20d5b4aadcbaa9c802f771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 94751625}
+  barImage: {fileID: 1672781280}
+  scoreText: {fileID: 1982291772}
 --- !u!114 &94751625
 MonoBehaviour:
   m_ObjectHideFlags: 0
