@@ -10,7 +10,6 @@ public class SaladItem : ItemCollectorBase
     {
         quantity++;
         containsItem = true;
-        this.transform.Find("Vegetable").gameObject.SetActive(true);
         alert.SetActive(true);
     }
 
@@ -20,7 +19,6 @@ public class SaladItem : ItemCollectorBase
         quantity--;
         if(quantity == 0)
         {
-            this.transform.Find("Vegetable").gameObject.SetActive(false);
             containsItem = false;
             alert.SetActive(false);
         }
