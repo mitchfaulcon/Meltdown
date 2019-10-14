@@ -5,12 +5,16 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using System;
+using UnityEngine.SceneManagement;
+
 
 public class DialogueManager : MonoBehaviour
 {
 
     public GameObject thisPanel;
     public GameObject nextPanel;
+    public String nextScene;
+    
     public TextMeshProUGUI dialogueText;
 
     private Queue<string> sentences = new Queue<string>();
@@ -97,10 +101,22 @@ public class DialogueManager : MonoBehaviour
         sentenceComplete = true;
     }
 
+    // Called after the last dialogue scene to change to the next game object within the scene
+    // or to another scene.
     private void EndDialogue()
     {
-        //Change active panel to next one
+        // Close current active panel
         thisPanel.SetActive(false);
-        nextPanel.SetActive(true);
+
+        if (nextScene==null || nextScene=="")
+        {
+            // Change to next specified panel
+            nextPanel.SetActive(true);
+        }
+        else
+        {
+            // Change to the next specified scene
+            SceneManager.LoadScene(nextScene);
+        }
     }
 }
