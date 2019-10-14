@@ -34,6 +34,11 @@ public class HomeIndoorNPC : NPCMovement
     public bool placeHolderFull;
 
     public bool served; // Boolean to check if the player has served the NPC a salad
+    private bool couchSwitch;
+    private float couchTimer = 0.0f;
+
+    private bool stoolReached;
+    private bool couchReached;
     void Start()
     {
         // Set the default starting point to the couch
@@ -45,6 +50,15 @@ public class HomeIndoorNPC : NPCMovement
         SetWalking(true);
         placeHolderFull = false;
         served = false;
+        couchSwitch = false;
+
+        // Purpose of reached boolean is because unity changes the value
+        // of the vector distance between player and point. It may pass
+        // the "if" condition in one frame but fail the next. Therefore we
+        // add a boolean to trigger it independent of whether the "if" condition
+        // is passed.
+        stoolReached = false;
+        couchReached = false;
 
         stools.Add(stool1);
         stools.Add(stool2);
@@ -57,23 +71,45 @@ public class HomeIndoorNPC : NPCMovement
     void Update()
     {
         // If the player has reached the destination
-        if (Vector3.Distance(transform.position, dest.position) < 1.2f) {
+        if (Vector3.Distance(transform.position, dest.position) < 1.0f) {
             // If the NPC is at one of the stools, stop moving
             if (curRoute == HomeIndoorRoutes.Stool) {
-                // Start walking once the NPC has been served a salad
-                if (served) {
-                    SetWalking(true);
-                    NextRoute();
-                } else {
-                    SetWalking(false);
-                }
+                stoolReached = true;
+            } else if (couchSwitch) {
+                couchReached = true;  
             } else {
                 NextRoute();
             }            
         }
 
+        if (stoolReached) {
+            // Start walking once the NPC has been served a salad
+            if (served) {
+                SetWalking(true);
+                NextRoute();
+                served = false;
+                stoolReached = false;
+            } else {
+                SetWalking(false);
+            }
+        }
+
+        if (couchReached) {
+            SetWalking(false);
+            couchTimer += Time.deltaTime;
+                    
+            if (couchTimer > 5.0f) {
+                couchTimer = 0.0f;
+                      
+                couchSwitch = false;
+                couchReached = false;
+                SetWalking(true);
+            }               
+        }
+
         Wait();
     }
+
     public void serve() {
         served = true;
     }
@@ -114,6 +150,7 @@ public class HomeIndoorNPC : NPCMovement
                     break;
                 case HomeIndoorRoutes.Couch:
                     dest = starting;
+                    couchSwitch = true;
                     break;
             }
             return curRoute;
