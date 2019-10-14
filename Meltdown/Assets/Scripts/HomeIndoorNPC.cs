@@ -4,30 +4,216 @@ using UnityEngine;
 
 public class HomeIndoorNPC : NPCMovement
 {
+    private static int NUM_TASKS = 5;
+    public Transform starting;
+    public Transform standing;
+    public Transform top;
+    public Transform lightSwitchRight;
+    //public Transform lightSwitchRight2;
+    //public Transform lightSwitchRight3;
+    public Transform lightSwitchLeft;
+    //public Transform lightSwitchLeft2;
+    //public Transform lightSwitchLeft3;
+    public Transform bottom;
+    public Transform sink;
+    public Transform stoolJunction;
+    public Transform stool1;
+    public Transform stool2;
+    public Transform stool3;
+    public Transform stool4;
+    
+    private List<Transform> stools = new List<Transform>();
 
-    private List<Transform[]> routes = new List<Transform[]>();
-    public Transform[] lightSwitchRight;
-    public Transform[] lightSwitchLeft;
-    public Transform[] sink;
-    public Transform[] plateAB;
-    public Transform[] plateCD;
+    private HomeIndoorRoutes prevRoute;
+    private HomeIndoorRoutes curRoute;
 
-    private Transform prevPoint;
+    private Transform dest;
+
+    public TaskController taskController;
+
+    public bool placeHolderFull;
 
     void Start()
     {
-        prevPoint = null;
+        prevRoute = HomeIndoorRoutes.Couch; // Set the default starting point to the couch
+        curRoute = HomeIndoorRoutes.Couch;
+        dest = starting;
 
-        // Add all routes to list to be randomly selected from
-        routes.Add(lightSwitchRight);
-        routes.Add(lightSwitchLeft);
-        routes.Add(sink);
-        routes.Add(plateAB);
-        routes.Add(plateCD);
+        points = new Transform[] {starting};
+
+        SetWalking(true);
+
+        placeHolderFull = false;
+
+        stools.Add(stool1);
+        stools.Add(stool2);
+        stools.Add(stool3);
+        stools.Add(stool4);
+
+        //taskController = FindObjectOfType<TaskController>();
     }
 
     void Update()
     {
-        
+        // If the player has reached the destination
+        if ((Vector3.Distance(transform.position, dest.position) < 1.0f)) {
+            HomeIndoorRoutes destination;
+            
+            // Have the NPC follow a new randomly selected route
+            if (placeHolderFull) {
+                destination = HomeIndoorRoutes.Couch;
+            } else {
+                // Set the route to the couch if the task list is full
+                destination = RandomRoute();
+            }
+
+            points = ConstructRoute(destination);
+
+        }
+        Wait();
+    }
+
+    private HomeIndoorRoutes RandomRoute() {
+        // Get a random route
+        HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(Random.Range(0, NUM_TASKS));
+
+        // If the next route is the same as the last, retry
+        if (nextRoute == prevRoute) {
+            return RandomRoute();
+        } else {
+            prevRoute = curRoute;
+            curRoute = nextRoute;
+
+            // Set the destination point
+            switch(curRoute) {
+                case HomeIndoorRoutes.LightSwitchLeft: 
+                    dest = lightSwitchLeft;
+                    break;
+                case HomeIndoorRoutes.LightSwitchRight:
+                    dest = lightSwitchRight;
+                    break;
+                case HomeIndoorRoutes.Sink:
+                    dest = sink;
+                    break;
+                case HomeIndoorRoutes.Couch:
+                    dest = starting;
+                    break;
+            }
+            return curRoute;
+        }
+    }
+
+    private Transform RandomStool() {
+        int num = Random.Range(0, stools.Count);
+        Transform stool = stools[num];
+        Debug.Log(stool);
+        switch(num) {
+            case 0:
+                dest = stool1;
+                break;
+            case 1:
+                dest = stool2;
+                break;
+            case 2:
+                dest = stool3;
+                break;
+            case 3:
+                dest = stool4;
+                break;
+        }
+
+        return stool;
+    }
+
+    private Transform[] ConstructRoute(HomeIndoorRoutes nextRoute) {
+        Debug.Log(prevRoute);
+        Debug.Log(nextRoute);
+        spot = 0;
+
+        switch(prevRoute) {
+        case HomeIndoorRoutes.LightSwitchLeft: 
+            switch (nextRoute) {
+                case HomeIndoorRoutes.LightSwitchRight:
+                    return new Transform[] {lightSwitchRight};
+                    break;
+                case HomeIndoorRoutes.Stool:
+                    return new Transform[] {RandomStool()};
+                    break;
+                case HomeIndoorRoutes.Sink:
+                    return new Transform[] {stoolJunction, sink};
+                    break;
+                case HomeIndoorRoutes.Couch:
+                    return new Transform[] {top, standing, starting};
+                    break;
+            }
+            break;
+        case HomeIndoorRoutes.LightSwitchRight: 
+            switch(nextRoute) {
+                case HomeIndoorRoutes.LightSwitchLeft:
+                    return new Transform[] {lightSwitchLeft};
+                    break;
+                case HomeIndoorRoutes.Stool:
+                    return new Transform[] {RandomStool()};
+                    break;
+                case HomeIndoorRoutes.Sink:
+                    return new Transform[] {top, bottom, sink};
+                    break;
+                case HomeIndoorRoutes.Couch:
+                    return new Transform[] {standing, starting};
+                    break;
+            }
+            break;
+        case HomeIndoorRoutes.Stool: 
+            switch(nextRoute) {
+                case HomeIndoorRoutes.LightSwitchLeft:
+                    return new Transform[] {lightSwitchLeft};
+                    break;
+                case HomeIndoorRoutes.LightSwitchRight:
+                    return new Transform[] {lightSwitchRight};;
+                    break;
+                case HomeIndoorRoutes.Sink:
+                    return new Transform[] {stoolJunction, sink};
+                    break;
+                case HomeIndoorRoutes.Couch:
+                    return new Transform[] {stoolJunction, bottom, standing, starting};
+                    break;
+            }
+            break;
+        case HomeIndoorRoutes.Sink: 
+            switch(nextRoute) {
+                case HomeIndoorRoutes.LightSwitchLeft:
+                    return new Transform[] {stoolJunction, lightSwitchLeft};
+                    break;
+                case HomeIndoorRoutes.LightSwitchRight:
+                    return new Transform[] {bottom, top, lightSwitchRight};
+                    break;
+                case HomeIndoorRoutes.Stool:
+                    return new Transform[] {stoolJunction, RandomStool()};
+                    break;
+                case HomeIndoorRoutes.Couch:
+                    return new Transform[] {stoolJunction, bottom, standing, starting};
+                    break;
+            }
+            break;
+        case HomeIndoorRoutes.Couch:
+            switch(nextRoute) {
+                case HomeIndoorRoutes.LightSwitchLeft:
+                    return new Transform[] {standing, top, lightSwitchLeft};
+                    break;
+                case HomeIndoorRoutes.LightSwitchRight:
+                    return new Transform[] {standing, top, lightSwitchRight};
+                    break;
+                case HomeIndoorRoutes.Stool:
+                    return new Transform[] {standing, bottom, stoolJunction, RandomStool()};
+                    break;
+                case HomeIndoorRoutes.Sink:
+                    return new Transform[] {standing, bottom, stoolJunction, sink};
+                    break;
+            }
+            break;
+        }
+
+        // For compilation's sake. "prevRoute" should always have a value
+        return new Transform[] {dest};
     }
 }
