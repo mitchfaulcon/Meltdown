@@ -47,12 +47,15 @@ public abstract class PlayerInteraction : MonoBehaviour
 
         }
 
-        // Once the interaction is complete, hide the interaction prompt
-        if (mInteractItem != GetComponent<ChoppingBoard>())
+        // Once the interaction is complete, hide the interaction prompt if it is not a chopping board with
+        // a complete salad 
+        if (!(mInteractItem is ChoppingBoard) || !((ChoppingBoard)mInteractItem).saladMade)
         {
+            mInteractItem = null;
             Hud.CloseMessagePanel();
         }
-        mInteractItem = null;
+        
+
     }
 
     private InteractableObjectBase mInteractItem = null;
