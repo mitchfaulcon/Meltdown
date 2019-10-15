@@ -96,6 +96,7 @@ public class HomeIndoorNPC : NPCMovement
 
         if (couchReached) {
             SetWalking(false);
+            SitDown();
             couchTimer += Time.deltaTime;
                     
             if (couchTimer > 5.0f) {
@@ -103,11 +104,30 @@ public class HomeIndoorNPC : NPCMovement
                       
                 couchSwitch = false;
                 couchReached = false;
-                SetWalking(true);
-            }               
+                StartCoroutine(StandUp());
+            }
         }
 
         Wait();
+    }
+
+    private void SitDown()
+    {
+        //Face npc away from couch
+        SetRotation(standing.position);
+        animator.SetBool("standing", false);
+        animator.SetBool("sit", true);
+    }
+
+    private IEnumerator StandUp()
+    {
+        animator.SetBool("sit", false);
+
+        //Wait until animation completes
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        animator.SetBool("standing", true);
+        SetWalking(true);
     }
 
     public void serve() {
@@ -138,7 +158,7 @@ public class HomeIndoorNPC : NPCMovement
             curRoute = nextRoute;
 
             // Set the destination point
-            switch(curRoute) {
+            switch (curRoute) {
                 case HomeIndoorRoutes.LightSwitchLeft: 
                     dest = lightSwitchLeft;
                     break;
@@ -194,80 +214,60 @@ public class HomeIndoorNPC : NPCMovement
             switch (nextRoute) {
                 case HomeIndoorRoutes.LightSwitchRight:
                     return new Transform[] {lightSwitchRight};
-                    break;
                 case HomeIndoorRoutes.Stool:
                     return new Transform[] {RandomStool()};
-                    break;
                 case HomeIndoorRoutes.Sink:
                     return new Transform[] {stoolJunction, sink};
-                    break;
                 case HomeIndoorRoutes.Couch:
                     return new Transform[] {top, standing, starting};
-                    break;
             }
             break;
         case HomeIndoorRoutes.LightSwitchRight: 
             switch(nextRoute) {
                 case HomeIndoorRoutes.LightSwitchLeft:
                     return new Transform[] {lightSwitchLeft};
-                    break;
                 case HomeIndoorRoutes.Stool:
                     return new Transform[] {RandomStool()};
-                    break;
                 case HomeIndoorRoutes.Sink:
                     return new Transform[] {top, bottom, sink};
-                    break;
                 case HomeIndoorRoutes.Couch:
                     return new Transform[] {standing, starting};
-                    break;
             }
             break;
         case HomeIndoorRoutes.Stool: 
             switch(nextRoute) {
                 case HomeIndoorRoutes.LightSwitchLeft:
                     return new Transform[] {lightSwitchLeft};
-                    break;
                 case HomeIndoorRoutes.LightSwitchRight:
                     return new Transform[] {lightSwitchRight};;
-                    break;
                 case HomeIndoorRoutes.Sink:
                     return new Transform[] {stoolJunction, sink};
-                    break;
                 case HomeIndoorRoutes.Couch:
                     return new Transform[] {stoolJunction, bottom, standing, starting};
-                    break;
             }
             break;
         case HomeIndoorRoutes.Sink: 
             switch(nextRoute) {
                 case HomeIndoorRoutes.LightSwitchLeft:
                     return new Transform[] {stoolJunction, lightSwitchLeft};
-                    break;
                 case HomeIndoorRoutes.LightSwitchRight:
                     return new Transform[] {bottom, top, lightSwitchRight};
-                    break;
                 case HomeIndoorRoutes.Stool:
                     return new Transform[] {stoolJunction, RandomStool()};
-                    break;
                 case HomeIndoorRoutes.Couch:
                     return new Transform[] {stoolJunction, bottom, standing, starting};
-                    break;
             }
             break;
         case HomeIndoorRoutes.Couch:
             switch(nextRoute) {
                 case HomeIndoorRoutes.LightSwitchLeft:
                     return new Transform[] {standing, top, lightSwitchLeft};
-                    break;
                 case HomeIndoorRoutes.LightSwitchRight:
                     return new Transform[] {standing, top, lightSwitchRight};
-                    break;
                 case HomeIndoorRoutes.Stool:
                     return new Transform[] {standing, bottom, stoolJunction, RandomStool()};
-                    break;
                 case HomeIndoorRoutes.Sink:
                     return new Transform[] {standing, bottom, stoolJunction, sink};
-                    break;
             }
             break;
         }
