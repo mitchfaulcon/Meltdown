@@ -39,14 +39,16 @@ public class IndoorTaskController : TaskController
 
     public void removeSaladTask()
     {
-        if (taskList.Contains(TaskTypes.Salad))
-        {
-            taskList.Remove(TaskTypes.Salad);
+        int i;
+        for (i = 0; i < taskList.Count; i++) {
+            TaskTypes type = taskList[i];
+            if (type == TaskTypes.Salad) {
+                break;
+            } else if (type == TaskTypes.Salad2) {
+                break;
+            }
         }
-        else
-        {
-            taskList.Remove(TaskTypes.Salad2);
-        }
+        taskList.RemoveAt(i);
         updateUI();
     }
 
