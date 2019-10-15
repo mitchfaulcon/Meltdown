@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class PlayerInteraction : MonoBehaviour
 {
@@ -53,6 +54,10 @@ public abstract class PlayerInteraction : MonoBehaviour
         {
             mInteractItem = null;
             Hud.CloseMessagePanel();
+        } else
+        {
+            //If salad is made, change display prompt
+            Hud.MessagePanel.transform.Find("Text").GetComponent<Text>().text = "Press J to make salad";
         }
         
 
