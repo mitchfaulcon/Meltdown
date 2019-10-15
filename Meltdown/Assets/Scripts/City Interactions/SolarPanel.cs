@@ -25,7 +25,7 @@ public class SolarPanel : InteractableObjectBase
         {
             solarPanelSet = true;
             toolStore.fill();
-            //set panel to fully opaque
+            this.GetComponent<MeshRenderer>().material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 1.0f);
         }
         else
         {
@@ -34,11 +34,12 @@ public class SolarPanel : InteractableObjectBase
             solarPanelSet = false;
             //complete solarPanel Tasks
         }
+        return ItemTypes.NONE;
     }
 
     public void setupTask()
     {
-        //set object back to transparent
+        this.GetComponent<MeshRenderer>().material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 0.1f);
         this.gameObject.SetActive(true);
     }
 }
