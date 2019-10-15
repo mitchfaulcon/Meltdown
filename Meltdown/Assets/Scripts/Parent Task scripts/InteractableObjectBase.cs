@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObjectBase : MonoBehaviour
+public abstract class InteractableObjectBase : MonoBehaviour
 {
     public string Name;
 
@@ -13,26 +13,27 @@ public class InteractableObjectBase : MonoBehaviour
     public AudioSource interactSound;
 
     //public EItemType ItemType;
-    void start()
+    void Start()
     {
         interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
 
-    public virtual void OnInteractAnimation(Animator animator)
+    public abstract ItemTypes OnInteract();
+
+    public abstract bool CanInteract(ItemTypes item);
+
+    public void playSound()
     {
-        animator.SetTrigger("tr_pickup");
+        interactSound.Play();
     }
 
-    public virtual ItemTypes OnInteract()
+    public void PlayInteractSound()
     {
-        // By default, empty the players hands on interact
-        return ItemTypes.NONE;
-    }
-
-    public virtual bool CanInteract(ItemTypes item)
-    {
-        // By default, the player can always interact
-        return true;
+        // Play the set interactSound if the sound settings enable sound effects. 
+        if (GameSettings.sounds == true)
+        {
+            interactSound.Play();
+        }
     }
 }
 
@@ -43,7 +44,7 @@ public class ItemCollectorBase : InteractableObjectBase
     public GameObject alert;
 
     // Ready tasks, such as filling bin or seed crate
-    public void fill()
+    public virtual void fill()
     {
         containsItem = true;
         alert.SetActive(true);

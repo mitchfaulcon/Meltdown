@@ -48,7 +48,10 @@ public abstract class PlayerInteraction : MonoBehaviour
         }
 
         // Once the interaction is complete, hide the interaction prompt
-        Hud.CloseMessagePanel();
+        if (mInteractItem != GetComponent<ChoppingBoard>())
+        {
+            Hud.CloseMessagePanel();
+        }
         mInteractItem = null;
     }
 

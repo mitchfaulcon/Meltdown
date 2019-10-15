@@ -12,7 +12,8 @@ public enum TaskTypes
     Light1 = 5,
     Light2 = 6,
     Tap = 7,
-    Salad = 8
+    Salad = 8,
+    Salad2 = 9
 }
 
 

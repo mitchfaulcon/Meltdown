@@ -9,6 +9,7 @@ public class ToggleItem : InteractableObjectBase
     public bool isLight;
     public TaskTypes task;
     public TaskController taskControl;
+    public IndoorScoreController scoring;
 
     // Start is called before the first frame update
     private void Start()
@@ -18,7 +19,8 @@ public class ToggleItem : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
-        Debug.Log("Turning off light");
+        scoring = FindObjectOfType<IndoorScoreController>();
+
         on = false;
         if(GameSettings.sounds == true)
         {
@@ -28,14 +30,17 @@ public class ToggleItem : InteractableObjectBase
         if (isLight)
         {
             //turn off the light
-            this.transform.Find("Area Light").gameObject.SetActive(false);
+            this.transform.Find("Light").gameObject.SetActive(false);
         }
         else
         {
             this.transform.Find("Water").gameObject.SetActive(false);
             this.transform.Find("SinkWater").gameObject.SetActive(false);
         }
+
         taskControl.taskComplete(task);
+        scoring.taskScored(IndoorScoreController.Tasks.TOGGLE);
+
         return playerHolding;
     }
 

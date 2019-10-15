@@ -15,6 +15,8 @@ public enum ItemTypes
 	WaterBucket,
 	Tomatoes,
 	Lettuce,
+    Avocado,
+    Salad,
 	Bike,
     NONE
 }

@@ -108,3 +108,29 @@ public class TapTask : Task
         controller.removeTask(TaskTypes.Tap);
     }
 }
+
+public class SaladTask : Task
+{
+    private SaladItem Avocado;
+    private SaladItem Tomato;
+    private SaladItem Lettuce;
+
+    public SaladTask()
+    {
+        Avocado = GameObject.FindGameObjectWithTag("Avocado").GetComponent<SaladItem>();
+        Tomato = GameObject.FindGameObjectWithTag("Tomato").GetComponent<SaladItem>();
+        Lettuce = GameObject.FindGameObjectWithTag("Lettuce").GetComponent<SaladItem>();
+    }
+
+    public override void setupTask()
+    {
+        Avocado.fill();
+        Tomato.fill();
+        Lettuce.fill();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(TaskTypes.Salad);
+    }
+}
