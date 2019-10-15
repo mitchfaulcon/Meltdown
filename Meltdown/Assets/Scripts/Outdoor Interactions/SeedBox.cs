@@ -13,7 +13,7 @@ public class SeedBox : InteractableObjectBase
     {
         hasSeeds = false;
         alert.SetActive(false);
-        PlayInteractSound();
+        playSound();
         return seedType;
     }
 

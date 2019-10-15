@@ -21,6 +21,8 @@ public class IndoorTaskController : TaskController
         tasks.Add(TaskTypes.Tap, new TapTask());
         tasks.Add(TaskTypes.Light1, new LightSwitchTask(leftSwitch, TaskTypes.Light1));
         tasks.Add(TaskTypes.Light2, new LightSwitchTask(rightSwitch, TaskTypes.Light2));
+        tasks.Add(TaskTypes.Salad, new SaladTask());
+        tasks.Add(TaskTypes.Salad2, new SaladTask());
     }
 
     protected override void setupRepeatingTasks()
@@ -32,9 +34,21 @@ public class IndoorTaskController : TaskController
     //generates a new task from enum TaskTypes, based on rng
     protected override TaskTypes generateTask()
     {
-        int newTask = Random.Range(5, 8);
-        Debug.Log("Generated task: " + newTask.ToString());
+        int newTask = Random.Range(5, 10);
+        Debug.Log(System.Enum.Parse(typeof(TaskTypes), newTask.ToString()).ToString());
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+    }
+
+    public void removeSaladTask()
+    {
+        if (taskList.Contains(TaskTypes.Salad))
+        {
+            taskList.Remove(TaskTypes.Salad);
+        }
+        else
+        {
+            taskList.Remove(TaskTypes.Salad2);
+        }
     }
 
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)

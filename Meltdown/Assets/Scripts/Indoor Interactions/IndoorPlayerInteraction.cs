@@ -4,63 +4,38 @@ using UnityEngine;
 
 public class IndoorPlayerInteraction : PlayerInteraction
 {
-    //public GameObject holdingBottle;
-    //public GameObject holdingRubbish;
-    //public GameObject holdingCompost;
-    //public GameObject holdingTomato;
-    //public GameObject holdingTree;
-    //public GameObject holdingPotato;
-    //public GameObject holdingCarrot;
-    //public GameObject holdingCan;
+    public GameObject holdingLettuce;
+    public GameObject holdingAvocado;
+    public GameObject holdingTomato;
+    public GameObject holdingSalad;
 
 
     // Remove all item speech bubbles
     protected override void removeSpeechBubbles()
     {
-        //holdingBottle.SetActive(false);
-        //holdingRubbish.SetActive(false);
-        //holdingCompost.SetActive(false);
-        //holdingTomato.SetActive(false);
-        //holdingTree.SetActive(false);
-        //holdingPotato.SetActive(false);
-        //holdingCarrot.SetActive(false);
-        //holdingCan.SetActive(false);
+        holdingLettuce.SetActive(false);
+        holdingAvocado.SetActive(false);
+        holdingSalad.SetActive(false);
+        holdingTomato.SetActive(false);
     }
 
     protected override void setActiveBubble()
     {
-        //if (heldItem == ItemTypes.Recyclables)
-        //{
-        //    holdingBottle.SetActive(true);
-
-        //}
-        //else if (heldItem == ItemTypes.RubbishBag)
-        //{
-        //    holdingRubbish.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.BananaSkin)
-        //{
-        //    holdingCompost.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.TomatoSeeds)
-        //{
-        //    holdingTomato.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.TreeSappling)
-        //{
-        //    holdingTree.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.PotatoSeeds)
-        //{
-        //    holdingPotato.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.CarrotSeeds)
-        //{
-        //    holdingCarrot.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.WaterBucket)
-        //{
-        //    holdingCan.SetActive(true);
-        //}
+        if (heldItem == ItemTypes.Tomatoes)
+        {
+            holdingTomato.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Lettuce)
+        {
+            holdingLettuce.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Avocado)
+        {
+            holdingAvocado.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Salad)
+        {
+            holdingSalad.SetActive(true);
+        }
     }
 }

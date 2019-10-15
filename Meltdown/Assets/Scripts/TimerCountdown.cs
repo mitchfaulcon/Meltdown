@@ -107,7 +107,21 @@ public class TimerCountdown : MonoBehaviour
         //Unfreeze time
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene("BackyardOutro");
+        // Load appropriate post scene
+        if (SceneManager.GetActiveScene().name == "Kitchen")
+        {
+            SceneManager.LoadScene("HomeOutro");
+        }
+        else if (SceneManager.GetActiveScene().name == "Backyard")
+        {
+            SceneManager.LoadScene("BackyardOutro");
+        }
+        else if (SceneManager.GetActiveScene().name == "City")
+        {
+            SceneManager.LoadScene("CityOutro");
+        }
+
+
 
         //Set gameCompleted to false to prevent bugs when trying again
         gameFinished = false;

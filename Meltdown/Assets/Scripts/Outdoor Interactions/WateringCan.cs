@@ -17,7 +17,7 @@ public class WateringCan : ItemCollectorBase
     {
         //when can contains no more water, remove alert
         waterLevel--;
-        PlayInteractSound();
+        playSound();
         if (waterLevel == 0)
         {
             alert.SetActive(false);

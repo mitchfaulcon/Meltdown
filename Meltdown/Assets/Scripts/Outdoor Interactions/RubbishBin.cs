@@ -12,6 +12,7 @@ public class RubbishBin : InteractableObjectBase
     public override ItemTypes OnInteract()
     {
         rubbishLevel--;
+        playSound();
 
         PlayInteractSound();
 
@@ -36,6 +37,7 @@ public class RubbishBin : InteractableObjectBase
         {
             return ItemTypes.BananaSkin;
         }
+        
         
     }
 
