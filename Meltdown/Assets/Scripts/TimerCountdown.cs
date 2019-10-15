@@ -110,7 +110,7 @@ public class TimerCountdown : MonoBehaviour
         // Load appropriate post scene
         if (SceneManager.GetActiveScene().name == "Kitchen")
         {
-            SceneManager.LoadScene("HomeOutro");
+            SceneManager.LoadScene("KitchenOutro");
         }
         else if (SceneManager.GetActiveScene().name == "Backyard")
         {
@@ -120,8 +120,6 @@ public class TimerCountdown : MonoBehaviour
         {
             SceneManager.LoadScene("CityOutro");
         }
-
-
 
         //Set gameCompleted to false to prevent bugs when trying again
         gameFinished = false;
