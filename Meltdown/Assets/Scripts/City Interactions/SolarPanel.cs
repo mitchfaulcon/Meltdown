@@ -7,6 +7,7 @@ public class SolarPanel : InteractableObjectBase
     private bool solarPanelSet = false;
     public ResourceCollector toolStore;
 
+
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Solar && !solarPanelSet)
@@ -25,7 +26,11 @@ public class SolarPanel : InteractableObjectBase
         {
             solarPanelSet = true;
             toolStore.fill();
-            this.GetComponent<MeshRenderer>().material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 1.0f);
+            Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
+            foreach (Component panel in panels)
+            {
+                ((MeshRenderer)panel).material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 1.0f);
+            }
         }
         else
         {
@@ -39,7 +44,12 @@ public class SolarPanel : InteractableObjectBase
 
     public void setupTask()
     {
-        this.GetComponent<MeshRenderer>().material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 0.1f);
+        Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
+        foreach (Component panel in panels)
+        {
+           ((MeshRenderer)panel).material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 0.1f);
+        }
+            
         this.gameObject.SetActive(true);
     }
 }

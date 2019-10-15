@@ -5,15 +5,9 @@ using UnityEngine;
 public class CityTaskController : TaskController
 {
 
-    //public GameObject[] potatoTasks = new GameObject[4];
-    //public GameObject[] treeTasks = new GameObject[4];
-    //public GameObject[] tomatoTasks = new GameObject[4];
-    //public GameObject[] carrotTasks = new GameObject[4];
-    //public GameObject[] recyclingTasks = new GameObject[4];
-
-
-    public ToggleItem leftSwitch;
-    public ToggleItem rightSwitch;
+    //public GameObject[] SolarTasks = new GameObject[4];
+    //public GameObject[] SignTasks= new GameObject[4];
+    //public GameObject[] BikeTasks = new GameObject[4];
 
     protected override void loadTasks()
     {
