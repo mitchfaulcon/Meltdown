@@ -679,6 +679,44 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 86c7741ccc195104ea92fc4828014cca, type: 3}
+--- !u!1 &82980885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8300077865775827224, guid: 72345996e3f131242a3f2729a8b045f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2029649220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &82980886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82980885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 7, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &82980887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82980885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c295aa5d783a7fa47b9e3f5376135071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to get Bike
+  interactSound: {fileID: 0}
+  item: 12
+  containsItem: 0
+  alert: {fileID: 0}
 --- !u!95 &98767620 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
