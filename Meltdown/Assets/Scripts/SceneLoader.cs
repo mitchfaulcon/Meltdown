@@ -10,10 +10,10 @@ public class SceneLoader : MonoBehaviour
     private static string LVL_1 = "Kitchen";
     private static string LVL_2 = "Backyard";
     private static string LVL_3 = "City";
-    private static string LVL_1_INTRO = "HomeIntro";
+    private static string LVL_1_INTRO = "KitchenIntro";
     private static string LVL_2_INTRO = "BackyardIntro";
     private static string LVL_3_INTRO = "CityIntro";
-    private static string LVL_1_OUTRO = "HomeOutro";
+    private static string LVL_1_OUTRO = "KitchenOutro";
     private static string LVL_2_OUTRO = "BackyardOutro";
     private static string LVL_3_OUTRO = "CityOutro";
     private static string GAME_INTRO = "GameIntro";
