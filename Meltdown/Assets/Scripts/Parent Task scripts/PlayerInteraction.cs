@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class PlayerInteraction : MonoBehaviour
 {
@@ -47,12 +48,19 @@ public abstract class PlayerInteraction : MonoBehaviour
 
         }
 
-        // Once the interaction is complete, hide the interaction prompt
-        if (mInteractItem != GetComponent<ChoppingBoard>())
+        // Once the interaction is complete, hide the interaction prompt if it is not a chopping board with
+        // a complete salad 
+        if (!(mInteractItem is ChoppingBoard) || !((ChoppingBoard)mInteractItem).saladMade)
         {
+            mInteractItem = null;
             Hud.CloseMessagePanel();
+        } else
+        {
+            //If salad is made, change display prompt
+            Hud.MessagePanel.transform.Find("Text").GetComponent<Text>().text = "Press J to make salad";
         }
-        mInteractItem = null;
+        
+
     }
 
     private InteractableObjectBase mInteractItem = null;
