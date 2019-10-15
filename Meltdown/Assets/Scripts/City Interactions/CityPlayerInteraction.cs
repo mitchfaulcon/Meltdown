@@ -4,38 +4,44 @@ using UnityEngine;
 
 public class CityPlayerInteraction : PlayerInteraction
 {
-    //public GameObject holdingLettuce;
-    //public GameObject holdingAvocado;
-    //public GameObject holdingTomato;
-    //public GameObject holdingSalad;
+    public GameObject holdingBike;
+    public GameObject holdingTools;
+    public GameObject holdingSolar;
+    public GameObject holdingSignMaterials;
+    public GameObject holdingSign;
 
 
     // Remove all item speech bubbles
     protected override void removeSpeechBubbles()
     {
-        //holdingLettuce.SetActive(false);
-        //holdingAvocado.SetActive(false);
-        //holdingSalad.SetActive(false);
-        //holdingTomato.SetActive(false);
+        holdingBike.SetActive(false);
+        holdingTools.SetActive(false);
+        holdingSolar.SetActive(false);
+        holdingSignMaterials.SetActive(false);
+        holdingSign.SetActive(false);
     }
 
     protected override void setActiveBubble()
     {
-        //if (heldItem == ItemTypes.Tomatoes)
-        //{
-        //    holdingTomato.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.Lettuce)
-        //{
-        //    holdingLettuce.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.Avocado)
-        //{
-        //    holdingAvocado.SetActive(true);
-        //}
-        //else if (heldItem == ItemTypes.Salad)
-        //{
-        //    holdingSalad.SetActive(true);
-        //}
+        if (heldItem == ItemTypes.Bike)
+        {
+            holdingBike.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Tools)
+        {
+            holdingTools.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Solar)
+        {
+            holdingSolar.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Supplies)
+        {
+            holdingSignMaterials.SetActive(true);
+        }
+        else if (heldItem == ItemTypes.Sign)
+        {
+            holdingSign.SetActive(true);
+        }
     }
 }
