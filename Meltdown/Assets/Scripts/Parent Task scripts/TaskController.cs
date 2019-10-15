@@ -87,11 +87,11 @@ public abstract class TaskController : MonoBehaviour
     public void removeTask(TaskTypes task)
     {
         taskList.Remove(task);
+        updateUI();
 
         if (taskList.Count < 1) {
             addTask();
         }
-        updateUI();
     }
 
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)
