@@ -47,6 +47,7 @@ public class IndoorTaskController : TaskController
         {
             taskList.Remove(TaskTypes.Salad2);
         }
+        updateUI();
     }
 
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)
@@ -57,15 +58,9 @@ public class IndoorTaskController : TaskController
         foreach (GameObject task in tapTasks) {
             task.SetActive(false);
         }
-        //foreach (GameObject task in carrotTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in treeTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in recyclingTasks) {
-        //    task.SetActive(false);
-        //}
+        foreach (GameObject task in saladTasks) {
+            task.SetActive(false);
+        }
     }
 
 
@@ -82,14 +77,14 @@ public class IndoorTaskController : TaskController
                     lightTasks[i].SetActive(true);
                     break;
                 case TaskTypes.Light2:
-                    tapTasks[i].SetActive(true);
+                    lightTasks[i].SetActive(true);
                     break;
-        //        case TaskTypes.Tomato:
-        //            tomatoTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Rubbish:
-        //            recyclingTasks[i].SetActive(true);
-        //            break;
+                case TaskTypes.Salad:
+                    saladTasks[i].SetActive(true);
+                    break;
+                case TaskTypes.Salad2:
+                    saladTasks[i].SetActive(true);
+                    break;
             }
             i++;
         }
