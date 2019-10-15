@@ -11877,8 +11877,8 @@ MonoBehaviour:
   on: 0
   isLight: 1
   task: 5
-  taskControl: {fileID: 0}
-  scoring: {fileID: 0}
+  taskControl: {fileID: 1522477128}
+  scoring: {fileID: 94751624}
 --- !u!65 &1241913285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20304,8 +20304,8 @@ MonoBehaviour:
   on: 0
   isLight: 1
   task: 6
-  taskControl: {fileID: 0}
-  scoring: {fileID: 0}
+  taskControl: {fileID: 1522477128}
+  scoring: {fileID: 94751624}
 --- !u!65 &1989705545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22298,5 +22298,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 356008076020613120, guid: 5b68c1571a2a2468e8bf0b01afc28bff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5b68c1571a2a2468e8bf0b01afc28bff, type: 3}
