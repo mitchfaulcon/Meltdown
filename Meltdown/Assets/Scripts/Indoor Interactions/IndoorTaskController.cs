@@ -48,6 +48,10 @@ public class IndoorTaskController : TaskController
             }
         }
         taskList.RemoveAt(i);
+        if (taskList.Count < 1)
+        {
+            addTask();
+        }
         updateUI();
     }
 
