@@ -231,6 +231,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -622,7 +623,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -930,7 +932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -1116,12 +1119,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ace73bab2b78194da6bc13a1f8d76dc, type: 2}
+      objectReference: {fileID: 2100000, guid: f2a00d7ebad14f643b24686df66538d4, type: 2}
     - target: {fileID: -941883518842354624, guid: f6ee17234c1102d46b8c91d6aae67ffe,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ace73bab2b78194da6bc13a1f8d76dc, type: 2}
+      objectReference: {fileID: 2100000, guid: f2a00d7ebad14f643b24686df66538d4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6ee17234c1102d46b8c91d6aae67ffe, type: 3}
 --- !u!137 &42585348 stripped
@@ -1326,6 +1329,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -1700,7 +1704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -2007,6 +2012,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -3883,12 +3889,14 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
+  interactSound: {fileID: 2109851903}
   type: 4
   currentTrash: 11
   scoring: {fileID: 0}
   taskControl: {fileID: 0}
   correctAlert: {fileID: 819703951}
   incorrectAlert: {fileID: 358388001}
+  errorSound: {fileID: 2096069772}
 --- !u!1001 &289511440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4476,6 +4484,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -4721,7 +4730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 129
+  m_RootOrder: 130
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &362202957
 PrefabInstance:
@@ -5132,6 +5141,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: 
+  interactSound: {fileID: 2109851903}
   hasRubbish: 0
   rubbishLevel: 0
   alert: {fileID: 450215295}
@@ -5950,6 +5960,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -6410,6 +6421,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to get Potatoes
+  interactSound: {fileID: 2109851903}
   hasSeeds: 0
   seedType: 0
   alert: {fileID: 1330423209}
@@ -6841,7 +6853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -7528,6 +7541,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to get Carrot Seeds
+  interactSound: {fileID: 2109851903}
   hasSeeds: 0
   seedType: 2
   alert: {fileID: 478600184}
@@ -8667,6 +8681,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -8781,6 +8796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskList: 
+  maxTasks: 4
   potatoTasks:
   - {fileID: 1668221766}
   - {fileID: 726954909}
@@ -8877,6 +8893,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc0324f82a0950243a863b4ef4f6d58a, type: 2}
     - target: {fileID: -8819975670437696471, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9477,11 +9498,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 91.7569
       objectReference: {fileID: 0}
-    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: dc0324f82a0950243a863b4ef4f6d58a, type: 2}
     - target: {fileID: 2709350737418432666, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9711,31 +9727,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4503626
-      objectReference: {fileID: 0}
-    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010382424806, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9778,6 +9769,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010382424806, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4503626
+      objectReference: {fileID: 0}
+    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 929566738468547698, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10248,7 +10264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -10667,6 +10684,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -11280,6 +11298,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to get a Sapling
+  interactSound: {fileID: 2109851903}
   hasSeeds: 0
   seedType: 3
   alert: {fileID: 1270023330}
@@ -11304,6 +11323,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to collect water
+  interactSound: {fileID: 2109851903}
   item: 7
   containsItem: 0
   alert: {fileID: 1662468969}
@@ -11598,7 +11618,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ace73bab2b78194da6bc13a1f8d76dc, type: 2}
+      objectReference: {fileID: 2100000, guid: f2a00d7ebad14f643b24686df66538d4, type: 2}
     - target: {fileID: 65522118501894952, guid: d70a765f5f6bb1d49accfaf2d1a6384c,
         type: 3}
       propertyPath: m_Center.x
@@ -11841,7 +11861,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 130
+  m_RootOrder: 131
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &833552118
 PrefabInstance:
@@ -13013,7 +13033,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hud: {fileID: 114894059030274231}
-  heldItem: 11
+  heldItem: 13
+  gameMusic: {fileID: 1587798849}
   holdingBottle: {fileID: 852254568}
   holdingRubbish: {fileID: 258916688}
   holdingCompost: {fileID: 213057651}
@@ -13022,8 +13043,6 @@ MonoBehaviour:
   holdingPotato: {fileID: 20309498}
   holdingCarrot: {fileID: 1108244045}
   holdingCan: {fileID: 1877207230}
-  interactSound: {fileID: 2109851903}
-  gameMusic: {fileID: 1587798849}
 --- !u!1001 &933046887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13354,7 +13373,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 132
+  m_RootOrder: 133
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983100629
 GameObject:
@@ -13912,7 +13931,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -14043,7 +14063,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -14181,12 +14202,14 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
+  interactSound: {fileID: 2109851903}
   type: 6
   currentTrash: 11
   scoring: {fileID: 0}
   taskControl: {fileID: 0}
   correctAlert: {fileID: 1979450359}
   incorrectAlert: {fileID: 1155136535}
+  errorSound: {fileID: 2096069772}
 --- !u!1001 &1022093046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15035,6 +15058,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -18191,12 +18215,14 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
+  interactSound: {fileID: 2109851903}
   type: 5
   currentTrash: 11
   scoring: {fileID: 0}
   taskControl: {fileID: 0}
   correctAlert: {fileID: 877080588}
   incorrectAlert: {fileID: 882646479}
+  errorSound: {fileID: 2096069772}
 --- !u!1001 &1392094805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18323,6 +18349,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to get Tomato Seeds
+  interactSound: {fileID: 2109851903}
   hasSeeds: 0
   seedType: 1
   alert: {fileID: 1940482473}
@@ -18968,6 +18995,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -19159,6 +19187,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -19646,7 +19675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -19853,6 +19883,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -20205,7 +20236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -20758,7 +20790,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 131
+  m_RootOrder: 132
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588434018
 GameObject:
@@ -20884,6 +20916,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -21207,7 +21240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -21326,6 +21360,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -21975,7 +22010,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -22107,6 +22143,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant Potatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -22369,6 +22406,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 0
   controller: {fileID: 0}
@@ -22534,7 +22572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -23303,6 +23342,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -23487,7 +23527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -24156,6 +24197,46 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
+    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8819975670437696471, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24680,7 +24761,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.16198437
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
     - target: {fileID: -3007804494361609972, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -24921,31 +25002,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.000000119209
       objectReference: {fileID: 0}
-    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
-    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
-    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
-    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a026a75aa11a5e6479638b60b2bb770e, type: 2}
-    - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2709350737418432666, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24965,6 +25021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 11.918739
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709350737418432666, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 19.519066
       objectReference: {fileID: 0}
     - target: {fileID: 3827042798230884271, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -25724,7 +25785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -26325,7 +26387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Carrot Seeds
+  InteractText: Press J to plant Carrots
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 2
   controller: {fileID: 0}
@@ -26517,7 +26580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Press J to plant Tomato Seeds
+  InteractText: Press J to plant Tomatoes
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 1
   controller: {fileID: 0}
@@ -26662,6 +26726,7 @@ MonoBehaviour:
   Name: 
   Image: {fileID: 0}
   InteractText: Press J to plant a Sapling
+  interactSound: {fileID: 0}
   watered: 0
   plotType: 3
   controller: {fileID: 0}
@@ -27545,6 +27610,133 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d15382853af1aa14daf50bfe726fd7c9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b, type: 3}
+--- !u!1 &2096069771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2096069773}
+  - component: {fileID: 2096069772}
+  m_Layer: 0
+  m_Name: ErrorSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2096069772
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096069771}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb1d56043d86c344eaa03436459624ab, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2096069773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096069771}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.27, y: 12.353567, z: -10.458573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 129
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2096184046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7206466841367982070, guid: 73c5a7a4e9b1a44bea63f2bb28265d97,
@@ -27939,7 +28131,7 @@ GameObject:
   - component: {fileID: 2109851903}
   m_Layer: 0
   m_Name: InteractSound
-  m_TagString: Untagged
+  m_TagString: AudioSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
