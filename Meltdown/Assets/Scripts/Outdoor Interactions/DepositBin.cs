@@ -10,6 +10,7 @@ public class DepositBin : InteractableObjectBase
     public TaskController taskControl;
     public GameObject correctAlert;
     public GameObject incorrectAlert;
+    public AudioSource errorSound;
     
 
     public override ItemTypes OnInteract()
@@ -22,6 +23,7 @@ public class DepositBin : InteractableObjectBase
             correctAlert.SetActive(true);
             incorrectAlert.SetActive(false);
             Invoke("removeAlerts", 2);
+            PlayInteractSound();
         }
         // If the player deposits incorrect rubbish, tell the player they were wrong and hide popup after 2 seconds
         else
@@ -30,11 +32,18 @@ public class DepositBin : InteractableObjectBase
             correctAlert.SetActive(false);
             incorrectAlert.SetActive(true);
             Invoke("removeAlerts", 2);
+            if (GameSettings.sounds == true)
+            {
+                errorSound.Play();
+            }
         }
+
+        
 
         // Either way, mark the task as complete in the Task Controller and remove the rubbish from the players hand
         taskControl = FindObjectOfType<TaskController>();
         taskControl.taskComplete(TaskTypes.Rubbish);
+        playSound();
 
         return ItemTypes.NONE;
     }
