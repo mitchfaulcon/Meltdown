@@ -61,10 +61,10 @@ public class ScoreDisplay : MonoBehaviour
         SetStars(level);
 
         //Play the appropriate music 
-        if (level == ScoreLevel.NONE)
+        if (level == ScoreLevel.NONE && GameSettings.sounds)
         {
             failMusic.Play();
-        } else
+        } else if (GameSettings.music) 
         {
             victoryMusic.Play();
         }
