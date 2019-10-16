@@ -31,19 +31,12 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void Menu() {
+        StopDialogueMusic();
         SceneManager.LoadScene(MAIN_MENU);
     }
 
     public void LoadLevel(int levelNumber) {
-        //Stop playing dialogue music if it is playing
-        try
-        {
-            GameObject.FindGameObjectWithTag("DialogueMusic").GetComponent<DialogueMusicController>().StopMusic();
-        }
-        catch (System.NullReferenceException)
-        {
-        }
-
+        StopDialogueMusic();
         switch (levelNumber)
         {
         case 1:
@@ -74,8 +67,9 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void LevelOutro(int levelNumber) {
+        StopDialogueMusic();
         switch (levelNumber)
-      {
+        {
         case 1:
             SceneManager.LoadScene(LVL_1_OUTRO);
             break;
@@ -85,7 +79,19 @@ public class SceneLoader : MonoBehaviour
         case 3:
             SceneManager.LoadScene(LVL_3_OUTRO);
             break;
-      }
+        }
+    }
+
+    private void StopDialogueMusic()
+    {
+        //Stop playing dialogue music if it is playing
+        try
+        {
+            GameObject.FindGameObjectWithTag("DialogueMusic").GetComponent<DialogueMusicController>().StopMusic();
+        }
+        catch (System.NullReferenceException)
+        {
+        }
     }
 
     public void GameIntro() {
