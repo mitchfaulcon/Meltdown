@@ -641,6 +641,7 @@ GameObject:
   - component: {fileID: 63904976}
   - component: {fileID: 63904981}
   - component: {fileID: 63904982}
+  - component: {fileID: 63904983}
   m_Layer: 0
   m_Name: npc15
   m_TagString: NPC
@@ -708,7 +709,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -797,6 +798,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &63904983
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63904974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &65770364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1654,6 +1669,7 @@ GameObject:
   - component: {fileID: 147330488}
   - component: {fileID: 147330493}
   - component: {fileID: 147330494}
+  - component: {fileID: 147330495}
   m_Layer: 0
   m_Name: npc3
   m_TagString: NPC
@@ -1721,7 +1737,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1810,6 +1826,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &147330495
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147330486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &165383330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1856,7 @@ GameObject:
   - component: {fileID: 165383332}
   - component: {fileID: 165383337}
   - component: {fileID: 165383338}
+  - component: {fileID: 165383339}
   m_Layer: 0
   m_Name: npc7
   m_TagString: NPC
@@ -1893,7 +1924,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1982,6 +2013,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &165383339
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165383330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &181825613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4513,12 +4558,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 391504343}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &407247355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1651072082}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &415291155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5316,6 +5355,95 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 86c7741ccc195104ea92fc4828014cca, type: 3}
+--- !u!1001 &444883331
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 527970255}
+    m_Modifications:
+    - target: {fileID: 2535123746593487858, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_Name
+      value: SignPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535123746593487858, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b208bd5b7f19b48bbbb469562b008b7a, type: 3}
 --- !u!1001 &445874312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5775,7 +5903,7 @@ MonoBehaviour:
   holdingTools: {fileID: 1487324965}
   holdingSolar: {fileID: 1503928047}
   holdingSignMaterials: {fileID: 560033707}
-  holdingSign: {fileID: 407247355}
+  holdingSign: {fileID: 1135815091}
 --- !u!95 &527970252
 Animator:
   serializedVersion: 3
@@ -5845,7 +5973,7 @@ Transform:
   - {fileID: 1625912782}
   - {fileID: 1360224315}
   - {fileID: 1294026482}
-  - {fileID: 1651072083}
+  - {fileID: 1135815094}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6672,7 +6800,6 @@ GameObject:
   - component: {fileID: 547340739}
   - component: {fileID: 547340742}
   - component: {fileID: 547340741}
-  - component: {fileID: 547340740}
   m_Layer: 0
   m_Name: Tasks List
   m_TagString: Untagged
@@ -6711,49 +6838,6 @@ RectTransform:
   m_AnchoredPosition: {x: -63.3125, y: -0.000091552734}
   m_SizeDelta: {x: 290, y: 635}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &547340740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547340738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67b0939bf11df5446a348b1f74e3e00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskList: 
-  maxTasks: 4
-  potatoTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  treeTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  tomatoTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  carrotTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  recyclingTasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  carrotBox: {fileID: 0}
-  potatoBox: {fileID: 0}
-  treeBox: {fileID: 0}
-  tomatoBox: {fileID: 0}
 --- !u!114 &547340741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6806,6 +6890,7 @@ GameObject:
   - component: {fileID: 548018451}
   - component: {fileID: 548018456}
   - component: {fileID: 548018457}
+  - component: {fileID: 548018458}
   m_Layer: 0
   m_Name: npc14
   m_TagString: NPC
@@ -6873,7 +6958,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -6962,6 +7047,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &548018458
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548018449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &549791375
 GameObject:
   m_ObjectHideFlags: 0
@@ -7111,6 +7210,7 @@ GameObject:
   - component: {fileID: 567289056}
   - component: {fileID: 567289061}
   - component: {fileID: 567289062}
+  - component: {fileID: 567289063}
   m_Layer: 0
   m_Name: npc2
   m_TagString: NPC
@@ -7178,7 +7278,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -7267,6 +7367,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &567289063
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567289054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &591662843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8038,6 +8152,7 @@ GameObject:
   - component: {fileID: 616032961}
   - component: {fileID: 616032966}
   - component: {fileID: 616032967}
+  - component: {fileID: 616032968}
   m_Layer: 0
   m_Name: npc13
   m_TagString: NPC
@@ -8105,7 +8220,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -8194,6 +8309,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &616032968
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616032959}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &627753178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8366,6 +8495,7 @@ GameObject:
   - component: {fileID: 631367102}
   - component: {fileID: 631367107}
   - component: {fileID: 631367108}
+  - component: {fileID: 631367109}
   m_Layer: 0
   m_Name: npc6
   m_TagString: NPC
@@ -8433,7 +8563,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -8522,6 +8652,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &631367109
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631367100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &652285860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8710,7 +8854,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685616815}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9, y: 2.6, z: 4}
@@ -8732,7 +8876,20 @@ MonoBehaviour:
   InteractText: Press J to place solar panel
   interactSound: {fileID: 0}
   toolStore: {fileID: 919317159}
-  taskController: {fileID: 0}
+  taskController: {fileID: 2095501720}
+--- !u!65 &685616819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685616815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9, y: 2.6, z: 4}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1 &697171259
 GameObject:
   m_ObjectHideFlags: 0
@@ -12054,6 +12211,7 @@ GameObject:
   - component: {fileID: 1022410676}
   - component: {fileID: 1022410681}
   - component: {fileID: 1022410682}
+  - component: {fileID: 1022410683}
   m_Layer: 0
   m_Name: npc12
   m_TagString: NPC
@@ -12121,7 +12279,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -12210,6 +12368,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &1022410683
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022410674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1034480695 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
@@ -12374,6 +12546,7 @@ GameObject:
   - component: {fileID: 1079193239}
   - component: {fileID: 1079193244}
   - component: {fileID: 1079193245}
+  - component: {fileID: 1079193246}
   m_Layer: 0
   m_Name: npc10
   m_TagString: NPC
@@ -12441,7 +12614,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -12530,6 +12703,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &1079193246
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079193237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1085436079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13481,6 +13668,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 968b3a59e4c0e254099fb3dea2e9888b,
     type: 3}
   m_PrefabInstance: {fileID: 1104205190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1135815091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2535123746593487858, guid: b208bd5b7f19b48bbbb469562b008b7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 444883331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1135815094 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1546362246937594337, guid: b208bd5b7f19b48bbbb469562b008b7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 444883331}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1177304277
 PrefabInstance:
@@ -14693,6 +14892,7 @@ GameObject:
   - component: {fileID: 1229346556}
   - component: {fileID: 1229346561}
   - component: {fileID: 1229346562}
+  - component: {fileID: 1229346563}
   m_Layer: 0
   m_Name: npc1
   m_TagString: NPC
@@ -14760,7 +14960,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -14849,6 +15049,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &1229346563
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229346554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1235023542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17819,6 +18033,7 @@ GameObject:
   - component: {fileID: 1371691883}
   - component: {fileID: 1371691888}
   - component: {fileID: 1371691889}
+  - component: {fileID: 1371691890}
   m_Layer: 0
   m_Name: npc9
   m_TagString: NPC
@@ -17886,7 +18101,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -17975,6 +18190,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &1371691890
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371691881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1372414081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19037,6 +19266,7 @@ GameObject:
   - component: {fileID: 1438232470}
   - component: {fileID: 1438232475}
   - component: {fileID: 1438232476}
+  - component: {fileID: 1438232477}
   m_Layer: 0
   m_Name: npc11
   m_TagString: NPC
@@ -19104,7 +19334,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -19193,6 +19423,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &1438232477
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438232468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1441192069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20668,145 +20912,9 @@ MonoBehaviour:
   Image: {fileID: 0}
   InteractText: Press J to get Sign and Stationery
   interactSound: {fileID: 0}
-  item: 16
+  item: 14
   containsItem: 0
   alert: {fileID: 0}
---- !u!1001 &1651072082
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 527970255}
-    m_Modifications:
-    - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_Name
-      value: SignPickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 2535123746593487858, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.08715578
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9961947
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206537387718007563, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_Name
-      value: signPickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626045430081988825, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 36d4209d876cc4a3e82ff52443cf6fe7,
-        type: 3}
-    - target: {fileID: 3626045430081988825, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626045430081988825, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626045430081988825, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226630455795755254, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226630455795755254, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226630455795755254, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4189e1d8bc10445b29d48317cbbe5d8f, type: 3}
---- !u!4 &1651072083 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1546362246937594337, guid: 4189e1d8bc10445b29d48317cbbe5d8f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1651072082}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1656833297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21143,6 +21251,7 @@ GameObject:
   - component: {fileID: 1719309925}
   - component: {fileID: 1719309930}
   - component: {fileID: 1719309931}
+  - component: {fileID: 1719309932}
   m_Layer: 0
   m_Name: npc5
   m_TagString: NPC
@@ -21210,7 +21319,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -21299,6 +21408,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &1719309932
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719309923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1726414533
 GameObject:
   m_ObjectHideFlags: 0
@@ -24447,6 +24570,7 @@ GameObject:
   - component: {fileID: 2044725151}
   - component: {fileID: 2044725156}
   - component: {fileID: 2044725157}
+  - component: {fileID: 2044725158}
   m_Layer: 0
   m_Name: npc8
   m_TagString: NPC
@@ -24514,7 +24638,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -24603,6 +24727,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &2044725158
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044725149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2058651874
 GameObject:
   m_ObjectHideFlags: 0
@@ -24946,9 +25084,9 @@ MonoBehaviour:
   - {fileID: 1372414083}
   - {fileID: 760611537}
   - {fileID: 1977228748}
-  solarShop: {fileID: 0}
-  signShop: {fileID: 0}
-  bikeShop: {fileID: 0}
+  solarShop: {fileID: 304533250}
+  signShop: {fileID: 1637179951}
+  bikeShop: {fileID: 82980887}
 --- !u!95 &2098470164 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
@@ -24971,6 +25109,7 @@ GameObject:
   - component: {fileID: 2118768477}
   - component: {fileID: 2118768482}
   - component: {fileID: 2118768483}
+  - component: {fileID: 2118768484}
   m_Layer: 0
   m_Name: npc4
   m_TagString: NPC
@@ -25038,7 +25177,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.53851706
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -25127,6 +25266,20 @@ MonoBehaviour:
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
   hasSign: 0
+--- !u!136 &2118768484
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118768475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2120884313
 GameObject:
   m_ObjectHideFlags: 0
