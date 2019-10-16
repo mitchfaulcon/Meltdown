@@ -55,6 +55,24 @@ public class IndoorTaskController : TaskController
         updateUI();
     }
 
+    public bool containsTask(int num)
+    {
+        switch (num)
+        {
+            case 0:
+                if (taskList.Contains(TaskTypes.Light2)) { return true; }
+                return false;
+            case 1:
+                if (taskList.Contains(TaskTypes.Light1)) { return true; }
+                return false;
+            case 2:
+                if (taskList.Contains(TaskTypes.Tap)) { return true; }
+                return false;
+            default:
+                return false;
+        }
+    }
+
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)
     protected override void hideAllUITasks() {
         foreach (GameObject task in lightTasks) {

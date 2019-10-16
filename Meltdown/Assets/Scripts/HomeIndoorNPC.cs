@@ -29,7 +29,7 @@ public class HomeIndoorNPC : NPCMovement
 
     private Transform dest;
 
-    public TaskController taskController;
+    public IndoorTaskController taskController;
 
     public bool taskListFull;
 
@@ -85,6 +85,7 @@ public class HomeIndoorNPC : NPCMovement
                 NextRoute(curRoute);
             }            
         }
+
 
         if (stoolReached) {
             // Start walking once the NPC has been served a salad
@@ -163,7 +164,11 @@ public class HomeIndoorNPC : NPCMovement
     private HomeIndoorRoutes RandomRoute() {
         couchSwitch = false;
         // Get a random route
-        HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(Random.Range(0, NUM_TASKS));
+        int pos = Random.Range(0, NUM_TASKS);
+        while (taskController.containsTask(pos)){
+            pos = Random.Range(0, NUM_TASKS);
+        }
+        HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(pos);
 
         // If the next route is the same as the last, retry
         if (nextRoute == prevRoute) {
