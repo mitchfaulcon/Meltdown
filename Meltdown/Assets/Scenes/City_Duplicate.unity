@@ -4316,6 +4316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtestSign
       objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5819,6 +5824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProtestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
@@ -7642,7 +7652,7 @@ MonoBehaviour:
   interactSound: {fileID: 0}
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
-  hasSign: 0
+  hasSign: 1
 --- !u!136 &567289063
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8584,7 +8594,7 @@ MonoBehaviour:
   interactSound: {fileID: 0}
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
-  hasSign: 0
+  hasSign: 1
 --- !u!136 &616032968
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9065,6 +9075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtestSign
       objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9350,6 +9365,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProtestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
@@ -10375,6 +10395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SolarPanelBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 2875330035834629894, guid: e83422d6ff77a4047900bc557603998d,
+        type: 3}
+      propertyPath: m_Name
+      value: SolarDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 1893545490927101558, guid: e83422d6ff77a4047900bc557603998d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10449,11 +10474,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2875330035834629894, guid: e83422d6ff77a4047900bc557603998d,
-        type: 3}
-      propertyPath: m_Name
-      value: SolarDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83422d6ff77a4047900bc557603998d, type: 3}
@@ -10611,6 +10631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProtestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
@@ -10931,6 +10956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProtestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
@@ -12844,6 +12874,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtestSign
       objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13197,6 +13232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProtestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
@@ -15452,6 +15492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProtestSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
@@ -18640,6 +18685,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtestSign
       objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19257,7 +19307,7 @@ MonoBehaviour:
   interactSound: {fileID: 0}
   taskController: {fileID: 0}
   scoreController: {fileID: 0}
-  hasSign: 0
+  hasSign: 1
 --- !u!136 &1371691890
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23926,6 +23976,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtestSign
       objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25694,6 +25749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtestSign
       objectReference: {fileID: 0}
+    - target: {fileID: 697617192631530969, guid: f347f62e5a473453aa5aaae89b82f85c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225947986257797881, guid: f347f62e5a473453aa5aaae89b82f85c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25778,6 +25838,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BikeBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 8300077865775827224, guid: 72345996e3f131242a3f2729a8b045f1,
+        type: 3}
+      propertyPath: m_Name
+      value: BikeDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 1791378983924117948, guid: 72345996e3f131242a3f2729a8b045f1,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -25853,11 +25918,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c9f6d084f2895ce43a1ed6d5f2f5bb42, type: 2}
-    - target: {fileID: 8300077865775827224, guid: 72345996e3f131242a3f2729a8b045f1,
-        type: 3}
-      propertyPath: m_Name
-      value: BikeDoor
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72345996e3f131242a3f2729a8b045f1, type: 3}
 --- !u!1 &2029649221 stripped

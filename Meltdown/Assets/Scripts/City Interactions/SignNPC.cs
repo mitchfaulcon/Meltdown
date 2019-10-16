@@ -21,11 +21,13 @@ public class SignNPC : InteractableObjectBase
     {
         taskController = GameObject.FindObjectOfType<CityTaskController>();
         scoreController = GameObject.FindObjectOfType<CityScoreController>();
+        InteractText = "Press J to give climate protester a sign";
     }
 
     public override ItemTypes OnInteract()
     {
-        //make sign visible in NPC hand
+        //Make sign they are holding visible
+        this.gameObject.transform.Find("character").Find("Armature").Find("main").Find("chest").Find("shoulders").Find("armRight1").Find("armRight2").Find("handRight").Find("itemLeft").Find("ProtestSign").gameObject.SetActive(true);
         hasSign = true;
 
         //complete sign task
