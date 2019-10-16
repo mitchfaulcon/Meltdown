@@ -10,6 +10,7 @@ public class SignNPC : InteractableObjectBase
     private CityCrowdNPC cityCrowdNPC;
 
     public bool hasSign = false;
+
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Sign && !hasSign)
@@ -24,6 +25,10 @@ public class SignNPC : InteractableObjectBase
         taskController = GameObject.FindObjectOfType<CityTaskController>();
         scoreController = GameObject.FindObjectOfType<CityScoreController>();
         cityCrowdNPC = this.GetComponent<CityCrowdNPC>();
+        if (hasSign)
+        {
+            cityCrowdNPC.animator.SetBool("holdingSign", true);
+        }
         InteractText = "Press J to give climate protester a sign";
     }
 
