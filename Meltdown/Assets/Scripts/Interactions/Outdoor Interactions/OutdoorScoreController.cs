@@ -31,10 +31,10 @@ public class OutdoorScoreController : ScoreController
 
     protected override void updateScenery()
     {
-        //Calculate the new colour as the value of the temperature between the bad & good colours
-        targetColour = (currentValue) * (badTreeColour) + (1 - currentValue) * (goodTreeColour);
+        ////Calculate the new colour as the value of the temperature between the bad & good colours
+        //targetColour = (currentValue) * (badTreeColour) + (1 - currentValue) * (goodTreeColour);
 
-        //Smooth the colour change over 2 seconds
-        treeMaterial.color = Color.Lerp(treeMaterial.color, targetColour, Time.deltaTime / 2f);
+        ////Smooth the colour change over 2 seconds
+        //treeMaterial.color = Color.Lerp(treeMaterial.color, targetColour, Time.deltaTime / 2f);
     }
 }
