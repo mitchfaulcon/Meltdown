@@ -36,47 +36,35 @@ public class CityTaskController : TaskController
 
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)
     protected override void hideAllUITasks() {
-        //foreach (GameObject task in potatoTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in tomatoTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in carrotTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in treeTasks) {
-        //    task.SetActive(false);
-        //}
-        //foreach (GameObject task in recyclingTasks) {
-        //    task.SetActive(false);
-        //}
+        foreach (GameObject task in solarTasks) {
+            task.SetActive(false);
+        }
+        foreach (GameObject task in signTasks) {
+            task.SetActive(false);
+        }
+        foreach (GameObject task in bikeTasks) {
+            task.SetActive(false);
+        }
     }
 
 
     // Updates the Task List UI on the level every time a new task is generated or completed
     protected override void updateUI () {
-        //hideAllUITasks();
-        //int i = 0;
-        //foreach (TaskTypes type in taskList) {
-        //    switch (type) {
-        //        case TaskTypes.Tree:
-        //            treeTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Carrot:
-        //            carrotTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Potato:
-        //            potatoTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Tomato:
-        //            tomatoTasks[i].SetActive(true);
-        //            break;
-        //        case TaskTypes.Rubbish:
-        //            recyclingTasks[i].SetActive(true);
-        //            break;
-        //    }
-        //    i++;
-        //}
+        hideAllUITasks();
+        int i = 0;
+        foreach (TaskTypes type in taskList) {
+            switch (type) {
+                case TaskTypes.Solar:
+                    solarTasks[i].SetActive(true);
+                    break;
+                case TaskTypes.Sign:
+                    signTasks[i].SetActive(true);
+                    break;
+                case TaskTypes.Bike:
+                    bikeTasks[i].SetActive(true);
+                    break;
+            }
+            i++;
+        }
     }
 }
