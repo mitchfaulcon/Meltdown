@@ -7784,6 +7784,12 @@ Transform:
   m_Father: {fileID: 1241913287}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 188.684, y: 0, z: 0}
+--- !u!1 &810635957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1268718748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &826305921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14783,8 +14789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7fe500f7273f3947bf695af7e92aa41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskList: 
-  maxTasks: 4
   lightTasks:
   - {fileID: 680539806}
   - {fileID: 1795461572}
@@ -17606,7 +17610,7 @@ MonoBehaviour:
   points: []
   walking: 0
   waitTime: 0
-  playerModel: {fileID: 0}
+  playerModel: {fileID: 810635957}
   animator: {fileID: 1268718749}
   starting: {fileID: 1581829497}
   standing: {fileID: 12705886}
@@ -17620,8 +17624,8 @@ MonoBehaviour:
   stool2: {fileID: 1148945134}
   stool3: {fileID: 1475441519}
   stool4: {fileID: 888276570}
-  taskController: {fileID: 0}
-  placeHolderFull: 0
+  taskController: {fileID: 1522477128}
+  taskListFull: 0
   served: 0
 --- !u!95 &1800075573
 Animator:
@@ -22511,6 +22515,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3698169694416176148, guid: 5b68c1571a2a2468e8bf0b01afc28bff,
+        type: 3}
+      propertyPath: m_Name
+      value: TaskListKitchen
+      objectReference: {fileID: 0}
     - target: {fileID: 3221677848060242655, guid: 5b68c1571a2a2468e8bf0b01afc28bff,
         type: 3}
       propertyPath: m_IsActive
@@ -22570,11 +22579,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698169694416176148, guid: 5b68c1571a2a2468e8bf0b01afc28bff,
-        type: 3}
-      propertyPath: m_Name
-      value: TaskListKitchen
       objectReference: {fileID: 0}
     - target: {fileID: 1949343092135359441, guid: 5b68c1571a2a2468e8bf0b01afc28bff,
         type: 3}

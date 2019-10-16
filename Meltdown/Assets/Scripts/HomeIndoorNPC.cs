@@ -77,27 +77,38 @@ public class HomeIndoorNPC : NPCMovement
         // If the player has reached the destination
         if (Vector3.Distance(transform.position, dest.position) < 1.0f) {
             // If the NPC is at one of the stools, stop moving
-            if (curRoute == HomeIndoorRoutes.Stool) {
-                stoolReached = true;
-            } else if (couchSwitch) {
-                couchReached = true;  
-            } else {
-                NextRoute(curRoute);
-            }            
-        }
+
+            if (curRoute == HomeIndoorRoutes.LightSwitchLeft && !taskController.isFull()) {
+                taskController.activateTask(TaskTypes.Light1);
+            }  else if (curRoute == HomeIndoorRoutes.LightSwitchRight && !taskController.isFull()) {
+                taskController.activateTask(TaskTypes.Light2);
+            }  else if (curRoute == HomeIndoorRoutes.Sink && !taskController.isFull()) {
+                taskController.activateTask(TaskTypes.Tap);
+            }
 
 
-        if (stoolReached) {
-            // Start walking once the NPC has been served a salad
-            if (served) {
-                SetWalking(true);
+            if (couchSwitch)
+            {
+                couchReached = true;
+            }
+            else
+            {
                 NextRoute(curRoute);
-                served = false;
-                stoolReached = false;
-            } else {
-                SetWalking(false);
             }
         }
+
+
+        //if (stoolReached) {
+        //    // Start walking once the NPC has been served a salad
+        //    if (served) {
+        //        SetWalking(true);
+        //        NextRoute(curRoute);
+        //        served = false;
+        //        stoolReached = false;
+        //    } else {
+        //        SetWalking(false);
+        //    }
+        //}
 
         if (couchReached) {
             SetWalking(false);
@@ -167,7 +178,7 @@ public class HomeIndoorNPC : NPCMovement
         int pos = Random.Range(0, NUM_TASKS);
         while (taskController.containsTask(pos)){
             pos = Random.Range(0, NUM_TASKS);
-        }
+        } Debug.Log(pos);
         HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(pos);
 
         // If the next route is the same as the last, retry

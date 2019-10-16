@@ -32,8 +32,14 @@ public class IndoorTaskController : TaskController
     //generates a new task from enum TaskTypes, based on rng
     protected override TaskTypes generateTask()
     {
-        int newTask = Random.Range(5, 10);
+        int newTask = Random.Range(8, 10);
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+    }
+
+    protected override void generateTaskTime()
+    {
+        timeCount = 0.0f;
+        newTaskTime = Random.Range(10.0f, 20.0f);
     }
 
     public void removeSaladTask()
@@ -60,10 +66,10 @@ public class IndoorTaskController : TaskController
         switch (num)
         {
             case 0:
-                if (taskList.Contains(TaskTypes.Light2)) { return true; }
+                if (taskList.Contains(TaskTypes.Light1)) { return true; }
                 return false;
             case 1:
-                if (taskList.Contains(TaskTypes.Light1)) { return true; }
+                if (taskList.Contains(TaskTypes.Light2)) { return true; }
                 return false;
             case 2:
                 if (taskList.Contains(TaskTypes.Tap)) { return true; }
@@ -71,6 +77,36 @@ public class IndoorTaskController : TaskController
             default:
                 return false;
         }
+    }
+
+    public bool isFull()
+    {
+        if(taskList.Count > 3)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void activateTask(TaskTypes task)
+    {
+        taskList.Add(task);
+        updateUI();
+        tasks[task].setupTask();
+    }
+
+    protected override void checkForNewTask()
+    {
+        //update time count, and if it reaches the time set to generate a new task at, do so.
+        if (taskList.Count < maxTasks)
+        {
+            timeCount += 0.5f;
+            if (timeCount >= newTaskTime && (!taskList.Contains(TaskTypes.Salad) || !taskList.Contains(TaskTypes.Salad2)))
+            {
+                addTask();
+            }
+        }
+
     }
 
     // Sets all tasks on the Task List UI to hidden (i.e. used to update UI or right at beginning before any tasks have been generated)

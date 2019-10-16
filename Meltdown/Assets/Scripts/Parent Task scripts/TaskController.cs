@@ -38,7 +38,7 @@ public abstract class TaskController : MonoBehaviour
 
     }
 
-    void checkForNewTask()
+    protected virtual void checkForNewTask()
     {
         //update time count, and if it reaches the time set to generate a new task at, do so.
         if (taskList.Count < maxTasks)
