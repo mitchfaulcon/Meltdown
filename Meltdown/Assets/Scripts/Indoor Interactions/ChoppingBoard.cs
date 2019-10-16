@@ -86,6 +86,6 @@ public class ChoppingBoard : InteractableObjectBase
         this.transform.Find("ChoppingBoard").gameObject.transform.Find("Avocado").gameObject.SetActive(false);
         this.transform.Find("ChoppingBoard").gameObject.transform.Find("Tomato").gameObject.SetActive(false);
         this.transform.Find("ChoppingBoard").gameObject.transform.Find("Salad").gameObject.SetActive(false);
-        GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+        interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
 }
