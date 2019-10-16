@@ -31,7 +31,7 @@ public class HomeIndoorNPC : NPCMovement
 
     public TaskController taskController;
 
-    public bool placeHolderFull;
+    public bool taskListFull;
 
     public bool served; // Boolean to check if the player has served the NPC a salad
     private bool couchSwitch;
@@ -39,6 +39,7 @@ public class HomeIndoorNPC : NPCMovement
 
     private bool stoolReached;
     private bool couchReached;
+
     void Start()
     {
         // Set the default starting point to the couch
@@ -48,7 +49,7 @@ public class HomeIndoorNPC : NPCMovement
         points = new Transform[] {starting};
 
         SetWalking(true);
-        placeHolderFull = false;
+        taskListFull = false;
         served = false;
         couchSwitch = false;
 
@@ -70,6 +71,9 @@ public class HomeIndoorNPC : NPCMovement
 
     void Update()
     {
+        //Check if the task list is full
+        taskListFull = TaskController.taskList.Count >= TaskController.maxTasks;
+
         // If the player has reached the destination
         if (Vector3.Distance(transform.position, dest.position) < 1.0f) {
             // If the NPC is at one of the stools, stop moving
@@ -78,7 +82,7 @@ public class HomeIndoorNPC : NPCMovement
             } else if (couchSwitch) {
                 couchReached = true;  
             } else {
-                NextRoute();
+                NextRoute(curRoute);
             }            
         }
 
@@ -86,7 +90,7 @@ public class HomeIndoorNPC : NPCMovement
             // Start walking once the NPC has been served a salad
             if (served) {
                 SetWalking(true);
-                NextRoute();
+                NextRoute(curRoute);
                 served = false;
                 stoolReached = false;
             } else {
@@ -98,12 +102,14 @@ public class HomeIndoorNPC : NPCMovement
             SetWalking(false);
             SitDown();
             couchTimer += Time.deltaTime;
-                    
-            if (couchTimer > 5.0f) {
+
+            //Only stand up once the 5s timer is up & if the task list isn't full
+            if (!taskListFull && couchTimer > 5.0f) {
                 couchTimer = 0.0f;
                       
                 couchSwitch = false;
                 couchReached = false;
+
                 StartCoroutine(StandUp());
             }
         }
@@ -134,19 +140,28 @@ public class HomeIndoorNPC : NPCMovement
         served = true;
     }
 
-    private void NextRoute() {
-        HomeIndoorRoutes destination;
+    private void NextRoute(HomeIndoorRoutes currentDest) {
+        HomeIndoorRoutes destination = currentDest;
         // Set the route to the couch if the task list is full, otherwise select a random route
-        if (placeHolderFull) {
-        destination = HomeIndoorRoutes.Couch;
+        if (taskListFull) {
+            prevRoute = currentDest;
+            curRoute = HomeIndoorRoutes.Couch;
+            destination = HomeIndoorRoutes.Couch;
+            dest = starting;
+            couchSwitch = true;
         } else {
-            destination = RandomRoute();
+            //Choose a different destination
+            while (destination == currentDest)
+            {
+                destination = RandomRoute();
+            }
         }
 
         points = ConstructRoute(destination);
     }
 
     private HomeIndoorRoutes RandomRoute() {
+        couchSwitch = false;
         // Get a random route
         HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(Random.Range(0, NUM_TASKS));
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public abstract class TaskController : MonoBehaviour
 {
-    public List<TaskTypes> taskList = new List<TaskTypes>();
+    public static List<TaskTypes> taskList = new List<TaskTypes>();
     
     public Dictionary<TaskTypes, Task> tasks = new Dictionary<TaskTypes, Task>();
 
     protected float timeCount = 0.0f;
     protected float newTaskTime = 0.0f;
-    public int maxTasks = 4;
+    public static int maxTasks = 4;
     
 
     // Start is called before the first frame update

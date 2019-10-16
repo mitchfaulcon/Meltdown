@@ -16,19 +16,14 @@ static class RouteMethods
         switch (num) {
             case 0:
                 return HomeIndoorRoutes.LightSwitchLeft;
-                break;
             case 1:
                 return HomeIndoorRoutes.LightSwitchRight;
-                break;
             case 2:
                 return HomeIndoorRoutes.Sink;
-                break;
             case 3:
                 return HomeIndoorRoutes.Stool;
-                break;
             default:
                 return HomeIndoorRoutes.Couch;
-                break;
         }
     } 
 }
