@@ -28,6 +28,8 @@ public class ScoreDisplay : MonoBehaviour
     public Image twoStar;
     public Image threeStar;
     public GameObject continueButton;
+    public AudioSource victoryMusic;
+    public AudioSource failMusic;
 
     public bool highScore = false;
     public enum Level
@@ -57,6 +59,15 @@ public class ScoreDisplay : MonoBehaviour
         threeStar.enabled = false;
         //Display correct no. of stars
         SetStars(level);
+
+        //Play the appropriate music 
+        if (level == ScoreLevel.NONE)
+        {
+            failMusic.Play();
+        } else
+        {
+            victoryMusic.Play();
+        }
 
         // Update HighScoreManager to save potential highscore
         highScoreDisplayText.SetActive(HighScoreManager.recieveNewScore((int) levelIndex, (int)score));
