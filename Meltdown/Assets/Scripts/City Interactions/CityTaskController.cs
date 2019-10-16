@@ -5,18 +5,20 @@ using UnityEngine;
 public class CityTaskController : TaskController
 {
 
-    //public GameObject[] SolarTasks = new GameObject[4];
-    //public GameObject[] SignTasks= new GameObject[4];
-    //public GameObject[] BikeTasks = new GameObject[4];
+    public GameObject[] SolarTasks = new GameObject[4];
+    public GameObject[] SignTasks= new GameObject[4];
+    public GameObject[] BikeTasks = new GameObject[4];
+
+    public ResourceCollector solarShop;
+    public ResourceCollector signShop;
+    public BikeShop bikeShop;
 
     protected override void loadTasks()
     {
         //add different task types to our task dictionary
-        //tasks.Add(TaskTypes.Tap, new TapTask());
-        //tasks.Add(TaskTypes.Light1, new LightSwitchTask(leftSwitch, TaskTypes.Light1));
-        //tasks.Add(TaskTypes.Light2, new LightSwitchTask(rightSwitch, TaskTypes.Light2));
-        //tasks.Add(TaskTypes.Salad, new SaladTask());
-        //tasks.Add(TaskTypes.Salad2, new SaladTask());
+        tasks.Add(TaskTypes.Solar, new SolarTask(solarShop));
+        tasks.Add(TaskTypes.Bike, new BikeTask(bikeShop));
+        tasks.Add(TaskTypes.Sign, new SignTask(signShop));
     }
 
     protected override void setupRepeatingTasks()
@@ -28,7 +30,7 @@ public class CityTaskController : TaskController
     //generates a new task from enum TaskTypes, based on rng
     protected override TaskTypes generateTask()
     {
-        int newTask = Random.Range(5, 10);
+        int newTask = Random.Range(10, 13);
         Debug.Log(System.Enum.Parse(typeof(TaskTypes), newTask.ToString()).ToString());
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
     }

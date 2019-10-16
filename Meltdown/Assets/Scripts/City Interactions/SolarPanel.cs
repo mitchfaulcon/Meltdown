@@ -7,6 +7,8 @@ public class SolarPanel : InteractableObjectBase
     private bool solarPanelSet = false;
     public ResourceCollector toolStore;
 
+    public CityTaskController taskController;
+
 
     public override bool CanInteract(ItemTypes item)
     {
@@ -37,7 +39,9 @@ public class SolarPanel : InteractableObjectBase
             //have tick appear for task completion
             this.gameObject.SetActive(false);
             solarPanelSet = false;
+            
             //complete solarPanel Tasks
+            taskController.taskComplete(TaskTypes.Solar);
         }
         return ItemTypes.NONE;
     }

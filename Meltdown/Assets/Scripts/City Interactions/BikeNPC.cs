@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BikeNPC : InteractableObjectBase
 {
+    CityTaskController taskController;
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Bike)
@@ -17,6 +18,8 @@ public class BikeNPC : InteractableObjectBase
     {
         //get NPC to change course and leave off screen
         //Complete Bike task
+        taskController.taskComplete(TaskTypes.Bike);
+
         return ItemTypes.NONE;
     }
 }

@@ -132,11 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationaryBuilding
       objectReference: {fileID: 0}
-    - target: {fileID: 1450004775470079977, guid: 3b7bfb560cd0e784fa0b60d32eb2e6e8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7831fc5221e62fe44be626a71bd68bee, type: 2}
     - target: {fileID: 1484459570826788919, guid: 3b7bfb560cd0e784fa0b60d32eb2e6e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,6 +201,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450004775470079977, guid: 3b7bfb560cd0e784fa0b60d32eb2e6e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7831fc5221e62fe44be626a71bd68bee, type: 2}
+    - target: {fileID: 8846818578996646383, guid: 3b7bfb560cd0e784fa0b60d32eb2e6e8,
+        type: 3}
+      propertyPath: m_Name
+      value: SignDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b7bfb560cd0e784fa0b60d32eb2e6e8, type: 3}
@@ -333,6 +338,7 @@ GameObject:
   - component: {fileID: 63904977}
   - component: {fileID: 63904976}
   - component: {fileID: 63904981}
+  - component: {fileID: 63904982}
   m_Layer: 0
   m_Name: npc15
   m_TagString: NPC
@@ -470,6 +476,25 @@ MonoBehaviour:
   playerModel: {fileID: 63904974}
   animator: {fileID: 2035403950}
   startPos: {fileID: 652285861}
+--- !u!114 &63904982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63904974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &65770364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1326,6 +1351,7 @@ GameObject:
   - component: {fileID: 147330489}
   - component: {fileID: 147330488}
   - component: {fileID: 147330493}
+  - component: {fileID: 147330494}
   m_Layer: 0
   m_Name: npc3
   m_TagString: NPC
@@ -1463,6 +1489,25 @@ MonoBehaviour:
   playerModel: {fileID: 147330486}
   animator: {fileID: 1532091849}
   startPos: {fileID: 652285861}
+--- !u!114 &147330494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147330486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &165383330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1523,7 @@ GameObject:
   - component: {fileID: 165383333}
   - component: {fileID: 165383332}
   - component: {fileID: 165383337}
+  - component: {fileID: 165383338}
   m_Layer: 0
   m_Name: npc7
   m_TagString: NPC
@@ -1615,6 +1661,25 @@ MonoBehaviour:
   playerModel: {fileID: 165383330}
   animator: {fileID: 2078784110}
   startPos: {fileID: 652285861}
+--- !u!114 &165383338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165383330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &181825613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6007,6 +6072,7 @@ GameObject:
   - component: {fileID: 548018452}
   - component: {fileID: 548018451}
   - component: {fileID: 548018456}
+  - component: {fileID: 548018457}
   m_Layer: 0
   m_Name: npc14
   m_TagString: NPC
@@ -6144,6 +6210,25 @@ MonoBehaviour:
   playerModel: {fileID: 548018449}
   animator: {fileID: 330548903}
   startPos: {fileID: 652285861}
+--- !u!114 &548018457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548018449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &549791375
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,6 +6377,7 @@ GameObject:
   - component: {fileID: 567289057}
   - component: {fileID: 567289056}
   - component: {fileID: 567289061}
+  - component: {fileID: 567289062}
   m_Layer: 0
   m_Name: npc2
   m_TagString: NPC
@@ -6429,6 +6515,25 @@ MonoBehaviour:
   playerModel: {fileID: 567289054}
   animator: {fileID: 1227799629}
   startPos: {fileID: 652285861}
+--- !u!114 &567289062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567289054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &591662843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7199,6 +7304,7 @@ GameObject:
   - component: {fileID: 616032962}
   - component: {fileID: 616032961}
   - component: {fileID: 616032966}
+  - component: {fileID: 616032967}
   m_Layer: 0
   m_Name: npc13
   m_TagString: NPC
@@ -7336,6 +7442,25 @@ MonoBehaviour:
   playerModel: {fileID: 616032959}
   animator: {fileID: 364363579}
   startPos: {fileID: 652285861}
+--- !u!114 &616032967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616032959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &631367100
 GameObject:
   m_ObjectHideFlags: 0
@@ -7351,6 +7476,7 @@ GameObject:
   - component: {fileID: 631367103}
   - component: {fileID: 631367102}
   - component: {fileID: 631367107}
+  - component: {fileID: 631367108}
   m_Layer: 0
   m_Name: npc6
   m_TagString: NPC
@@ -7488,6 +7614,25 @@ MonoBehaviour:
   playerModel: {fileID: 631367100}
   animator: {fileID: 451952614}
   startPos: {fileID: 652285861}
+--- !u!114 &631367108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631367100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &652285860
 GameObject:
   m_ObjectHideFlags: 0
@@ -7698,6 +7843,7 @@ MonoBehaviour:
   InteractText: Press J to place solar panel
   interactSound: {fileID: 0}
   toolStore: {fileID: 919317159}
+  taskController: {fileID: 0}
 --- !u!1 &697171259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8513,11 +8659,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SolarPanelBuilding
       objectReference: {fileID: 0}
-    - target: {fileID: 1893545490927101558, guid: e83422d6ff77a4047900bc557603998d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c030f7578c63f5948ab039f747ba6b44, type: 2}
     - target: {fileID: 4587043299208459624, guid: e83422d6ff77a4047900bc557603998d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8587,6 +8728,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893545490927101558, guid: e83422d6ff77a4047900bc557603998d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c030f7578c63f5948ab039f747ba6b44, type: 2}
+    - target: {fileID: 2875330035834629894, guid: e83422d6ff77a4047900bc557603998d,
+        type: 3}
+      propertyPath: m_Name
+      value: SolarDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83422d6ff77a4047900bc557603998d, type: 3}
@@ -10035,11 +10186,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToolBuilding
       objectReference: {fileID: 0}
-    - target: {fileID: 988190967614258175, guid: 49fadc54066332b4c84e64b1b4f9d157,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a687e54e5f4cbc548832dc5ca338df64, type: 2}
     - target: {fileID: 8173558424454570101, guid: 49fadc54066332b4c84e64b1b4f9d157,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10109,6 +10255,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 988190967614258175, guid: 49fadc54066332b4c84e64b1b4f9d157,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a687e54e5f4cbc548832dc5ca338df64, type: 2}
+    - target: {fileID: 7014995886265464122, guid: 49fadc54066332b4c84e64b1b4f9d157,
+        type: 3}
+      propertyPath: m_Name
+      value: ToolDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49fadc54066332b4c84e64b1b4f9d157, type: 3}
@@ -10736,6 +10892,7 @@ GameObject:
   - component: {fileID: 1022410677}
   - component: {fileID: 1022410676}
   - component: {fileID: 1022410681}
+  - component: {fileID: 1022410682}
   m_Layer: 0
   m_Name: npc12
   m_TagString: NPC
@@ -10873,6 +11030,25 @@ MonoBehaviour:
   playerModel: {fileID: 1022410674}
   animator: {fileID: 1034480695}
   startPos: {fileID: 652285861}
+--- !u!114 &1022410682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022410674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!95 &1034480695 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
@@ -11036,6 +11212,7 @@ GameObject:
   - component: {fileID: 1079193240}
   - component: {fileID: 1079193239}
   - component: {fileID: 1079193244}
+  - component: {fileID: 1079193245}
   m_Layer: 0
   m_Name: npc10
   m_TagString: NPC
@@ -11173,6 +11350,25 @@ MonoBehaviour:
   playerModel: {fileID: 1079193237}
   animator: {fileID: 98767620}
   startPos: {fileID: 652285861}
+--- !u!114 &1079193245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079193237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &1085436079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13033,6 +13229,7 @@ GameObject:
   - component: {fileID: 1229346557}
   - component: {fileID: 1229346556}
   - component: {fileID: 1229346561}
+  - component: {fileID: 1229346562}
   m_Layer: 0
   m_Name: npc1
   m_TagString: NPC
@@ -13170,6 +13367,25 @@ MonoBehaviour:
   playerModel: {fileID: 1229346554}
   animator: {fileID: 1078995080}
   startPos: {fileID: 652285861}
+--- !u!114 &1229346562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229346554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &1235023542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15984,6 +16200,7 @@ GameObject:
   - component: {fileID: 1371691884}
   - component: {fileID: 1371691883}
   - component: {fileID: 1371691888}
+  - component: {fileID: 1371691889}
   m_Layer: 0
   m_Name: npc9
   m_TagString: NPC
@@ -16121,6 +16338,25 @@ MonoBehaviour:
   playerModel: {fileID: 1371691881}
   animator: {fileID: 209601500}
   startPos: {fileID: 652285861}
+--- !u!114 &1371691889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371691881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &1373384276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17046,6 +17282,7 @@ GameObject:
   - component: {fileID: 1438232471}
   - component: {fileID: 1438232470}
   - component: {fileID: 1438232475}
+  - component: {fileID: 1438232476}
   m_Layer: 0
   m_Name: npc11
   m_TagString: NPC
@@ -17183,6 +17420,25 @@ MonoBehaviour:
   playerModel: {fileID: 1438232468}
   animator: {fileID: 451952614}
   startPos: {fileID: 652285861}
+--- !u!114 &1438232476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438232468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1001 &1441192069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19057,6 +19313,7 @@ GameObject:
   - component: {fileID: 1719309926}
   - component: {fileID: 1719309925}
   - component: {fileID: 1719309930}
+  - component: {fileID: 1719309931}
   m_Layer: 0
   m_Name: npc5
   m_TagString: NPC
@@ -19194,6 +19451,25 @@ MonoBehaviour:
   playerModel: {fileID: 1719309923}
   animator: {fileID: 2098470164}
   startPos: {fileID: 652285861}
+--- !u!114 &1719309931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719309923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &1726414533
 GameObject:
   m_ObjectHideFlags: 0
@@ -21862,16 +22138,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BikeBuilding
       objectReference: {fileID: 0}
-    - target: {fileID: 1791378983924117948, guid: 72345996e3f131242a3f2729a8b045f1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 1791378983924117948, guid: 72345996e3f131242a3f2729a8b045f1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4038308932176787975, guid: 72345996e3f131242a3f2729a8b045f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21932,11 +22198,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1791378983924117948, guid: 72345996e3f131242a3f2729a8b045f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791378983924117948, guid: 72345996e3f131242a3f2729a8b045f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6793679350150989113, guid: 72345996e3f131242a3f2729a8b045f1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c9f6d084f2895ce43a1ed6d5f2f5bb42, type: 2}
+    - target: {fileID: 8300077865775827224, guid: 72345996e3f131242a3f2729a8b045f1,
+        type: 3}
+      propertyPath: m_Name
+      value: BikeDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72345996e3f131242a3f2729a8b045f1, type: 3}
 --- !u!1 &2029649221 stripped
@@ -21980,6 +22261,7 @@ GameObject:
   - component: {fileID: 2044725152}
   - component: {fileID: 2044725151}
   - component: {fileID: 2044725156}
+  - component: {fileID: 2044725157}
   m_Layer: 0
   m_Name: npc8
   m_TagString: NPC
@@ -22117,6 +22399,25 @@ MonoBehaviour:
   playerModel: {fileID: 2044725149}
   animator: {fileID: 208165879}
   startPos: {fileID: 652285861}
+--- !u!114 &2044725157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044725149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &2061977868
 GameObject:
   m_ObjectHideFlags: 0
@@ -22290,6 +22591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2095501719}
+  - component: {fileID: 2095501720}
   m_Layer: 0
   m_Name: Task Controller
   m_TagString: Untagged
@@ -22311,6 +22613,38 @@ Transform:
   m_Father: {fileID: 841528341}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095501720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095501718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af56c6e70f717114c969cea043948fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskList: 
+  maxTasks: 3
+  SolarTasks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SignTasks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BikeTasks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  solarShop: {fileID: 304533250}
+  signShop: {fileID: 1637179951}
+  bikeShop: {fileID: 82980887}
 --- !u!95 &2098470164 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
@@ -22332,6 +22666,7 @@ GameObject:
   - component: {fileID: 2118768478}
   - component: {fileID: 2118768477}
   - component: {fileID: 2118768482}
+  - component: {fileID: 2118768483}
   m_Layer: 0
   m_Name: npc4
   m_TagString: NPC
@@ -22469,6 +22804,25 @@ MonoBehaviour:
   playerModel: {fileID: 2118768475}
   animator: {fileID: 1040438240}
   startPos: {fileID: 652285861}
+--- !u!114 &2118768483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118768475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ba91edcdd40714bb11f120b7706f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Press J to interact with object
+  interactSound: {fileID: 0}
+  taskController: {fileID: 0}
+  scoreController: {fileID: 0}
+  hasSign: 0
 --- !u!1 &2120884313
 GameObject:
   m_ObjectHideFlags: 0
