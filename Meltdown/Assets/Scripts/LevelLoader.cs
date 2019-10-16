@@ -16,9 +16,17 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadAsynchronously());
     }
 
-    // Update is called once per frame
     IEnumerator LoadAsynchronously()
     {
+        //Stop playing dialogue music if it is playing
+        try
+        {
+            GameObject.FindGameObjectWithTag("DialogueMusic").GetComponent<DialogueMusicController>().StopMusic();
+        }
+        catch (System.NullReferenceException)
+        {
+        }
+
         //Start loading scene
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
 
