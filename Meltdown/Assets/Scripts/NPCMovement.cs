@@ -11,14 +11,10 @@ public class NPCMovement : MonoBehaviour {
 	public Transform[] points;
 	protected int spot;
 	
-	public Rigidbody rigidBody;
-	
 	public bool walking;
 
 	public float waitTime;
 	private float waitCounter;
-
-	public float rotateSpeed = 20f;
 	public GameObject playerModel;
 	public Animator animator;
 	protected Task task;

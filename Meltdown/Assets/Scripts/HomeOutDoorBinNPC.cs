@@ -12,7 +12,6 @@ public class HomeOutDoorBinNPC : NPCMovement
 
     public GameObject toIgnore;
     
-    // Start is called before the first frame update
     void Start()
     {
         // Set the NPC to wait on the first spot for 2 seconds
@@ -22,10 +21,10 @@ public class HomeOutDoorBinNPC : NPCMovement
         completed = false;
         filled = false;
         binVisited = false;
+
         Physics.IgnoreCollision(toIgnore.GetComponent<Collider>(), playerModel.GetComponent<Collider>());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (completed) {
@@ -46,7 +45,7 @@ public class HomeOutDoorBinNPC : NPCMovement
 
         // Set filled to true after the player starts walking away from the bin
         // so that interact animation stops playing.
-        if (Vector3.Distance(transform.position, points[2].position) > 1.0f & binVisited) {
+        if (Vector3.Distance(transform.position, points[2].position) > 1.0f && binVisited) {
             filled = true;
             animator.SetBool("interact", false);
         }
@@ -59,8 +58,8 @@ public class HomeOutDoorBinNPC : NPCMovement
 
     public void StartTask(Task toStart) {
         this.task = toStart;
-        SetWalking(true);
         completed = false;
         filled = false;
+        SetWalking(true);
     }
 }

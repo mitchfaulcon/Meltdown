@@ -103,4 +103,9 @@ public class OutdoorTaskController : TaskController
             i++;
         }
     }
+
+    // Returns true only if there are no task slots available;
+    public bool IsFull() {
+        return taskList.Count == 4; 
+    }
 }
