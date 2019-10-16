@@ -16,6 +16,8 @@ public abstract class TaskController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        taskList.Clear();
+        updateUI();
         hideAllUITasks();
 
         //add different task types to our task dictionary
