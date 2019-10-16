@@ -25,16 +25,13 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        // Start playing dialogue music if it has been instatiated and music is on
-        if (GameSettings.music)
+        // Start playing dialogue music if it has been instatiated
+        try
         {
-            try
-            {
-                GameObject.FindGameObjectWithTag("DialogueMusic").GetComponent<DialogueMusicController>().PlayMusic();
-            }
-            catch (NullReferenceException)
-            {
-            }
+            GameObject.FindGameObjectWithTag("DialogueMusic").GetComponent<DialogueMusicController>().PlayMusic();
+        }
+        catch (NullReferenceException)
+        {
         }
         //Make sure queue is cleared of sentences
         sentences.Clear();
