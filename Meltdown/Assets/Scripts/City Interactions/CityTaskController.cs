@@ -5,9 +5,9 @@ using UnityEngine;
 public class CityTaskController : TaskController
 {
 
-    public GameObject[] SolarTasks = new GameObject[4];
-    public GameObject[] SignTasks= new GameObject[4];
-    public GameObject[] BikeTasks = new GameObject[4];
+    public GameObject[] solarTasks = new GameObject[4];
+    public GameObject[] signTasks= new GameObject[4];
+    public GameObject[] bikeTasks = new GameObject[4];
 
     public ResourceCollector solarShop;
     public ResourceCollector signShop;
