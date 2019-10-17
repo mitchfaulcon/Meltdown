@@ -9,11 +9,7 @@ public class HomeIndoorNPC : NPCMovement
     public Transform standing;
     public Transform top;
     public Transform lightSwitchRight;
-    //public Transform lightSwitchRight2;
-    //public Transform lightSwitchRight3;
     public Transform lightSwitchLeft;
-    //public Transform lightSwitchLeft2;
-    //public Transform lightSwitchLeft3;
     public Transform bottom;
     public Transform sink;
     public Transform stoolJunction;
@@ -65,8 +61,6 @@ public class HomeIndoorNPC : NPCMovement
         stools.Add(stool2);
         stools.Add(stool3);
         stools.Add(stool4);
-
-        //taskController = FindObjectOfType<TaskController>();
     }
 
     void Update()
@@ -86,7 +80,6 @@ public class HomeIndoorNPC : NPCMovement
                 taskController.activateTask(TaskTypes.Tap);
             }
 
-
             if (couchSwitch)
             {
                 couchReached = true;
@@ -96,19 +89,6 @@ public class HomeIndoorNPC : NPCMovement
                 NextRoute(curRoute);
             }
         }
-
-
-        //if (stoolReached) {
-        //    // Start walking once the NPC has been served a salad
-        //    if (served) {
-        //        SetWalking(true);
-        //        NextRoute(curRoute);
-        //        served = false;
-        //        stoolReached = false;
-        //    } else {
-        //        SetWalking(false);
-        //    }
-        //}
 
         if (couchReached) {
             SetWalking(false);
