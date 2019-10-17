@@ -10,6 +10,7 @@ public class MenuMusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Play music if it's enabled and not already playing
         if (menuMusic.isPlaying == false && GameSettings.music == true)
         {
             menuMusic.Play();
