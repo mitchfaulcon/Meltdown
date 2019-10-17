@@ -27,10 +27,16 @@ public class IndoorScoreController : ScoreController
     private readonly Color badPolyTreeColour = new Color(0.361f, 0.192f, 0.051f, 1f); //Dark brown colour
     private Color targetPolyColour;
 
+    public Material grassMaterial;
+    private readonly Color goodGrassColour = new Color(0.561f, 1f, 0.588f, 1f); //Normal green colour
+    private readonly Color badGrassColour = new Color(1f, 0.572f, 0.561f, 1f); //Dark brown colour
+    private Color targetGrassColour;
+
     private void Start()
     {
         treeMaterial.color = badTreeColour;
         lowPolyTreeMaterial.color = badPolyTreeColour;
+        grassMaterial.color = badGrassColour;
     }
 
     protected override void updateScenery()
@@ -40,8 +46,11 @@ public class IndoorScoreController : ScoreController
         //Smooth the colour change over 2 seconds
         treeMaterial.color = Color.Lerp(treeMaterial.color, targetColour, Time.deltaTime / 2f);
 
-        //Do the same for the low poly trees
+        //Do the same for the low poly trees & grass
         targetPolyColour = (currentValue) * (badPolyTreeColour) + (1 - currentValue) * (goodPolyTreeColour);
         lowPolyTreeMaterial.color = Color.Lerp(lowPolyTreeMaterial.color, targetPolyColour, Time.deltaTime / 2f);
+
+        targetGrassColour = (currentValue) * (badGrassColour) + (1 - currentValue) * (goodGrassColour);
+        grassMaterial.color = Color.Lerp(grassMaterial.color, targetGrassColour, Time.deltaTime / 2f);
     }
 }
