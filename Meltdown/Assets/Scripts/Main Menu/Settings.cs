@@ -79,7 +79,12 @@ public class Settings : MonoBehaviour
         //Get value of resolution dropdown & set new resolution accordingly
         int resolutionIndex = resolutionDropdown.value;
         Resolution newResolution = resolutions[resolutionIndex];
-        Screen.SetResolution(newResolution.width, newResolution.height, Screen.fullScreen);
+
+        //Only change resolution if selected is different to current
+        if (newResolution.width != Screen.width || newResolution.height != Screen.height)
+        {
+            Screen.SetResolution(newResolution.width, newResolution.height, Screen.fullScreen);
+        }
     }
 
     public void SetQuality()
