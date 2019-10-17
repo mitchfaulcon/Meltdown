@@ -29,9 +29,9 @@ public class HomeIndoorNPC : NPCMovement
 
     private Transform dest;
 
-    public TaskController taskController;
+    public IndoorTaskController taskController;
 
-    public bool placeHolderFull;
+    public bool taskListFull;
 
     public bool served; // Boolean to check if the player has served the NPC a salad
     private bool couchSwitch;
@@ -39,6 +39,7 @@ public class HomeIndoorNPC : NPCMovement
 
     private bool stoolReached;
     private bool couchReached;
+
     void Start()
     {
         // Set the default starting point to the couch
@@ -48,7 +49,7 @@ public class HomeIndoorNPC : NPCMovement
         points = new Transform[] {starting};
 
         SetWalking(true);
-        placeHolderFull = false;
+        taskListFull = false;
         served = false;
         couchSwitch = false;
 
@@ -70,65 +71,115 @@ public class HomeIndoorNPC : NPCMovement
 
     void Update()
     {
+        //Check if the task list is full
+        taskListFull = TaskController.taskList.Count >= TaskController.maxTasks;
+
         // If the player has reached the destination
         if (Vector3.Distance(transform.position, dest.position) < 1.0f) {
             // If the NPC is at one of the stools, stop moving
-            if (curRoute == HomeIndoorRoutes.Stool) {
-                stoolReached = true;
-            } else if (couchSwitch) {
-                couchReached = true;  
-            } else {
-                NextRoute();
-            }            
-        }
 
-        if (stoolReached) {
-            // Start walking once the NPC has been served a salad
-            if (served) {
-                SetWalking(true);
-                NextRoute();
-                served = false;
-                stoolReached = false;
-            } else {
-                SetWalking(false);
+            if (curRoute == HomeIndoorRoutes.LightSwitchLeft && !taskController.isFull()) {
+                taskController.activateTask(TaskTypes.Light1);
+            }  else if (curRoute == HomeIndoorRoutes.LightSwitchRight && !taskController.isFull()) {
+                taskController.activateTask(TaskTypes.Light2);
+            }  else if (curRoute == HomeIndoorRoutes.Sink && !taskController.isFull()) {
+                taskController.activateTask(TaskTypes.Tap);
+            }
+
+
+            if (couchSwitch)
+            {
+                couchReached = true;
+            }
+            else
+            {
+                NextRoute(curRoute);
             }
         }
 
+
+        //if (stoolReached) {
+        //    // Start walking once the NPC has been served a salad
+        //    if (served) {
+        //        SetWalking(true);
+        //        NextRoute(curRoute);
+        //        served = false;
+        //        stoolReached = false;
+        //    } else {
+        //        SetWalking(false);
+        //    }
+        //}
+
         if (couchReached) {
             SetWalking(false);
+            SitDown();
             couchTimer += Time.deltaTime;
-                    
-            if (couchTimer > 5.0f) {
+
+            //Only stand up once the 5s timer is up & if the task list isn't full
+            if (!taskListFull && couchTimer > 5.0f) {
                 couchTimer = 0.0f;
                       
                 couchSwitch = false;
                 couchReached = false;
-                SetWalking(true);
-            }               
+
+                StartCoroutine(StandUp());
+            }
         }
 
         Wait();
+    }
+
+    private void SitDown()
+    {
+        //Face npc away from couch
+        SetRotation(standing.position);
+        animator.SetBool("standing", false);
+        animator.SetBool("sit", true);
+    }
+
+    private IEnumerator StandUp()
+    {
+        animator.SetBool("sit", false);
+
+        //Wait until animation completes
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        animator.SetBool("standing", true);
+        SetWalking(true);
     }
 
     public void serve() {
         served = true;
     }
 
-    private void NextRoute() {
-        HomeIndoorRoutes destination;
+    private void NextRoute(HomeIndoorRoutes currentDest) {
+        HomeIndoorRoutes destination = currentDest;
         // Set the route to the couch if the task list is full, otherwise select a random route
-        if (placeHolderFull) {
-        destination = HomeIndoorRoutes.Couch;
+        if (taskListFull) {
+            prevRoute = currentDest;
+            curRoute = HomeIndoorRoutes.Couch;
+            destination = HomeIndoorRoutes.Couch;
+            dest = starting;
+            couchSwitch = true;
         } else {
-            destination = RandomRoute();
+            //Choose a different destination
+            while (destination == currentDest)
+            {
+                destination = RandomRoute();
+            }
         }
 
         points = ConstructRoute(destination);
     }
 
     private HomeIndoorRoutes RandomRoute() {
+        couchSwitch = false;
         // Get a random route
-        HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(Random.Range(0, NUM_TASKS));
+        int pos = Random.Range(0, NUM_TASKS);
+        while (taskController.containsTask(pos)){
+            pos = Random.Range(0, NUM_TASKS);
+        } Debug.Log(pos);
+        HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(pos);
 
         // If the next route is the same as the last, retry
         if (nextRoute == prevRoute) {
@@ -138,7 +189,7 @@ public class HomeIndoorNPC : NPCMovement
             curRoute = nextRoute;
 
             // Set the destination point
-            switch(curRoute) {
+            switch (curRoute) {
                 case HomeIndoorRoutes.LightSwitchLeft: 
                     dest = lightSwitchLeft;
                     break;

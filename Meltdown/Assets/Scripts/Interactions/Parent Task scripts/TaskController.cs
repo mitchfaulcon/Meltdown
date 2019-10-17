@@ -4,18 +4,20 @@ using UnityEngine;
 
 public abstract class TaskController : MonoBehaviour
 {
-    public List<TaskTypes> taskList = new List<TaskTypes>();
+    public static List<TaskTypes> taskList = new List<TaskTypes>();
     
     public Dictionary<TaskTypes, Task> tasks = new Dictionary<TaskTypes, Task>();
 
     protected float timeCount = 0.0f;
     protected float newTaskTime = 0.0f;
-    public int maxTasks = 4;
+    public static int maxTasks = 4;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        taskList.Clear();
+        updateUI();
         hideAllUITasks();
 
         //add different task types to our task dictionary
@@ -38,7 +40,7 @@ public abstract class TaskController : MonoBehaviour
 
     }
 
-    void checkForNewTask()
+    protected virtual void checkForNewTask()
     {
         //update time count, and if it reaches the time set to generate a new task at, do so.
         if (taskList.Count < maxTasks)
