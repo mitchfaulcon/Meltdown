@@ -139,6 +139,7 @@ public class SaladTask : Task
 public class BikeTask : Task
 {
     BikeShop bikeShop;
+    CityBikeNPC npc;
 
     public BikeTask(BikeShop bikeShop)
     {
@@ -147,7 +148,10 @@ public class BikeTask : Task
 
     public override void setupTask()
     {
-       bikeShop.fill();
+        npc = FindObjectOfType<CityBikeNPC>();
+        npc.StartTask();
+        
+        bikeShop.fill();
     }
 
     public override void completeTask()

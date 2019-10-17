@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class BikeNPC : InteractableObjectBase
 {
-    CityTaskController taskController;
+    public CityTaskController taskController;
+    CityBikeNPC npc;
+
+    public OutdoorScoreController scoring;
+
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Bike)
@@ -18,8 +22,17 @@ public class BikeNPC : InteractableObjectBase
     {
         //get NPC to change course and leave off screen
         //Complete Bike task
+        npc = this.GetComponent<CityBikeNPC>();
+        npc.GiveBike();
+
         taskController.taskComplete(TaskTypes.Bike);
 
         return ItemTypes.NONE;
+    }
+
+    public void FailTask() {
+        // Should also play fail sound along with fail speech bubble and remove points
+
+        taskController.removeTask(TaskTypes.Bike);
     }
 }
