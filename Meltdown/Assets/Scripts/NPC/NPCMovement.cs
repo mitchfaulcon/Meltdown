@@ -19,6 +19,8 @@ public class NPCMovement : MonoBehaviour {
 	public Animator animator;
 	protected Task task;
 
+	protected float threshhold = 1.0f;
+
   // Start is called before the first frame update
   	void Start() {
 		walking = false;
@@ -33,7 +35,7 @@ public class NPCMovement : MonoBehaviour {
 
 	protected void Wait() {
 		// Check if NPC is near the point before decrementing wait counter
-		if ((Vector3.Distance(transform.position, points[spot].position) < 1.0f) && walking) {
+		if ((Vector3.Distance(transform.position, points[spot].position) < threshhold) && walking) {
 			if (waitCounter <= 0) {
 				// Increment spots to move towards next spot, reset after last spot
 				if (spot == points.Length - 1) {

@@ -6,6 +6,8 @@ public class CityBikeNPC : NPCMovement
 {
     public Animator[] doorAnimators;
     public Animator taxiAnimator;
+
+    public GameObject bike;
     private bool taxiReached;
     private bool bikeGiven;
     private Material material;
@@ -15,13 +17,15 @@ public class CityBikeNPC : NPCMovement
 
     private BikeNPC bikeTask;
 
+
     void Start()
     {
         movementSpeed = SLOW_SPEED;
         SetWalking(false);
-        
+        bike.SetActive(false);        
         taxiReached = false;
         bikeGiven = false;
+        threshhold = 1.0f;
 
         material = gameObject.GetComponent<MeshRenderer>().material;
         bikeTask = this.GetComponent<BikeNPC>();
@@ -42,11 +46,18 @@ public class CityBikeNPC : NPCMovement
         }
 
         // If the player did give him the bike and the NPC reaches off screen
-        if (bikeGiven && Vector3.Distance(transform.position, points[points.Length-1].position) < 1.0f) 
-        {
-            bikeTask.CompleteTask();
-            ResetPosition();
+        if (bikeGiven) {
+            transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+
+            if (Vector3.Distance(transform.position, points[points.Length-1].position) < 1.0f) 
+            {
+                bikeTask.CompleteTask();
+                SetBiking(false);
+                ResetPosition();
+            }
         }
+        
+        
 
         if (taxiReached) {
             SetWalking(false);
@@ -83,6 +94,7 @@ public class CityBikeNPC : NPCMovement
         bikeGiven = false;
         taxiReached = false;
         spot = 0;
+        threshhold = 1.0f;
         movementSpeed = SLOW_SPEED;
     }
 
@@ -106,9 +118,23 @@ public class CityBikeNPC : NPCMovement
         }
     }
 
+    private void SetBiking(bool biking) {
+        float y = transform.position.y;
+
+        if (biking) {
+            y += 0.5f;
+        }
+
+        bike.SetActive(biking);
+        animator.SetBool("biking", biking);
+
+    }
+
     public void GiveBike() 
     {
         bikeGiven = true;
+        SetBiking(true);
+        threshhold = 2.0f;
         movementSpeed = FAST_SPEED;
     }
 }
