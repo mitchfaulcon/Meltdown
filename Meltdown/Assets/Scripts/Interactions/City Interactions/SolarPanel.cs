@@ -57,7 +57,6 @@ public class SolarPanel : InteractableObjectBase
 
     public void setupTask()
     {
-        this.gameObject.SetActive(true);
         Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
         foreach (Component panel in panels)
         {
