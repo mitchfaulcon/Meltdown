@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCMovement : MonoBehaviour {
-	private const float DEFAULT_SPEED = 5f;
+	protected const float DEFAULT_SPEED = 5f;
 
 	public float movementSpeed = DEFAULT_SPEED;
 	

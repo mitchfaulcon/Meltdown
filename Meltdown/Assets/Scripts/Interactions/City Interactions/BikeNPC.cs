@@ -25,9 +25,11 @@ public class BikeNPC : InteractableObjectBase
         npc = this.GetComponent<CityBikeNPC>();
         npc.GiveBike();
 
-        taskController.taskComplete(TaskTypes.Bike);
-
         return ItemTypes.NONE;
+    }
+
+    public void CompleteTask() {
+        taskController.taskComplete(TaskTypes.Bike);
     }
 
     public void FailTask() {

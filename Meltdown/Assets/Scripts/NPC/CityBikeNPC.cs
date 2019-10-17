@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class CityBikeNPC : NPCMovement
 {
-
     public Animator[] doorAnimators;
     private bool taxiReached;
     private bool bikeGiven;
     private Material material;
 
+    private const float SLOW_SPEED = 2.0f;
+    private const float FAST_SPEED = 7.0f;
+
     private BikeNPC bikeTask;
 
     void Start()
     {
+        movementSpeed = SLOW_SPEED;
         SetWalking(false);
-
+        
         taxiReached = false;
         bikeGiven = false;
 
@@ -29,7 +32,6 @@ public class CityBikeNPC : NPCMovement
         }
     }
 
-
     void Update()
     {
         // If the NPC reaches the taxi and the player didn't give him the bike
@@ -41,6 +43,7 @@ public class CityBikeNPC : NPCMovement
         // If the player did give him the bike and the NPC reaches off screen
         if (bikeGiven && Vector3.Distance(transform.position, points[points.Length-1].position) < 1.0f) 
         {
+            bikeTask.CompleteTask();
             ResetPosition();
         }
 
@@ -67,6 +70,8 @@ public class CityBikeNPC : NPCMovement
 
     private void ResetPosition() 
     {
+        SetWalking(false);
+
         // Teleport NPC back to starting position
         transform.position = new Vector3(
         points[0].position.x,
@@ -76,6 +81,7 @@ public class CityBikeNPC : NPCMovement
         bikeGiven = false;
         taxiReached = false;
         spot = 0;
+        movementSpeed = SLOW_SPEED;
     }
 
     public void StartTask() 
@@ -101,5 +107,6 @@ public class CityBikeNPC : NPCMovement
     public void GiveBike() 
     {
         bikeGiven = true;
+        movementSpeed = FAST_SPEED;
     }
 }
