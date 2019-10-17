@@ -19,7 +19,7 @@ public class CityScoreController : ScoreController
     }
 
     private readonly float goodFogDensity = 0f;
-    private readonly float badFogDensity = 0.05f;
+    private readonly float badFogDensity = 0.035f;
     private float targetDensity;
 
     private void Start()
