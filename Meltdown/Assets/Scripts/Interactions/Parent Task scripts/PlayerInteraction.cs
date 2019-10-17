@@ -8,19 +8,11 @@ public abstract class PlayerInteraction : MonoBehaviour
     public HUD Hud;
     public ItemTypes heldItem = ItemTypes.NONE;
 
-    public AudioSource gameMusic;
-
     // Start is called before the first frame update
     void Start()
     {
         //Hide the cursor when the game starts
         Cursor.visible = false;
-
-        // Start game music if enabled
-        if (GameSettings.music == true)
-        {
-            gameMusic.Play();
-        }
     }
 
     // Update is called once per frame
