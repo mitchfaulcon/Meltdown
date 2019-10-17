@@ -14,6 +14,14 @@ See the project [wiki](https://github.com/mitchfaulcon/Meltdown/wiki) for all pr
 | Salma Sanad | ssan631 | [salma-s](https://github.com/salma-s/) |
 | Hayden Simpson | hsim744 | [hdnsimpson](https://github.com/hdnsimpson/) |
 
+## Ideal Pathway
+In order to progress through all dialogue sequences and game levels, we have cheat codes that can be used.
+ - The Enter button can be used to quickly progress through menus and dialogues
+ - CTRL+T can be used when inside a game level to grant the player points
+ - CTRL+E can be used to end a level at any time, in conjunction with CTRL+T being pressed multiple times beforehand, the player can quickly finish a level with a score high enough to progress onwards
+
+A combination of the above three methods can progress through all levels and screens in the game very quickly.
+
 ## Prototype Execution Instructions
 1. Download the prototype .zip file from the [releases page](https://github.com/mitchfaulcon/Meltdown/releases)
 2. Extract the downloaded .zip to desired location
