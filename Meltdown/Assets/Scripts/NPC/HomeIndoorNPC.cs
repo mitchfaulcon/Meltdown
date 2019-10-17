@@ -158,7 +158,7 @@ public class HomeIndoorNPC : NPCMovement
         int pos = Random.Range(0, NUM_TASKS);
         while (taskController.containsTask(pos)){
             pos = Random.Range(0, NUM_TASKS);
-        } Debug.Log(pos);
+        }
         HomeIndoorRoutes nextRoute = RouteMethods.GetRoute(pos);
 
         // If the next route is the same as the last, retry
