@@ -5,6 +5,7 @@ using UnityEngine;
 public class CityBikeNPC : NPCMovement
 {
     public Animator[] doorAnimators;
+    public Animator taxiAnimator;
     private bool taxiReached;
     private bool bikeGiven;
     private Material material;
@@ -62,6 +63,7 @@ public class CityBikeNPC : NPCMovement
             {
                 ResetPosition();
                 bikeTask.FailTask();
+                taxiAnimator.SetTrigger("play");
             }            
         }
 
