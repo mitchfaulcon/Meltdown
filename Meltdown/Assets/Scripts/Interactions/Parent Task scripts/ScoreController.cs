@@ -25,6 +25,9 @@ public abstract class ScoreController : MonoBehaviour
     private readonly float hotTemp = 20f;
     private readonly float coldTemp = 10f;
 
+    public GameObject temperaturePopup;
+    public GameObject player;
+
     private void Start()
     {
 
@@ -59,11 +62,40 @@ public abstract class ScoreController : MonoBehaviour
     public void taskScored(float points)
     {
         currentValue -= points;
+
+        DisplayPopup(points, true);
     }
 
     public void taskFailed(float points)
     {
         currentValue += points;
+
+        DisplayPopup(points, false);
+    }
+
+    protected void DisplayPopup(float points, bool success)
+    {
+        //Instantiate temperature popup
+        var popup = Instantiate(temperaturePopup, player.transform.position, Quaternion.identity);
+        TextMeshPro popupText = popup.GetComponent<TextMeshPro>();
+
+        //Rotate popup to be more visible to the camera
+        popup.transform.eulerAngles = new Vector3(45f, 0f, 0f);
+
+        string tempDecrease = ((hotTemp - coldTemp) * points).ToString() + "°";
+
+        if (success)
+        {
+            //Set to green with a '-' at the front
+            popupText.text = "-" + tempDecrease;
+            popupText.color = Color.green;
+        }
+        else
+        {
+            //Wrong bin: set to red with a '+' at the front
+            popupText.text = "+" + tempDecrease;
+            popupText.color = Color.red;
+        }
     }
 
     protected virtual void calculateRate()
