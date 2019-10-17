@@ -6,15 +6,17 @@ public class SaladNPC : ItemCollectorBase
 {
     public ScoreController scoring;
     public IndoorTaskController taskControl;
+
+    // Allow the player to give the NPC their held salad item
     public override ItemTypes OnInteract()
     {
         interactSound.Play();
         scoring.taskScored(IndoorScoreController.Tasks.SALAD);
-        //alert.SetActive(false);
         taskControl.removeSaladTask();
         return ItemTypes.NONE;
     }
 
+    // The player can only interact with the NPC if they are holding a salad
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Salad)
@@ -26,6 +28,6 @@ public class SaladNPC : ItemCollectorBase
 
     public void readyForSalad()
     {
-        //alert.SetActive(true);
+
     }
 }

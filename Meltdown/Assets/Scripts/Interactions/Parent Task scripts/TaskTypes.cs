@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Task types
 public enum TaskTypes
 {
     Tree = 0,

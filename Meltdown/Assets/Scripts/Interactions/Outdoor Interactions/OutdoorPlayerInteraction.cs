@@ -27,6 +27,7 @@ public class OutdoorPlayerInteraction : PlayerInteraction
         holdingCan.SetActive(false);
     }
 
+    // Show currently held item in the backyard via speech bubble
     protected override void setActiveBubble()
     {
         if (heldItem == ItemTypes.Recyclables)

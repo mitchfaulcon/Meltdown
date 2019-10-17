@@ -58,7 +58,7 @@ public abstract class ScoreController : MonoBehaviour
         UpdateTempText();
     }
 
-
+    // Decrease temp for scoring a task
     public void taskScored(float points)
     {
         currentValue -= points;
@@ -66,6 +66,7 @@ public abstract class ScoreController : MonoBehaviour
         DisplayPopup(points, true);
     }
 
+    // Increase temp for failing a task
     public void taskFailed(float points)
     {
         currentValue += points;
@@ -98,6 +99,7 @@ public abstract class ScoreController : MonoBehaviour
         }
     }
 
+    // The rate of temperate rise is based on what stars the player would currently earn
     protected virtual void calculateRate()
     {
         float newRate = DEFAULT_RATE;

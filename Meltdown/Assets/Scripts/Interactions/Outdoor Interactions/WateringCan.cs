@@ -5,7 +5,8 @@ using UnityEngine;
 public class WateringCan : ItemCollectorBase
 {
     public int waterLevel = 0;
-      public new void fill()
+
+    public new void fill()
     {
         //increase water level for if multiple tasks need water
         waterLevel++;

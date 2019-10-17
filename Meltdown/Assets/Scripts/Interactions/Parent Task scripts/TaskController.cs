@@ -54,17 +54,19 @@ public abstract class TaskController : MonoBehaviour
 
     }
 
-    protected void addTask() {
-        TaskTypes task = generateTask();
-                while (taskList.Contains(task))
-                {
-                    task = generateTask();
-                }
-                taskList.Add(task);
-                updateUI();
-                tasks[task].setupTask();
+    // Add a task to the task list
+    protected void addTask()
+    {
+         TaskTypes task = generateTask();
+         while (taskList.Contains(task))
+         {
+            task = generateTask();
+         }
+         taskList.Add(task);
+         updateUI();
+         tasks[task].setupTask();
 
-                generateTaskTime();
+         generateTaskTime();
     }
 
     protected abstract void loadTasks();

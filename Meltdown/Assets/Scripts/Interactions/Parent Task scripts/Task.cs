@@ -65,6 +65,7 @@ public class SeedTask : Task
 
 }
 
+// Light switch toggle task
 public class LightSwitchTask : Task
 {
     private ToggleItem lightSwitch;
@@ -88,6 +89,7 @@ public class LightSwitchTask : Task
     }
 }
 
+// Tap toggle task
 public class TapTask : Task
 {
     private ToggleItem tap;
@@ -109,6 +111,7 @@ public class TapTask : Task
     }
 }
 
+// Salad creation task
 public class SaladTask : Task
 {
     private SaladItem Avocado;
