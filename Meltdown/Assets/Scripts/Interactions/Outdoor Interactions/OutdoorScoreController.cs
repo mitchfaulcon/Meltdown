@@ -13,8 +13,8 @@ public class OutdoorScoreController : ScoreController
 
     public struct Tasks
     {
-        public const float SORT_RUBBISH = 0.07f;
-        public const float PLANT = 0.06f;
+        public const float SORT_RUBBISH = 0.08f;
+        public const float PLANT = 0.08f;
     }
 
     public Material treeMaterial;
