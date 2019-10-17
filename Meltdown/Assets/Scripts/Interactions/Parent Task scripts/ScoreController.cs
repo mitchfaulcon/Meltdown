@@ -19,7 +19,12 @@ public abstract class ScoreController : MonoBehaviour
 
     protected float increaseRate = DEFAULT_RATE;
     public TextMeshProUGUI scoreText;
-    
+
+    public TextMeshProUGUI temp;
+    private readonly string degreesText = "°";
+    private readonly float hotTemp = 20f;
+    private readonly float coldTemp = 10f;
+
     private void Start()
     {
 
@@ -46,6 +51,8 @@ public abstract class ScoreController : MonoBehaviour
         }
 
         updateScenery();
+
+        UpdateTempText();
     }
 
 
@@ -78,5 +85,15 @@ public abstract class ScoreController : MonoBehaviour
     }
 
     protected abstract void updateScenery();
+
+    private void UpdateTempText()
+    {
+        float currentTemp = (currentValue) * (hotTemp) + (1 - currentValue) * (coldTemp);
+
+        //Round temp to 2dp
+        currentTemp = (float) System.Math.Round(currentTemp, 2);
+
+        temp.text = currentTemp.ToString() + degreesText;
+    }
 
 }
