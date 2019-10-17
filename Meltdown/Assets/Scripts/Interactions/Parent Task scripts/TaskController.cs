@@ -10,7 +10,7 @@ public abstract class TaskController : MonoBehaviour
 
     protected float timeCount = 0.0f;
     protected float newTaskTime = 0.0f;
-    public static int maxTasks = 4;
+    public int maxTasks = 4;
     
 
     // Start is called before the first frame update

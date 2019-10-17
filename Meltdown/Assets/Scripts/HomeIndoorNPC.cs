@@ -72,7 +72,7 @@ public class HomeIndoorNPC : NPCMovement
     void Update()
     {
         //Check if the task list is full
-        taskListFull = TaskController.taskList.Count >= TaskController.maxTasks;
+        taskListFull = TaskController.taskList.Count >= taskController.maxTasks;
 
         // If the player has reached the destination
         if (Vector3.Distance(transform.position, dest.position) < 1.0f) {
