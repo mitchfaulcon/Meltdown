@@ -8,16 +8,20 @@ public class SolarPanel : InteractableObjectBase
     public ResourceCollector toolStore;
 
     public CityTaskController taskController;
+    public AudioSource buildSound;
+    public AudioSource baseSound;
 
 
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Solar && !solarPanelSet)
         {
+            interactSound = baseSound;
             return true;
         }
         else if(item == ItemTypes.Tools && solarPanelSet)
         {
+            interactSound = buildSound;
             return true;
         }
         return false;
@@ -29,10 +33,12 @@ public class SolarPanel : InteractableObjectBase
             solarPanelSet = true;
             toolStore.fill();
             Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
+            
             foreach (Component panel in panels)
             {
                 ((MeshRenderer)panel).material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 1.0f);
             }
+
         }
         else
         {
