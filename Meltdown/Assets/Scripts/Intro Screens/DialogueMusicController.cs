@@ -13,6 +13,7 @@ public class DialogueMusicController : MonoBehaviour
         introMusic = GetComponent<AudioSource>();
     }
 
+    // Play music if it is enabled and not already doing so
     public void PlayMusic()
     {
         if (!introMusic.isPlaying && GameSettings.music == true)
