@@ -13,8 +13,8 @@ public class IndoorScoreController : ScoreController
 
     public struct Tasks
     {
-        public const float SALAD = 0.12f;
-        public const float TOGGLE = 0.05f;
+        public const float SALAD = 0.125f;
+        public const float TOGGLE = 0.055f;
     }
 
     public Material treeMaterial;
