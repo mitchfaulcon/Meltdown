@@ -40,7 +40,7 @@ public class CityBikeNPC : NPCMovement
     void Update()
     {
         // If the NPC reaches the taxi and the player didn't give him the bike
-        if (Vector3.Distance(transform.position, points[3].position) < 1.0f && !bikeGiven) 
+        if (Vector3.Distance(transform.position, points[2].position) < 1.0f && !bikeGiven) 
         {
             taxiReached = true;
         }
@@ -49,7 +49,7 @@ public class CityBikeNPC : NPCMovement
         if (bikeGiven) {
             transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
 
-            if (Vector3.Distance(transform.position, points[points.Length-1].position) < 1.0f) 
+            if (Vector3.Distance(transform.position, points[points.Length-1].position) < 2.0f) 
             {
                 bikeTask.CompleteTask();
                 SetBiking(false);
