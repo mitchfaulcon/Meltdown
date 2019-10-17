@@ -33,7 +33,6 @@ public class HomeIndoorNPC : NPCMovement
     private bool couchSwitch;
     private float couchTimer = 0.0f;
 
-    private bool stoolReached;
     private bool couchReached;
 
     void Start()
@@ -54,7 +53,6 @@ public class HomeIndoorNPC : NPCMovement
         // the "if" condition in one frame but fail the next. Therefore we
         // add a boolean to trigger it independent of whether the "if" condition
         // is passed.
-        stoolReached = false;
         couchReached = false;
 
         stools.Add(stool1);
