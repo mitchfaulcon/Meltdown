@@ -16,7 +16,7 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_FogMode: 2
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -29570,14 +29570,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986198323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81ae031b6098b0240a676190d2d32fa8, type: 3}
+  m_Script: {fileID: 11500000, guid: a95ca9ce8e84a67478ca3c1fcf26472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1986198326}
   barImage: {fileID: 927182051}
   scoreText: {fileID: 1402155132}
-  treeMaterial: {fileID: 2100000, guid: c9f6d084f2895ce43a1ed6d5f2f5bb42, type: 2}
-  grassMaterial: {fileID: 0}
 --- !u!114 &1986198326
 MonoBehaviour:
   m_ObjectHideFlags: 0
