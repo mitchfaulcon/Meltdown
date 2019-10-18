@@ -13,9 +13,10 @@ public class CityScoreController : ScoreController
 
     public struct Tasks
     {
-        public const float SIGN = 0.07f;
-        public const float SOLAR = 0.025f;
-        public const float BIKE = 0.5f;
+        public const float SIGN = 0.08f;
+        public const float SOLAR = 0.13f;
+        public const float BIKE = 0.11f;
+        public const float BIKE_FAILED = 0.05f;
     }
 
     private readonly float goodFogDensity = 0f;
