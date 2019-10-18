@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.5, y: 0}
-  m_SizeDelta: {x: -105, y: -100}
+  m_AnchoredPosition: {x: 7.5, y: 7.5}
+  m_SizeDelta: {x: -105, y: -85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10300673
 MonoBehaviour:
@@ -1929,7 +1929,7 @@ MonoBehaviour:
     - "Hi Timmy, I'm Fiona from the year\n2100.\n\nI work for the youth \nenvironmental
       education trust \n\n...... or YEET for short."
     - "At YEET, we go back in time to \nteach kids like you the things \nthey can
-      do to help reverse the\nterrible effects of climate change."
+      do to help reduce the\nterrible effects of climate change."
     images:
     - {fileID: 0}
     - {fileID: 0}
@@ -4419,13 +4419,19 @@ MonoBehaviour:
   dialogueManager: {fileID: 1304705500}
   dialogue:
     sentences:
-    - "In 2100, the Earth's surface\ntemperature is 4\xB0C hotter.\nEcosystems, crops
-      and people\nare suffering.\n\nYour mission is to do your part to reduce this
-      temperature change\nand save the planet's future!"
-    - "Complete environmentally\nfriendly tasks to reduce \nthis temperature rise.\n\nThe
-      lower you get the\ntemperature, the higher your\nscore will be!"
-    - "Complete as many tasks\nas you can before the \ntimer runs out!"
+    - "In the future, the Earth\u2019s \ntemperature has increased by\na significant
+      amount. \nEcosystems, crops, and people\nare suffering. \n\nI need your help
+      to stop this \nfrom happening again."
+    - "I\u2019ve made a prediction on what \nthe temperature rise will be \nbased
+      on the current state of \nthe Earth.\n\nIt's currently very high, and it's \nconstantly
+      rising as people do \nbad things."
+    - "As you complete \nenvironmentally-friendly \ntasks, the prediction will \ngo
+      down.\r\n\r\nYou may also notice the world \naround you becoming cleaner and
+      \ngreener as nature begins to \nthrive again."
+    - "Get the predicted \ntemperature as low as \npossible within the time \nlimit.\n\nThe
+      lower you can get it,\nthe higher your score will be. \r"
     images:
+    - {fileID: 1255315191}
     - {fileID: 1255315191}
     - {fileID: 2079819483}
     - {fileID: 802983898}
