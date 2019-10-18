@@ -8,6 +8,7 @@ public class SolarPanel : InteractableObjectBase
     public ResourceCollector toolStore;
 
     public CityTaskController taskController;
+    public CityScoreController scoreController;
     public AudioSource buildSound;
     public AudioSource baseSound;
     public GameObject[] truckSolarPanels;
@@ -51,6 +52,7 @@ public class SolarPanel : InteractableObjectBase
             
             //complete solarPanel Tasks
             taskController.taskComplete(TaskTypes.Solar);
+            scoreController.taskScored(CityScoreController.Tasks.SOLAR);
         }
         return ItemTypes.NONE;
     }

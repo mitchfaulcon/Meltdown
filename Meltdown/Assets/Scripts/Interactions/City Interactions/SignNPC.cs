@@ -41,7 +41,8 @@ public class SignNPC : InteractableObjectBase
 
         //complete sign task
         taskController.taskComplete(TaskTypes.Sign);
-    
+        scoreController.taskScored(CityScoreController.Tasks.SIGN);
+
         return ItemTypes.NONE;
     }
 }
