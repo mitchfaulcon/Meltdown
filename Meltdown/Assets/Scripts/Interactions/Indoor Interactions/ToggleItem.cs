@@ -34,6 +34,7 @@ public class ToggleItem : InteractableObjectBase
         }
         else
         {
+            // Turn off the water
             this.transform.Find("Water").gameObject.SetActive(false);
             this.transform.Find("SinkWater").gameObject.SetActive(false);
         }
@@ -51,6 +52,7 @@ public class ToggleItem : InteractableObjectBase
         return on;
     }
 
+    // Allow the NPC to turn these toggles on
     public void Activate()
     {
         on = true;

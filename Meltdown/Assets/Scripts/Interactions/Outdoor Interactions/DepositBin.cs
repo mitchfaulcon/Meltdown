@@ -8,8 +8,6 @@ public class DepositBin : InteractableObjectBase
     public ItemTypes currentTrash;
     public OutdoorScoreController scoring;
     public TaskController taskControl;
-    public GameObject correctAlert;
-    public GameObject incorrectAlert;
     public AudioSource errorSound;
     
 
@@ -20,8 +18,6 @@ public class DepositBin : InteractableObjectBase
         if (currentTrash == type)
         {
             scoring.taskScored(OutdoorScoreController.Tasks.SORT_RUBBISH);
-            correctAlert.SetActive(true);
-            incorrectAlert.SetActive(false);
             Invoke("removeAlerts", 2);
             PlayInteractSound();
         }
@@ -29,8 +25,6 @@ public class DepositBin : InteractableObjectBase
         else
         {
             scoring.taskFailed(OutdoorScoreController.Tasks.SORT_RUBBISH);
-            correctAlert.SetActive(false);
-            incorrectAlert.SetActive(true);
             Invoke("removeAlerts", 2);
             if (GameSettings.sounds == true)
             {
@@ -73,9 +67,7 @@ public class DepositBin : InteractableObjectBase
 
     public void removeAlerts()
     {
-        // Hide both correct and incorrect popup alerts
-        correctAlert.SetActive(false);
-        incorrectAlert.SetActive(false);
+
     }
 
 }

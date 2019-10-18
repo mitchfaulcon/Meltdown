@@ -11,7 +11,6 @@ public class OutdoorTaskController : TaskController
     public GameObject[] carrotTasks = new GameObject[4];
     public GameObject[] recyclingTasks = new GameObject[4];
     
-
     public SeedBox carrotBox;
     public SeedBox potatoBox;
     public SeedBox treeBox;

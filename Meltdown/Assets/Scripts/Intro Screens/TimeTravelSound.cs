@@ -7,6 +7,7 @@ public class TimeTravelSound : MonoBehaviour
     public AudioSource portalSound;
 
     // Start is called before the first frame update
+    // Play the portal sound if it is enabled
     void Start()
     {
         if (GameSettings.sounds == true)
@@ -15,7 +16,6 @@ public class TimeTravelSound : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         

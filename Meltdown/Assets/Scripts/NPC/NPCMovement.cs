@@ -61,7 +61,6 @@ public class NPCMovement : MonoBehaviour {
 		}
 	}
 
-
 	protected void MovePlayer(Vector3 dest) {
 		// Move player and start animation when npc is moving
 		transform.position = Vector3.MoveTowards(transform.position, dest, movementSpeed*Time.deltaTime);

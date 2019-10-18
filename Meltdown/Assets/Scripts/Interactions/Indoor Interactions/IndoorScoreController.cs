@@ -11,10 +11,11 @@ public class IndoorScoreController : ScoreController
     protected new static readonly float TWO_STAR_RATE = 0.003f;
     protected new static readonly float THREE_STAR_RATE = 0.005f;
 
+    // This struct contains the points for each task in the kitchen
     public struct Tasks
     {
-        public const float SALAD = 0.07f;
-        public const float TOGGLE = 0.025f;
+        public const float SALAD = 0.125f;
+        public const float TOGGLE = 0.055f;
     }
 
     public Material treeMaterial;

@@ -11,10 +11,11 @@ public class OutdoorScoreController : ScoreController
     protected new static readonly float TWO_STAR_RATE = 0.003f;
     protected new static readonly float THREE_STAR_RATE = 0.005f;
 
+    // This struct holds the points awarded for each task in the backyard
     public struct Tasks
     {
-        public const float SORT_RUBBISH = 0.07f;
-        public const float PLANT = 0.06f;
+        public const float SORT_RUBBISH = 0.09f;
+        public const float PLANT = 0.085f;
     }
 
     public Material treeMaterial;
