@@ -10,7 +10,8 @@ public class SolarPanel : InteractableObjectBase
     public CityTaskController taskController;
     public AudioSource buildSound;
     public AudioSource baseSound;
-
+    public GameObject[] truckSolarPanels;
+    private int activePanels = 0;
 
     public override bool CanInteract(ItemTypes item)
     {
@@ -44,6 +45,8 @@ public class SolarPanel : InteractableObjectBase
         {
             //have tick appear for task completion
             this.gameObject.SetActive(false);
+            this.truckSolarPanels[activePanels].SetActive(true);
+            activePanels++;
             solarPanelSet = false;
             
             //complete solarPanel Tasks
