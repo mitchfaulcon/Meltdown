@@ -83,7 +83,7 @@ public abstract class ScoreController : MonoBehaviour
         //Rotate popup to be more visible to the camera
         popup.transform.eulerAngles = new Vector3(45f, 0f, 0f);
 
-        string tempDecrease = ((hotTemp - coldTemp) * points).ToString() + "°";
+        string tempDecrease = System.Math.Round(((hotTemp - coldTemp) * points), 2).ToString() + "°";
 
         if (success)
         {
