@@ -44,4 +44,11 @@ public class CityPlayerInteraction : PlayerInteraction
             holdingSign.SetActive(true);
         }
     }
+
+    public void setItem(ItemTypes item)
+    {
+        heldItem = item;
+        removeSpeechBubbles();
+        setActiveBubble();
+    }
 }

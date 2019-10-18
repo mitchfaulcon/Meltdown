@@ -12,10 +12,12 @@ public class CityBikeNPC : NPCMovement
     private bool bikeGiven;
     private Material material;
 
-    private const float SLOW_SPEED = 2.0f;
+    private const float SLOW_SPEED = 1.33f;
     private const float FAST_SPEED = 7.0f;
 
     private BikeNPC bikeTask;
+
+    public CityPlayerInteraction player;
 
 
     void Start()
@@ -61,7 +63,9 @@ public class CityBikeNPC : NPCMovement
 
         if (taxiReached) {
             SetWalking(false);
-            
+            player.setItem(ItemTypes.NONE);
+            //TODO make x appear above taxi head indicating person was too slow
+
             // Slowly make NPC transparent
             if (material.color.a > 0)
             {
