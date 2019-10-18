@@ -9,7 +9,6 @@ public class IndoorTaskController : TaskController
     public GameObject[] tapTasks = new GameObject[4];
     public GameObject[] saladTasks = new GameObject[4];
 
-
     public ToggleItem leftSwitch;
     public ToggleItem rightSwitch;
 

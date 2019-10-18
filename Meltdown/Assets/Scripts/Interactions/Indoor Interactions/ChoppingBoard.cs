@@ -12,6 +12,7 @@ public class ChoppingBoard : InteractableObjectBase
 
     public override bool CanInteract(ItemTypes item)
     {
+        // Change interaction text based on curently held vegetable
         playerHolding = item;
         if (!saladMade)
         {
@@ -44,6 +45,7 @@ public class ChoppingBoard : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
+        // Either add an ingredient to the board, or make the complete salad
         playSound();
         if (saladMade == false)
         {
@@ -79,6 +81,7 @@ public class ChoppingBoard : InteractableObjectBase
 
     public void clearBoard()
     {
+        // Remove all ingredients from the board
         containsAvocado = false;
         containsLettuce = false;
         containsTomato = false;

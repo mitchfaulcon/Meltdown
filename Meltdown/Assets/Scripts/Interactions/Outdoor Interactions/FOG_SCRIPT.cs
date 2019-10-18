@@ -5,10 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class FOG_SCRIPT : ScoreController
-    {
-
-    //COPY EVERYTHING TO APPROPRIATE PLACE IN CITY SCORE CONTROLLER SRIPT
-
+{
     private readonly float goodFogDensity = 0f;
     private readonly float badFogDensity = 0.05f;
     private float targetDensity;

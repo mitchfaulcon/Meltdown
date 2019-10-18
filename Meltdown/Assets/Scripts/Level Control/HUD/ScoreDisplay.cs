@@ -80,6 +80,7 @@ public class ScoreDisplay : MonoBehaviour
         scoreDisplayText.text = scoreText;
     }
 
+    // Display the appropriate star level based on which thresholds the player has met
     private ScoreLevel CalculateLevel(float score)
     {
         if (score >= THREESTARTHRESHOLD)

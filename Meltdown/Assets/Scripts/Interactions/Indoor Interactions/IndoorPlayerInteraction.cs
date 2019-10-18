@@ -19,6 +19,7 @@ public class IndoorPlayerInteraction : PlayerInteraction
         holdingTomato.SetActive(false);
     }
 
+    // Show currently held item from the kitchen
     protected override void setActiveBubble()
     {
         if (heldItem == ItemTypes.Tomatoes)

@@ -19,7 +19,15 @@ public abstract class ScoreController : MonoBehaviour
 
     protected float increaseRate = DEFAULT_RATE;
     public TextMeshProUGUI scoreText;
-    
+
+    public TextMeshProUGUI temp;
+    private readonly string degreesText = "°";
+    private readonly float hotTemp = 20f;
+    private readonly float coldTemp = 10f;
+
+    public GameObject temperaturePopup;
+    public GameObject player;
+
     private void Start()
     {
 
@@ -46,19 +54,52 @@ public abstract class ScoreController : MonoBehaviour
         }
 
         updateScenery();
+
+        UpdateTempText();
     }
 
-
+    // Decrease temp for scoring a task
     public void taskScored(float points)
     {
         currentValue -= points;
+
+        DisplayPopup(points, true);
     }
 
+    // Increase temp for failing a task
     public void taskFailed(float points)
     {
         currentValue += points;
+
+        DisplayPopup(points, false);
     }
 
+    protected void DisplayPopup(float points, bool success)
+    {
+        //Instantiate temperature popup
+        var popup = Instantiate(temperaturePopup, player.transform.position, Quaternion.identity);
+        TextMeshPro popupText = popup.GetComponent<TextMeshPro>();
+
+        //Rotate popup to be more visible to the camera
+        popup.transform.eulerAngles = new Vector3(45f, 0f, 0f);
+
+        string tempDecrease = ((hotTemp - coldTemp) * points).ToString() + "°";
+
+        if (success)
+        {
+            //Set to green with a '-' at the front
+            popupText.text = "-" + tempDecrease;
+            popupText.color = Color.green;
+        }
+        else
+        {
+            //Wrong bin: set to red with a '+' at the front
+            popupText.text = "+" + tempDecrease;
+            popupText.color = Color.red;
+        }
+    }
+
+    // The rate of temperate rise is based on what stars the player would currently earn
     protected virtual void calculateRate()
     {
         float newRate = DEFAULT_RATE;
@@ -78,5 +119,15 @@ public abstract class ScoreController : MonoBehaviour
     }
 
     protected abstract void updateScenery();
+
+    private void UpdateTempText()
+    {
+        float currentTemp = (currentValue) * (hotTemp) + (1 - currentValue) * (coldTemp);
+
+        //Round temp to 2dp
+        currentTemp = (float) System.Math.Round(currentTemp, 2);
+
+        temp.text = currentTemp.ToString() + degreesText;
+    }
 
 }
