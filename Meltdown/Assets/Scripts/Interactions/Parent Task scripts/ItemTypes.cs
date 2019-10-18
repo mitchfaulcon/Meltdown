@@ -18,5 +18,9 @@ public enum ItemTypes
     Avocado,
     Salad,
 	Bike,
-    NONE
+    NONE,
+    Supplies,
+    Solar,
+    Sign,
+    Tools
 }

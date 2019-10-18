@@ -10,8 +10,14 @@ public class CityCrowdNPC : NPCMovement
     public Transform startPos;
     public void Start()
     {
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("InvisWall");
+        foreach (GameObject wall in walls)
+        {
+            Physics.IgnoreCollision(wall.GetComponent<Collider>(), playerModel.GetComponent<Collider>());
+        }
         walking = true;
         xPos = transform.position.x;
+        
     }
 
     void Update()

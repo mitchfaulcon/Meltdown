@@ -22,8 +22,8 @@ public abstract class ScoreController : MonoBehaviour
 
     public TextMeshProUGUI temp;
     private readonly string degreesText = "°";
-    private readonly float hotTemp = 20f;
-    private readonly float coldTemp = 10f;
+    private readonly float hotTemp = 30f;
+    private readonly float coldTemp = 15f;
 
     public GameObject temperaturePopup;
     public GameObject player;
@@ -83,7 +83,7 @@ public abstract class ScoreController : MonoBehaviour
         //Rotate popup to be more visible to the camera
         popup.transform.eulerAngles = new Vector3(45f, 0f, 0f);
 
-        string tempDecrease = ((hotTemp - coldTemp) * points).ToString() + "°";
+        string tempDecrease = System.Math.Round(((hotTemp - coldTemp) * points), 2).ToString() + "°";
 
         if (success)
         {

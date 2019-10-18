@@ -34,7 +34,18 @@ public class Settings : MonoBehaviour
     void SetUpResolutions()
     {
         //Get all available resolutions
-        resolutions = Screen.resolutions;
+        List<Resolution> allResolutions = new List<Resolution>();
+        List<Resolution> displatedResolutions = new List<Resolution>();
+        allResolutions.AddRange(Screen.resolutions);
+
+        foreach (Resolution resolution in allResolutions)
+        {
+            if (!(resolution.width < 800 && resolution.height < 600))
+            {
+                displatedResolutions.Add(resolution);
+            }
+        }
+        resolutions = displatedResolutions.ToArray(); ;
 
         resolutionDropdown.ClearOptions();
 
@@ -44,6 +55,7 @@ public class Settings : MonoBehaviour
         //Add each resolution to dropdown options
         for (int i = 0; i < resolutions.Length; i++)
         {
+            
             options.Add(resolutions[i].width + " x " + resolutions[i].height);
 
             //Check if current iteration is the same as current resolution
@@ -51,7 +63,10 @@ public class Settings : MonoBehaviour
             {
                 currentResolutionIndex = i;
             }
+            
         }
+
+        
 
         resolutionDropdown.AddOptions(options);
         //Set selected resolution to current resolution
