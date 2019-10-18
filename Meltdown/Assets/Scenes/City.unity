@@ -28430,10 +28430,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "14.04\xB0"
+  m_text: "24.44\xB0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7eeaa0055307f934c8b1c36c764518a2, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 3f37101e20cbb674abbd77f7f0b2923c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: a258b0628f9b390478be56b7c591beaa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28458,13 +28458,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -30079,7 +30079,7 @@ GameObject:
   - component: {fileID: 1746430888}
   - component: {fileID: 1746430887}
   m_Layer: 0
-  m_Name: TMP SubMeshUI [TimeText + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [Temperature Text + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30127,7 +30127,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 3.5
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 1746430888}
   m_TextComponent: {fileID: 1613827581}
   m_materialReferenceIndex: 1

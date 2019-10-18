@@ -22,8 +22,8 @@ public abstract class ScoreController : MonoBehaviour
 
     public TextMeshProUGUI temp;
     private readonly string degreesText = "°";
-    private readonly float hotTemp = 20f;
-    private readonly float coldTemp = 10f;
+    private readonly float hotTemp = 30f;
+    private readonly float coldTemp = 15f;
 
     public GameObject temperaturePopup;
     public GameObject player;

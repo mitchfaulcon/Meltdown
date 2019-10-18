@@ -10,11 +10,17 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject pauseMenuCards;
     public GameObject helpMenuCards;
+    private GameObject levelCountdown;
+
+    private void Start()
+    {
+        levelCountdown = GameObject.Find("Countdown");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !TimerCountdown.gameFinished)
+        if (!levelCountdown.activeSelf && Input.GetKeyDown(KeyCode.Escape) && !TimerCountdown.gameFinished)
         {
             if (isPaused)
             {
