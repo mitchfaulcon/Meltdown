@@ -47,8 +47,11 @@ public class CityPlayerInteraction : PlayerInteraction
 
     public void setItem(ItemTypes item)
     {
-        heldItem = item;
-        removeSpeechBubbles();
-        setActiveBubble();
+        if(heldItem == ItemTypes.Bike)
+        {
+            heldItem = item;
+            removeSpeechBubbles();
+            setActiveBubble();
+        }
     }
 }

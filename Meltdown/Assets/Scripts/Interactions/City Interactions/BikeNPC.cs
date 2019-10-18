@@ -7,7 +7,7 @@ public class BikeNPC : InteractableObjectBase
     public CityTaskController taskController;
     CityBikeNPC npc;
 
-    public OutdoorScoreController scoring;
+    public CityScoreController scoring;
 
     public override bool CanInteract(ItemTypes item)
     {
