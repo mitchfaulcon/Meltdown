@@ -137,3 +137,69 @@ public class SaladTask : Task
         controller.removeTask(TaskTypes.Salad);
     }
 }
+
+
+public class BikeTask : Task
+{
+    BikeShop bikeShop;
+    CityBikeNPC npc;
+
+    public BikeTask(BikeShop bikeShop)
+    {
+        this.bikeShop = bikeShop;
+    }
+
+    public override void setupTask()
+    {
+        npc = FindObjectOfType<CityBikeNPC>();
+        npc.StartTask();
+        
+        bikeShop.fill();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(TaskTypes.Bike);
+    }
+}
+
+public class SignTask : Task
+{
+    ResourceCollector signShop;
+
+    public SignTask(ResourceCollector signShop)
+    {
+        this.signShop = signShop;
+    }
+
+    public override void setupTask()
+    {
+       signShop.fill();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(TaskTypes.Sign);
+    }
+}
+
+public class SolarTask : Task
+{
+    
+    ResourceCollector solarShop;
+
+    public SolarTask(ResourceCollector solarShop)
+    {
+        this.solarShop = solarShop;
+    }
+
+    public override void setupTask()
+    {
+       solarShop.fill();
+    }
+
+    public override void completeTask()
+    {
+        controller.removeTask(TaskTypes.Solar);
+    }
+}

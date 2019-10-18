@@ -2634,6 +2634,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomato Task (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3195122290073260159, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2753,16 +2763,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato Task (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7465683571420718851, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
@@ -2935,12 +2935,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d15382853af1aa14daf50bfe726fd7c9, type: 2}
-    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3544,6 +3544,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_Name
+      value: Potato Task (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6169312048799014827, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3663,16 +3673,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_Name
-      value: Potato Task (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1359327471860979285, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
@@ -3821,8 +3821,6 @@ MonoBehaviour:
   currentTrash: 11
   scoring: {fileID: 0}
   taskControl: {fileID: 0}
-  correctAlert: {fileID: 0}
-  incorrectAlert: {fileID: 0}
   errorSound: {fileID: 2096069772}
 --- !u!1001 &289511440
 PrefabInstance:
@@ -7309,7 +7307,7 @@ GameObject:
   - component: {fileID: 539905400}
   - component: {fileID: 539905399}
   m_Layer: 0
-  m_Name: TMP SubMeshUI [TimeText + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [Temperature Text + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7357,7 +7355,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 3.5
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 539905400}
   m_TextComponent: {fileID: 1157875052}
   m_materialReferenceIndex: 1
@@ -8619,6 +8617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b0939bf11df5446a348b1f74e3e00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTasks: 4
   potatoTasks:
   - {fileID: 1668221766}
   - {fileID: 726954909}
@@ -8714,6 +8713,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000000015250407
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 21.757019
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -114.19053
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 91.7569
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -8819,26 +8858,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.11706929
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5865163338561875921, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -9299,26 +9318,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000015250407
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000000015250407
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 21.757019
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -114.19053
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 91.7569
       objectReference: {fileID: 0}
     - target: {fileID: 2709350737418432666, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -10388,6 +10387,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_Name
+      value: Potato Task (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6169312048799014827, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10507,16 +10516,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_Name
-      value: Potato Task (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1359327471860979285, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
@@ -12973,6 +12972,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomato Task (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3195122290073260159, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13092,16 +13101,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato Task (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7465683571420718851, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
@@ -13597,8 +13596,6 @@ MonoBehaviour:
   currentTrash: 11
   scoring: {fileID: 0}
   taskControl: {fileID: 0}
-  correctAlert: {fileID: 0}
-  incorrectAlert: {fileID: 0}
   errorSound: {fileID: 2096069772}
 --- !u!1001 &1022093046
 PrefabInstance:
@@ -13899,6 +13896,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomato Task (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3195122290073260159, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14018,16 +14025,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato Task (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7465683571420718851, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
@@ -15113,6 +15110,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_Name
+      value: Potato Task (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6169312048799014827, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15232,16 +15239,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_Name
-      value: Potato Task (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1359327471860979285, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
@@ -15529,10 +15526,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "14.04\xB0"
+  m_text: "24.44\xB0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7eeaa0055307f934c8b1c36c764518a2, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 3f37101e20cbb674abbd77f7f0b2923c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: a258b0628f9b390478be56b7c591beaa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15557,13 +15554,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -15717,12 +15714,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d15382853af1aa14daf50bfe726fd7c9, type: 2}
-    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -17819,8 +17816,6 @@ MonoBehaviour:
   currentTrash: 11
   scoring: {fileID: 0}
   taskControl: {fileID: 0}
-  correctAlert: {fileID: 0}
-  incorrectAlert: {fileID: 0}
   errorSound: {fileID: 2096069772}
 --- !u!1001 &1392094805
 PrefabInstance:
@@ -23492,6 +23487,51 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 48.823746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -173.49203
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 10.272166
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.161325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000000119209
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2489302850876048126, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -23646,26 +23686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.027044684
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e1a7cee59c026304ca49ac57035162c5, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5865163338561875921, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -24107,11 +24127,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.000000119209
       objectReference: {fileID: 0}
-    - target: {fileID: -1998603500003954517, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 61.3431
-      objectReference: {fileID: 0}
     - target: {fileID: -635839988826460514, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24276,31 +24291,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 48.823746
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -173.49203
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 10.272166
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.161325
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050384868635168522, guid: 968b3a59e4c0e254099fb3dea2e9888b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.000000119209
       objectReference: {fileID: 0}
     - target: {fileID: 2709350737418432666, guid: 968b3a59e4c0e254099fb3dea2e9888b,
         type: 3}
@@ -24587,6 +24577,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5829368
       objectReference: {fileID: 0}
+    - target: {fileID: -1998603500003954517, guid: 968b3a59e4c0e254099fb3dea2e9888b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 61.3431
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 968b3a59e4c0e254099fb3dea2e9888b, type: 3}
 --- !u!95 &1894331387 stripped
@@ -24689,12 +24684,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d15382853af1aa14daf50bfe726fd7c9, type: 2}
-    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -26704,12 +26699,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d15382853af1aa14daf50bfe726fd7c9, type: 2}
-    - target: {fileID: -4837922819561239497, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
+    - target: {fileID: 5500297215732240941, guid: dde7bf8aa3a6e4f2b8f2e26968c3750b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -27936,6 +27931,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomato Task
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3195122290073260159, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28040,16 +28045,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato Task
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722770806450684317, guid: 01fb93288242c4625a66c64594719944,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7465683571420718851, guid: 01fb93288242c4625a66c64594719944,
         type: 3}
@@ -28651,6 +28646,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 633317732}
     m_Modifications:
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_Name
+      value: Potato Task
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6169312048799014827, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28755,16 +28760,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_Name
-      value: Potato Task
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118440022044456370, guid: ecace539e12394b96b56eca60f044be7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1359327471860979285, guid: ecace539e12394b96b56eca60f044be7,
         type: 3}

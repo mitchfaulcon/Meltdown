@@ -47,14 +47,14 @@ public class ItemCollectorBase : InteractableObjectBase
     public virtual void fill()
     {
         containsItem = true;
-        alert.SetActive(true);
+        //alert.SetActive(true);
     }
 
     // On interaction, empty the item collector and return an item to the player
     public override ItemTypes OnInteract()
     {
         containsItem = false;
-        alert.SetActive(false);
+        //alert.SetActive(false);
         return item;
     }
 
