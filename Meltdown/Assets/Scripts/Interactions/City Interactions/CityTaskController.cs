@@ -31,7 +31,6 @@ public class CityTaskController : TaskController
     protected override TaskTypes generateTask()
     {
         int newTask = Random.Range(10, 13);
-        Debug.Log(System.Enum.Parse(typeof(TaskTypes), newTask.ToString()).ToString());
         return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
     }
 
