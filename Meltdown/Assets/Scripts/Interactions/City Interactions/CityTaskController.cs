@@ -13,11 +13,13 @@ public class CityTaskController : TaskController
     public ResourceCollector signShop;
     public BikeShop bikeShop;
 
+    public bool readyForBikeTask;
+
     protected override void loadTasks()
     {
         //add different task types to our task dictionary
         tasks.Add(TaskTypes.Solar, new SolarTask(solarShop));
-        tasks.Add(TaskTypes.Bike, new BikeTask(bikeShop));
+        tasks.Add(TaskTypes.Bike, new BikeTask(bikeShop, this));
         tasks.Add(TaskTypes.Sign, new SignTask(signShop));
     }
 
@@ -25,6 +27,20 @@ public class CityTaskController : TaskController
     {
         // Continually generate tasks
         InvokeRepeating("checkForNewTask", 1.0f, 0.5f);
+    }
+
+    protected override void checkForNewTask()
+    {
+        //update time count, and if it reaches the time set to generate a new task at, do so.
+        if ((!taskList.Contains(TaskTypes.Bike) && readyForBikeTask) || taskList.Count < maxTasks)
+        {
+            timeCount += 0.5f;
+            if (timeCount >= newTaskTime)
+            {
+                addTask();
+            }
+        }
+
     }
 
     //generates a new task from enum TaskTypes, based on rng
@@ -67,5 +83,10 @@ public class CityTaskController : TaskController
             }
             i++;
         }
+    }
+
+    public void readyForBike()
+    {
+        readyForBikeTask = !readyForBikeTask;
     }
 }

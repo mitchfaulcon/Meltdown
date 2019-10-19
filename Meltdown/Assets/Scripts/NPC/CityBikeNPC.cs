@@ -56,13 +56,11 @@ public class CityBikeNPC : NPCMovement
 
             if (Vector3.Distance(transform.position, points[points.Length-1].position) < 2.0f) 
             {
-                bikeTask.CompleteTask();
                 SetBiking(false);
                 ResetPosition();
             }
         }
         
-        //TODO make x appear above taxi head indicating person was too slow
         if (taxiReached) {
             SetWalking(false);
             
@@ -75,8 +73,8 @@ public class CityBikeNPC : NPCMovement
 
                 player.setItem(ItemTypes.NONE);
                 alert.SetActive(false);
-                bikeTask.FailTask();
                 ResetPosition();
+                bikeTask.FailTask();
                 taxiAnimator.SetTrigger("leave");
                 taxiOnScreen = false;
             }
@@ -88,6 +86,7 @@ public class CityBikeNPC : NPCMovement
     private void ResetPosition() 
     {
         SetWalking(false);
+        bikeTask.setBikeStatus();
 
         // Teleport NPC back to starting position
         transform.position = new Vector3(

@@ -63,10 +63,13 @@ public class SolarPanel : InteractableObjectBase
     public void setupTask()
     {
         alert.SetActive(true);
-        Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
-        foreach (Component panel in panels)
+        if (!solarPanelSet)
         {
-           ((MeshRenderer)panel).material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 0.1f);
+            Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
+            foreach (Component panel in panels)
+            {
+                ((MeshRenderer)panel).material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 0.1f);
+            }
         }
             
         this.gameObject.SetActive(true);
