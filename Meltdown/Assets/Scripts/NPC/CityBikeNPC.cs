@@ -20,7 +20,8 @@ public class CityBikeNPC : NPCMovement
     private float taxiTimer = 0.0f;
 
     public CityPlayerInteraction player;
-
+    public GameObject taxi;
+    private bool taxiOnScreen = false;
 
     void Start()
     {
@@ -76,7 +77,8 @@ public class CityBikeNPC : NPCMovement
                 alert.SetActive(false);
                 bikeTask.FailTask();
                 ResetPosition();
-                taxiAnimator.SetTrigger("play");     
+                taxiAnimator.SetTrigger("leave");
+                taxiOnScreen = false;
             }
         }
 
@@ -103,6 +105,12 @@ public class CityBikeNPC : NPCMovement
 
     public void StartTask() 
     {
+        if (!taxiOnScreen)
+        {
+            //Trigger animation only if taxi is offscreen
+            taxiAnimator.SetTrigger("enter");
+            taxiOnScreen = true;
+        }
         SetDoors(true);
         SetWalking(true);
         alert.SetActive(true);
