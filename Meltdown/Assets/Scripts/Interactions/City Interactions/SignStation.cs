@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SignStation : InteractableObjectBase
 {
+    public GameObject alert;
     public override bool CanInteract(ItemTypes item)
     {
         if(item == ItemTypes.Supplies)
@@ -15,6 +16,12 @@ public class SignStation : InteractableObjectBase
 
     public override ItemTypes OnInteract()
     {
+        alert.SetActive(false);
         return ItemTypes.Sign;
+    }
+
+    public void setAlert()
+    {
+        alert.SetActive(true);
     }
 }

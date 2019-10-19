@@ -8,11 +8,12 @@ public class CityBikeNPC : NPCMovement
     public Animator taxiAnimator;
 
     public GameObject bike;
+    public GameObject alert;
     private bool taxiReached;
     private bool bikeGiven;
     private Material material;
 
-    private const float SLOW_SPEED = 1.33f;
+    private const float SLOW_SPEED = 1.00f;
     private const float FAST_SPEED = 7.0f;
 
     private BikeNPC bikeTask;
@@ -77,6 +78,7 @@ public class CityBikeNPC : NPCMovement
             else 
             {
                 ResetPosition();
+                alert.SetActive(false);
                 bikeTask.FailTask();
                 taxiAnimator.SetTrigger("play");
             }            
@@ -106,6 +108,7 @@ public class CityBikeNPC : NPCMovement
     {
         SetDoors(true);
         SetWalking(true);
+        alert.SetActive(true);
 
         StartCoroutine(CloseDoors());
     }
@@ -136,6 +139,7 @@ public class CityBikeNPC : NPCMovement
 
     public void GiveBike() 
     {
+        alert.SetActive(false);
         bikeGiven = true;
         SetBiking(true);
         threshhold = 2.0f;

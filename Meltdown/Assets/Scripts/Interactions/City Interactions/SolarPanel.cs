@@ -6,6 +6,7 @@ public class SolarPanel : InteractableObjectBase
 {
     private bool solarPanelSet = false;
     public ResourceCollector toolStore;
+    public GameObject alert;
 
     public CityTaskController taskController;
     public CityScoreController scoreController;
@@ -33,6 +34,7 @@ public class SolarPanel : InteractableObjectBase
         if (!solarPanelSet)
         {
             solarPanelSet = true;
+            alert.SetActive(false);
             toolStore.fill();
             Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
             
@@ -54,11 +56,13 @@ public class SolarPanel : InteractableObjectBase
             taskController.taskComplete(TaskTypes.Solar);
             scoreController.taskScored(CityScoreController.Tasks.SOLAR);
         }
+        interactSound.Play();
         return ItemTypes.NONE;
     }
 
     public void setupTask()
     {
+        alert.SetActive(true);
         Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
         foreach (Component panel in panels)
         {

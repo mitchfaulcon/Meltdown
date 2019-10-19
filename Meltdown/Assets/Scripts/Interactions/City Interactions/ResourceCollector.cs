@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class ResourceCollector : ItemCollectorBase
 {
-    public bool isSolarShop = false;
+    public SignStation station;
     public SolarPanel solarPanel;
-    //All applicable method inherited from ItemCollectorBase
-    public override void fill() {
-        containsItem = true;
-        if (isSolarShop) {
+
+    public override ItemTypes OnInteract()
+    {
+        containsItem = false;
+        alert.SetActive(false);
+        if (solarPanel != null) {
             solarPanel.setupTask();
         }
+        if(station != null)
+        {
+            station.setAlert();
+        }
+        return item;
     }
 
 
