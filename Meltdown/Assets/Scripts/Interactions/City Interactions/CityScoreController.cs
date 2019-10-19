@@ -37,4 +37,12 @@ public class CityScoreController : ScoreController
         //Smooth the density change over 2 seconds
         RenderSettings.fogDensity = Mathf.Lerp(RenderSettings.fogDensity, targetDensity, Time.deltaTime / 2f);
     }
+
+    //Overload method to display bike failed popup at taxi instead of player
+    public void taskFailed(float points, Transform taskLocation)
+    {
+        currentValue += points;
+
+        DisplayPopup(points, false, taskLocation);
+    }
 }

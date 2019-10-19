@@ -17,6 +17,7 @@ public class CityBikeNPC : NPCMovement
     private const float FAST_SPEED = 7.0f;
 
     private BikeNPC bikeTask;
+    private float taxiTimer = 0.0f;
 
     public CityPlayerInteraction player;
 
@@ -60,28 +61,23 @@ public class CityBikeNPC : NPCMovement
             }
         }
         
-        
-
+        //TODO make x appear above taxi head indicating person was too slow
         if (taxiReached) {
             SetWalking(false);
-            player.setItem(ItemTypes.NONE);
-            //TODO make x appear above taxi head indicating person was too slow
+            
+            taxiTimer += Time.deltaTime;
 
-            // Slowly make NPC transparent
-            if (material.color.a > 0)
-            {
-                Color newColor = material.color;
-                newColor.a -= Time.deltaTime;
-                material.color = newColor;
-                gameObject.GetComponent<MeshRenderer>().material = material;
-            } 
-            else 
-            {
-                ResetPosition();
+            // Let the NPC stand for 2 seconds before the taxi leaves, allowing the player
+            // to still give him the bike
+            if (taxiTimer > 2.0f) {
+                taxiTimer = 0.0f;
+
+                player.setItem(ItemTypes.NONE);
                 alert.SetActive(false);
                 bikeTask.FailTask();
-                taxiAnimator.SetTrigger("play");
-            }            
+                ResetPosition();
+                taxiAnimator.SetTrigger("play");     
+            }
         }
 
         Wait();
@@ -97,6 +93,7 @@ public class CityBikeNPC : NPCMovement
         transform.position.y,
         points[0].position.z);
 
+        // Reset Variables
         bikeGiven = false;
         taxiReached = false;
         spot = 0;
@@ -130,6 +127,7 @@ public class CityBikeNPC : NPCMovement
 
         if (biking) {
             y += 0.5f;
+            SetWalking(true);
         }
 
         bike.SetActive(biking);
@@ -141,6 +139,7 @@ public class CityBikeNPC : NPCMovement
     {
         alert.SetActive(false);
         bikeGiven = true;
+        taxiReached = false;
         SetBiking(true);
         threshhold = 2.0f;
         movementSpeed = FAST_SPEED;
