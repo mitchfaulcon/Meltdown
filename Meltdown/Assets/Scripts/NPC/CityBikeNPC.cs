@@ -72,8 +72,8 @@ public class CityBikeNPC : NPCMovement
                 taxiTimer = 0.0f;
 
                 player.setItem(ItemTypes.NONE);
-                ResetPosition();
                 bikeTask.FailTask();
+                ResetPosition();
                 taxiAnimator.SetTrigger("play");     
             }
         }

@@ -24,20 +24,27 @@ public class BikeNPC : InteractableObjectBase
         //Complete Bike task
         npc = this.GetComponent<CityBikeNPC>();
         npc.GiveBike();
-        interactSound.Play();
+
+        if (GameSettings.sounds)
+        {
+            interactSound.Play();
+        }
+
+        //Decrease score & display popup
+        scoring.taskScored(CityScoreController.Tasks.BIKE);
 
         return ItemTypes.NONE;
     }
 
     public void CompleteTask() {
         taskController.taskComplete(TaskTypes.Bike);
-        scoring.taskScored(CityScoreController.Tasks.BIKE);
     }
 
     public void FailTask() {
         // Should also play fail sound along with fail speech bubble and remove points
 
+
         taskController.removeTask(TaskTypes.Bike);
-        scoring.taskFailed(CityScoreController.Tasks.BIKE_FAILED);
+        scoring.taskFailed(CityScoreController.Tasks.BIKE_FAILED, transform);
     }
 }
