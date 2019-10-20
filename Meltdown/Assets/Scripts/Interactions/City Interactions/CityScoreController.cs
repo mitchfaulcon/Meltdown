@@ -19,23 +19,23 @@ public class CityScoreController : ScoreController
         public const float BIKE_FAILED = 0.05f;
     }
 
-    private readonly float goodFogDensity = 0f;
-    private readonly float badFogDensity = 0.035f;
+    public Material smogMaterial;
+    private readonly float goodSmogDensity = 2f;
+    private readonly float badSmogDensity = 1.18f;
     private float targetDensity;
 
     private void Start()
     {
-        RenderSettings.fogDensity = badFogDensity;
-        RenderSettings.fog = true; //Makes fog visible/enabled
+        smogMaterial.SetFloat("_Density", badSmogDensity);
     }
 
     protected override void updateScenery()
     {
         //Calculate the new density as the value of the temperature between the bad & good densities
-        targetDensity = (currentValue) * (badFogDensity) + (1 - currentValue) * (goodFogDensity);
+        targetDensity = (currentValue) * (badSmogDensity) + (1 - currentValue) * (goodSmogDensity);
 
         //Smooth the density change over 2 seconds
-        RenderSettings.fogDensity = Mathf.Lerp(RenderSettings.fogDensity, targetDensity, Time.deltaTime / 2f);
+        smogMaterial.SetFloat("_Density", Mathf.Lerp(smogMaterial.GetFloat("_Density"), targetDensity, Time.deltaTime / 2f));
     }
 
     //Overload method to display bike failed popup at taxi instead of player
