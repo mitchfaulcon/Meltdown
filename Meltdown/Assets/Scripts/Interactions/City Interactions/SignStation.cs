@@ -17,6 +17,10 @@ public class SignStation : InteractableObjectBase
     public override ItemTypes OnInteract()
     {
         alert.SetActive(false);
+        if (GameSettings.sounds)
+        {
+            interactSound.Play();
+        }
         return ItemTypes.Sign;
     }
 
