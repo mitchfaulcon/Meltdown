@@ -23,6 +23,8 @@ public class CityBikeNPC : NPCMovement
     public GameObject taxi;
     private bool taxiOnScreen = false;
 
+    public static bool atInitialPoint = true;
+
     void Start()
     {
         movementSpeed = SLOW_SPEED;
@@ -85,6 +87,7 @@ public class CityBikeNPC : NPCMovement
 
     private void ResetPosition() 
     {
+        atInitialPoint = true;
         SetWalking(false);
         bikeTask.setBikeStatus();
 
@@ -104,6 +107,7 @@ public class CityBikeNPC : NPCMovement
 
     public void StartTask() 
     {
+        atInitialPoint = false;
         if (!taxiOnScreen)
         {
             //Trigger animation only if taxi is offscreen

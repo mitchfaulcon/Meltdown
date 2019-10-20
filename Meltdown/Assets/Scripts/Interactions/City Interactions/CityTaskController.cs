@@ -47,7 +47,18 @@ public class CityTaskController : TaskController
     protected override TaskTypes generateTask()
     {
         int newTask = Random.Range(10, 13);
-        return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+        TaskTypes generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+
+        //Ensure bike task does not get generated if bikeNPC is not at start point
+        if (!CityBikeNPC.atInitialPoint && generatedTask.Equals(TaskTypes.Bike))
+        {
+            while (generatedTask.Equals(TaskTypes.Bike))
+            {
+                newTask = Random.Range(10, 13);
+                generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+            }
+        }
+        return generatedTask;
     }
 
 
