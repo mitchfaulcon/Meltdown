@@ -18,6 +18,10 @@ public class ResourceCollector : ItemCollectorBase
         {
             station.setAlert();
         }
+        if (GameSettings.sounds)
+        {
+            interactSound.Play();
+        }
         return item;
     }
 
