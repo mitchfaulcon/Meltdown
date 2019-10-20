@@ -36,8 +36,11 @@ public class SolarPanel : InteractableObjectBase
             solarPanelSet = true;
             alert.SetActive(false);
             toolStore.fill();
+            if (GameSettings.sounds)
+            {
+                baseSound.Play();
+            }
             Component[] panels = this.GetComponentsInChildren<MeshRenderer>();
-            
             foreach (Component panel in panels)
             {
                 ((MeshRenderer)panel).material.color = new Color(0.2683339f, 0.4018649f, 0.4245283f, 1.0f);
@@ -51,12 +54,14 @@ public class SolarPanel : InteractableObjectBase
             this.truckSolarPanels[activePanels].SetActive(true);
             activePanels++;
             solarPanelSet = false;
-            
+            if (GameSettings.sounds)
+            {
+                buildSound.Play();
+            }
             //complete solarPanel Tasks
             taskController.taskComplete(TaskTypes.Solar);
             scoreController.taskScored(CityScoreController.Tasks.SOLAR);
         }
-        interactSound.Play();
         return ItemTypes.NONE;
     }
 

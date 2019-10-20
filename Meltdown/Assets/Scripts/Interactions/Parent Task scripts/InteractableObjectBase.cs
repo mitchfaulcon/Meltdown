@@ -15,7 +15,7 @@ public abstract class InteractableObjectBase : MonoBehaviour
     //public EItemType ItemType;
     void Start()
     {
-        interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+        //interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
 
     public abstract ItemTypes OnInteract();
