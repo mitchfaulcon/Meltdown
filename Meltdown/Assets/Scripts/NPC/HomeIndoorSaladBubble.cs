@@ -10,6 +10,7 @@ public class HomeIndoorSaladBubble : MonoBehaviour
     void Start()
     {
         iniRot = transform.rotation;
+        iniRot.y = -270;
     }
 
     // Update is called once per frame
