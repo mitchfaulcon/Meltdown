@@ -25,11 +25,7 @@ public class BikeNPC : InteractableObjectBase
         npc = this.GetComponent<CityBikeNPC>();
         npc.GiveBike();
         CompleteTask();
-
-        if (GameSettings.sounds)
-        {
-            interactSound.Play();
-        }
+        PlayInteractSound();
 
         //Decrease score & display popup
         scoring.taskScored(CityScoreController.Tasks.BIKE);

@@ -12,8 +12,6 @@ public class RubbishBin : InteractableObjectBase
     public override ItemTypes OnInteract()
     {
         rubbishLevel--;
-        playSound();
-
         PlayInteractSound();
 
         // Remove popup alert if bin is empty

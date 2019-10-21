@@ -17,10 +17,7 @@ public class BikeShop : ItemCollectorBase
     {
         containsItem = false;
         alert.SetActive(false);
-        if (GameSettings.sounds)
-        {
-            interactSound.Play();
-        }
+        PlayInteractSound();
         return item;
     }
 

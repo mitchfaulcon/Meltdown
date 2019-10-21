@@ -22,11 +22,6 @@ public abstract class InteractableObjectBase : MonoBehaviour
 
     public abstract bool CanInteract(ItemTypes item);
 
-    public void playSound()
-    {
-        interactSound.Play();
-    }
-
     public void PlayInteractSound()
     {
         // Play the set interactSound if the sound settings enable sound effects. 
