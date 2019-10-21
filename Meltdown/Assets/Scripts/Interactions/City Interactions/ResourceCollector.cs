@@ -18,10 +18,7 @@ public class ResourceCollector : ItemCollectorBase
         {
             station.setAlert();
         }
-        if (GameSettings.sounds)
-        {
-            interactSound.Play();
-        }
+        PlayInteractSound();
         return item;
     }
 
