@@ -13,11 +13,13 @@ public class CityTaskController : TaskController
     public ResourceCollector signShop;
     public BikeShop bikeShop;
 
+    public bool readyForBikeTask;
+
     protected override void loadTasks()
     {
         //add different task types to our task dictionary
         tasks.Add(TaskTypes.Solar, new SolarTask(solarShop));
-        tasks.Add(TaskTypes.Bike, new BikeTask(bikeShop));
+        tasks.Add(TaskTypes.Bike, new BikeTask(bikeShop, this));
         tasks.Add(TaskTypes.Sign, new SignTask(signShop));
     }
 
@@ -27,11 +29,52 @@ public class CityTaskController : TaskController
         InvokeRepeating("checkForNewTask", 1.0f, 0.5f);
     }
 
+    protected override void checkForNewTask()
+    {
+        //update time count, and if it reaches the time set to generate a new task at, do so.
+        if ((!taskList.Contains(TaskTypes.Bike) && readyForBikeTask) || taskList.Count < maxTasks)
+        {
+            timeCount += 0.5f;
+            if (timeCount >= newTaskTime)
+            {
+                addTask();
+            }
+        }
+
+    }
+
+    protected override TaskTypes GenerateInitialTask()
+    {
+        //Ensure bike task is not generated first
+        return GetNonBikeTask();
+    }
+
     //generates a new task from enum TaskTypes, based on rng
     protected override TaskTypes generateTask()
     {
         int newTask = Random.Range(10, 13);
-        return (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+        TaskTypes generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+
+        //Ensure bike task does not get generated if bikeNPC is not at start point
+        if (!CityBikeNPC.atInitialPoint && generatedTask.Equals(TaskTypes.Bike))
+        {
+            generatedTask = GetNonBikeTask();
+        }
+        return generatedTask;
+    }
+
+    private TaskTypes GetNonBikeTask()
+    {
+        int newTask = Random.Range(10, 13);
+        TaskTypes generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+
+        //Ensure bike task does not get generated
+        while (generatedTask.Equals(TaskTypes.Bike))
+        {
+            newTask = Random.Range(10, 13);
+            generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+        }
+        return generatedTask;
     }
 
 
@@ -67,5 +110,10 @@ public class CityTaskController : TaskController
             }
             i++;
         }
+    }
+
+    public void readyForBike()
+    {
+        readyForBikeTask = !readyForBikeTask;
     }
 }

@@ -15,22 +15,17 @@ public abstract class InteractableObjectBase : MonoBehaviour
     //public EItemType ItemType;
     void Start()
     {
-        interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+        //interactSound = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
 
     public abstract ItemTypes OnInteract();
 
     public abstract bool CanInteract(ItemTypes item);
 
-    public void playSound()
-    {
-        interactSound.Play();
-    }
-
     public void PlayInteractSound()
     {
         // Play the set interactSound if the sound settings enable sound effects. 
-        if (GameSettings.sounds == true)
+        if (GameSettings.sounds)
         {
             interactSound.Play();
         }
@@ -47,14 +42,14 @@ public class ItemCollectorBase : InteractableObjectBase
     public virtual void fill()
     {
         containsItem = true;
-        //alert.SetActive(true);
+        alert.SetActive(true);
     }
 
     // On interaction, empty the item collector and return an item to the player
     public override ItemTypes OnInteract()
     {
         containsItem = false;
-        //alert.SetActive(false);
+        alert.SetActive(false);
         return item;
     }
 

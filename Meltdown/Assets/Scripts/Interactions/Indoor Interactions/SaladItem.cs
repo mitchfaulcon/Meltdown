@@ -17,7 +17,7 @@ public class SaladItem : ItemCollectorBase
     // Provide the player with the correct ingredient and remove the alert if appropriate
     public override ItemTypes OnInteract()
     {
-        playSound();
+        PlayInteractSound();
         quantity--;
         if(quantity == 0)
         {

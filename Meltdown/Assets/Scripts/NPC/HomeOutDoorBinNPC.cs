@@ -27,7 +27,15 @@ public class HomeOutDoorBinNPC : NPCMovement
 
     void Update()
     {
+        if ((Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f) && filled) {
+            completed = true;
+        }
+
         if (completed) {
+            // Reset variables so that it's ready to launch again
+            filled = false;
+            completed = false;
+            spot = 0;
             // Stop walking once the route is complete
             SetWalking(false);
         } else if (walking && (spot == 1 || spot == 5)) { // Set NPC to stop near the shed and the bin
@@ -49,9 +57,6 @@ public class HomeOutDoorBinNPC : NPCMovement
             filled = true;
             animator.SetBool("interact", false);
         }
-
-        // Set completed to false if it is not neat or at the final node
-        completed = (Vector3.Distance(transform.position, points[points.Length - 1].position) < 1.0f) && filled;
 
         Wait();
     }

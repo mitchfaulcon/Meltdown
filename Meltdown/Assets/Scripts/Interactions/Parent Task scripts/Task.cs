@@ -143,16 +143,19 @@ public class BikeTask : Task
 {
     BikeShop bikeShop;
     CityBikeNPC npc;
+    CityTaskController taskController;
 
-    public BikeTask(BikeShop bikeShop)
+    public BikeTask(BikeShop bikeShop, CityTaskController controller)
     {
         this.bikeShop = bikeShop;
+        taskController = controller;
     }
 
     public override void setupTask()
     {
         npc = FindObjectOfType<CityBikeNPC>();
         npc.StartTask();
+        taskController.readyForBike();
         
         bikeShop.fill();
     }

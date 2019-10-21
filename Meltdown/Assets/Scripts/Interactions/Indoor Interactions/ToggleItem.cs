@@ -22,10 +22,7 @@ public class ToggleItem : InteractableObjectBase
         scoring = FindObjectOfType<IndoorScoreController>();
 
         on = false;
-        if(GameSettings.sounds == true)
-        {
-            interactSound.Play();
-        }
+        PlayInteractSound();
  
         if (isLight)
         {
