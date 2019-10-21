@@ -79,6 +79,10 @@ public class CityBikeNPC : NPCMovement
                 ResetPosition();
                 bikeTask.FailTask();
                 taxiAnimator.SetTrigger("leave");
+                if (GameSettings.sounds)
+                {
+                    skidSound.Play();
+                }
                 taxiOnScreen = false;
             }
         }
