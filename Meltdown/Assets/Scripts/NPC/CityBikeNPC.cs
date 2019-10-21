@@ -8,18 +8,23 @@ public class CityBikeNPC : NPCMovement
     public Animator taxiAnimator;
 
     public GameObject bike;
+    public GameObject alert;
+    public AudioSource skidSound;
     private bool taxiReached;
     private bool bikeGiven;
     private Material material;
 
-    private const float SLOW_SPEED = 1.33f;
+    private const float SLOW_SPEED = 1.00f;
     private const float FAST_SPEED = 7.0f;
 
     private BikeNPC bikeTask;
     private float taxiTimer = 0.0f;
 
     public CityPlayerInteraction player;
+    public GameObject taxi;
+    private bool taxiOnScreen = false;
 
+    public static bool atInitialPoint = true;
 
     void Start()
     {
@@ -54,13 +59,11 @@ public class CityBikeNPC : NPCMovement
 
             if (Vector3.Distance(transform.position, points[points.Length-1].position) < 2.0f) 
             {
-                bikeTask.CompleteTask();
                 SetBiking(false);
                 ResetPosition();
             }
         }
         
-        //TODO make x appear above taxi head indicating person was too slow
         if (taxiReached) {
             SetWalking(false);
             
@@ -72,9 +75,15 @@ public class CityBikeNPC : NPCMovement
                 taxiTimer = 0.0f;
 
                 player.setItem(ItemTypes.NONE);
+                alert.SetActive(false);
                 ResetPosition();
                 bikeTask.FailTask();
-                taxiAnimator.SetTrigger("play");     
+                taxiAnimator.SetTrigger("leave");
+                if (GameSettings.sounds)
+                {
+                    skidSound.Play();
+                }
+                taxiOnScreen = false;
             }
         }
 
@@ -83,7 +92,9 @@ public class CityBikeNPC : NPCMovement
 
     private void ResetPosition() 
     {
+        atInitialPoint = true;
         SetWalking(false);
+        bikeTask.setBikeStatus();
 
         // Teleport NPC back to starting position
         transform.position = new Vector3(
@@ -101,8 +112,20 @@ public class CityBikeNPC : NPCMovement
 
     public void StartTask() 
     {
+        atInitialPoint = false;
+        if (!taxiOnScreen)
+        {
+            //Trigger animation only if taxi is offscreen
+            taxiAnimator.SetTrigger("enter");
+            if (GameSettings.sounds)
+            {
+                skidSound.Play();
+            }
+            taxiOnScreen = true;
+        }
         SetDoors(true);
         SetWalking(true);
+        alert.SetActive(true);
 
         StartCoroutine(CloseDoors());
     }
@@ -134,6 +157,7 @@ public class CityBikeNPC : NPCMovement
 
     public void GiveBike() 
     {
+        alert.SetActive(false);
         bikeGiven = true;
         taxiReached = false;
         SetBiking(true);

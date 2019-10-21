@@ -10,7 +10,7 @@ public class SaladNPC : ItemCollectorBase
     // Allow the player to give the NPC their held salad item
     public override ItemTypes OnInteract()
     {
-        interactSound.Play();
+        PlayInteractSound();
         scoring.taskScored(IndoorScoreController.Tasks.SALAD);
         taskControl.removeSaladTask();
         return ItemTypes.NONE;

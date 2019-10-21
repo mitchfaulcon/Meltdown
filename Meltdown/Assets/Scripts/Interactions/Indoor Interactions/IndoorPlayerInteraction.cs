@@ -8,6 +8,7 @@ public class IndoorPlayerInteraction : PlayerInteraction
     public GameObject holdingAvocado;
     public GameObject holdingTomato;
     public GameObject holdingSalad;
+    public GameObject saladAlert;
 
 
     // Remove all item speech bubbles
@@ -17,6 +18,7 @@ public class IndoorPlayerInteraction : PlayerInteraction
         holdingAvocado.SetActive(false);
         holdingSalad.SetActive(false);
         holdingTomato.SetActive(false);
+        saladAlert.SetActive(false);
     }
 
     // Show currently held item from the kitchen
@@ -37,6 +39,7 @@ public class IndoorPlayerInteraction : PlayerInteraction
         else if (heldItem == ItemTypes.Salad)
         {
             holdingSalad.SetActive(true);
+            saladAlert.SetActive(true);
         }
     }
 }

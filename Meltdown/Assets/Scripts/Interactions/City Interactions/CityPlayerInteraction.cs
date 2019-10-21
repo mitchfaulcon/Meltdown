@@ -9,6 +9,7 @@ public class CityPlayerInteraction : PlayerInteraction
     public GameObject holdingSolar;
     public GameObject holdingSignMaterials;
     public GameObject holdingSign;
+    public GameObject constructionAlert;
 
 
     // Remove all item speech bubbles
@@ -19,6 +20,7 @@ public class CityPlayerInteraction : PlayerInteraction
         holdingSolar.SetActive(false);
         holdingSignMaterials.SetActive(false);
         holdingSign.SetActive(false);
+        constructionAlert.SetActive(false);
     }
 
     protected override void setActiveBubble()
@@ -30,10 +32,12 @@ public class CityPlayerInteraction : PlayerInteraction
         else if (heldItem == ItemTypes.Tools)
         {
             holdingTools.SetActive(true);
+            constructionAlert.SetActive(true);
         }
         else if (heldItem == ItemTypes.Solar)
         {
             holdingSolar.SetActive(true);
+            constructionAlert.SetActive(true);
         }
         else if (heldItem == ItemTypes.Supplies)
         {
