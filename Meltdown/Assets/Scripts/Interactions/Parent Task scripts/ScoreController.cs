@@ -63,7 +63,7 @@ public abstract class ScoreController : MonoBehaviour
     {
         currentValue -= points;
 
-        DisplayPopup(points, true);
+        DisplayPopup(points, true, player.transform);
     }
 
     // Increase temp for failing a task
@@ -71,13 +71,13 @@ public abstract class ScoreController : MonoBehaviour
     {
         currentValue += points;
 
-        DisplayPopup(points, false);
+        DisplayPopup(points, false, player.transform);
     }
 
-    protected void DisplayPopup(float points, bool success)
+    protected void DisplayPopup(float points, bool success, Transform location)
     {
         //Instantiate temperature popup
-        var popup = Instantiate(temperaturePopup, player.transform.position, Quaternion.identity);
+        var popup = Instantiate(temperaturePopup, location.position, Quaternion.identity);
         TextMeshPro popupText = popup.GetComponent<TextMeshPro>();
 
         //Rotate popup to be more visible to the camera

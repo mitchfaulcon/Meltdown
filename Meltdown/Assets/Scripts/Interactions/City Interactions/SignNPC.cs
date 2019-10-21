@@ -38,7 +38,7 @@ public class SignNPC : InteractableObjectBase
         this.gameObject.transform.Find("character").Find("Armature").Find("main").Find("chest").Find("shoulders").Find("armRight1").Find("armRight2").Find("handRight").Find("itemLeft").Find("ProtestSign").gameObject.SetActive(true);
         hasSign = true;
         cityCrowdNPC.animator.SetBool("holdingSign", true);
-
+        PlayInteractSound();
         //complete sign task
         taskController.taskComplete(TaskTypes.Sign);
         scoreController.taskScored(CityScoreController.Tasks.SIGN);

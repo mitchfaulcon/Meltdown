@@ -24,7 +24,7 @@ public abstract class TaskController : MonoBehaviour
         loadTasks();
 
         // Generate initial Task
-        TaskTypes task = generateTask();
+        TaskTypes task = GenerateInitialTask();
         generateTaskTime();
         taskList.Add(task);
         updateUI();
@@ -69,6 +69,10 @@ public abstract class TaskController : MonoBehaviour
          generateTaskTime();
     }
 
+    protected virtual TaskTypes GenerateInitialTask()
+    {
+        return generateTask();
+    }
     protected abstract void loadTasks();
 
     protected abstract void setupRepeatingTasks();

@@ -15,9 +15,10 @@ public class BikeShop : ItemCollectorBase
 
     public override ItemTypes OnInteract()
     {
-            containsItem = false;
-            //alert.SetActive(false);
-            return item;
+        containsItem = false;
+        alert.SetActive(false);
+        PlayInteractSound();
+        return item;
     }
 
 }
