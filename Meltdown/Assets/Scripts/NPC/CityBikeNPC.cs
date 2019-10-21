@@ -9,6 +9,7 @@ public class CityBikeNPC : NPCMovement
 
     public GameObject bike;
     public GameObject alert;
+    public AudioSource skidSound;
     private bool taxiReached;
     private bool bikeGiven;
     private Material material;
@@ -112,6 +113,10 @@ public class CityBikeNPC : NPCMovement
         {
             //Trigger animation only if taxi is offscreen
             taxiAnimator.SetTrigger("enter");
+            if (GameSettings.sounds)
+            {
+                skidSound.Play();
+            }
             taxiOnScreen = true;
         }
         SetDoors(true);
