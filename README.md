@@ -14,6 +14,11 @@ See the project [wiki](https://github.com/mitchfaulcon/Meltdown/wiki) for all pr
 | Salma Sanad | ssan631 | [salma-s](https://github.com/salma-s/) |
 | Hayden Simpson | hsim744 | [hdnsimpson](https://github.com/hdnsimpson/) |
 
+## Game Execution Instructions
+1. Download the .zip file from the [releases page](https://github.com/mitchfaulcon/Meltdown/releases)
+2. Extract the downloaded .zip to desired location
+3. Double-click Meltdown.exe to play!
+
 ## Ideal Pathway
 In order to progress through all dialogue sequences and game levels, we have cheat codes that can be used.
  - The Enter button can be used to quickly progress through menus and dialogues
@@ -26,7 +31,3 @@ Other game highlights outside of the core gameplay and dialogue are the settings
  - The settings scren includes a number of settings, as well as our skin customisation system
   - The high scores screen shows the player's top 5 high scores for each level, and provides the ability to reset these scores
 
-## Game Execution Instructions
-1. Download the .zip file from the [releases page](https://github.com/mitchfaulcon/Meltdown/releases)
-2. Extract the downloaded .zip to desired location
-3. Double-click Meltdown.exe to play!
