@@ -26,7 +26,7 @@ Other game highlights outside of the core gameplay and dialogue are the settings
  - The settings scren includes a number of settings, as well as our skin customisation system
   - The high scores screen shows the player's top 5 high scores for each level, and provides the ability to reset these scores
 
-## Prototype Execution Instructions
-1. Download the prototype .zip file from the [releases page](https://github.com/mitchfaulcon/Meltdown/releases)
+## Game Execution Instructions
+1. Download the .zip file from the [releases page](https://github.com/mitchfaulcon/Meltdown/releases)
 2. Extract the downloaded .zip to desired location
 3. Double-click Meltdown.exe to play!
