@@ -25,7 +25,7 @@ public abstract class InteractableObjectBase : MonoBehaviour
     public void PlayInteractSound()
     {
         // Play the set interactSound if the sound settings enable sound effects. 
-        if (GameSettings.sounds == true)
+        if (GameSettings.sounds)
         {
             interactSound.Play();
         }
