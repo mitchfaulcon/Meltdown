@@ -43,6 +43,12 @@ public class CityTaskController : TaskController
 
     }
 
+    protected override TaskTypes GenerateInitialTask()
+    {
+        //Ensure bike task is not generated first
+        return GetNonBikeTask();
+    }
+
     //generates a new task from enum TaskTypes, based on rng
     protected override TaskTypes generateTask()
     {
@@ -52,11 +58,21 @@ public class CityTaskController : TaskController
         //Ensure bike task does not get generated if bikeNPC is not at start point
         if (!CityBikeNPC.atInitialPoint && generatedTask.Equals(TaskTypes.Bike))
         {
-            while (generatedTask.Equals(TaskTypes.Bike))
-            {
-                newTask = Random.Range(10, 13);
-                generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
-            }
+            generatedTask = GetNonBikeTask();
+        }
+        return generatedTask;
+    }
+
+    private TaskTypes GetNonBikeTask()
+    {
+        int newTask = Random.Range(10, 13);
+        TaskTypes generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
+
+        //Ensure bike task does not get generated
+        while (generatedTask.Equals(TaskTypes.Bike))
+        {
+            newTask = Random.Range(10, 13);
+            generatedTask = (TaskTypes)System.Enum.Parse(typeof(TaskTypes), newTask.ToString());
         }
         return generatedTask;
     }
