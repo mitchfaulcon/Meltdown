@@ -22,6 +22,10 @@ In order to progress through all dialogue sequences and game levels, we have che
 
 A combination of the above three methods can progress through all levels and screens in the game very quickly.
 
+Other game highlights outside of the core gameplay and dialogue are the settings and high score screens in the main menu
+ - The settings scren includes a number of settings, as well as our skin customisation system
+  - The high scores screen shows the player's top 5 high scores for each level, and provides the ability to reset these scores
+
 ## Prototype Execution Instructions
 1. Download the prototype .zip file from the [releases page](https://github.com/mitchfaulcon/Meltdown/releases)
 2. Extract the downloaded .zip to desired location
